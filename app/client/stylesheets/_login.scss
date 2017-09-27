@@ -1,52 +1,61 @@
 #login {
-  height: 100%;
-  width: 100%;
-  background-color: $login-bg-color;
-  background:  $login-bg;
-  background-size: cover;
+    height: 100%;
+    width: 100%;
+    background-color: $login-bg-color;
+    background:  $login-bg;
+    background-size: cover;
+    
+    > .container {
+        position: relative;
+        top: 50%;
+        
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        
+        > .content {
+            max-width: 320px;
+            margin: 0 auto;
+            
+            .segment {
+                border-radius: 15px;
+            }
+            
+            .logo {
+                max-width: 100px;
+                margin: .5rem auto 1rem auto;
+                img {
+                    width: 100px;
+                    height: 100px;
+                    
+                    border-radius: 20px;
+                }
+            }
+            
+            .button {
+                color: white;
+                &.login {
+                    background: $login-color;
+                }
+                &.register {
+                    background: $register-color
+                }
+            }
+            
+            .forgot {
+                text-align: center;
+            }
 
-  > .container {
-    position: relative;
-    top: 50%;
+            a {
+                display: inline-block;
+                margin-top: 1em;
+            }
 
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-
-    > .content {
-      max-width: 320px;
-      margin: 0 auto;
-
-      .segment {
-	border-radius: 15px;
-      }
-
-      .logo {
-        max-width: 100px;
-        margin: .5rem auto 1rem auto;
-        img {
-          width: 100px;
-          height: 100px;
-
-          border-radius: 20px;
+            .error {
+                text-align: center;
+            }
+            
         }
-      }
-
-      .button {
-        color: white;
-        &.login {
-          background: $login-color;
-        }
-        &.register {
-          background: $register-color
-        }
-      }
-
-      .forgot {
-        text-align: center;
-      }
-
     }
-  }
-
+    
 }
