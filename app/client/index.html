@@ -6,32 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> HackUCI 2018 </title>
 
-    <script src="plugins/jquery/dist/jquery.min.js"></script>
+    <!-- build:vendorjs vendors.js -->
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../../node_modules/angular/angular.js"></script>
+    <script src="../../node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="../../node_modules/semantic-ui-css/semantic.js"></script>
+    <script src="../../node_modules/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../../node_modules/moment/moment.js"></script>
+    <script src="../../node_modules/showdown/dist/showdown.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js app.js -->
+    <script src="/src/app.js"></script>
+    <script src="/src/constants.js"></script>
+    <script src="/src/routes.js"></script>
+
+    <script src="/src/modules/Session.js"></script>
+    <script src="/src/modules/Utils.js"></script>
+
+    <script src="/src/interceptors/AuthInterceptor.js"></script>
+
+    <script src="/src/services/AuthService.js"></script>
+    <script src="/src/services/SettingsService.js"></script>
+    <script src="/src/services/UserService.js"></script>
+
+    <script src="/views/admin/adminCtrl.js"></script>
+    <script src="/views/admin/settings/adminSettingsCtrl.js"></script>
+    <script src="/views/admin/stats/adminStatsCtrl.js"></script>
+    <script src="/views/admin/user/adminUserCtrl.js"></script>
+    <script src="/views/admin/users/adminUsersCtrl.js"></script>
+
+    <script src="/views/application/applicationCtrl.js"></script>
+    <script src="/views/confirmation/confirmationCtrl.js"></script>
+    <script src="/views/dashboard/dashboardCtrl.js"></script>
+    <script src="/views/login/loginCtrl.js"></script>
+    <script src="/views/reset/resetCtrl.js"></script>
+    <script src="/views/sidebar/sidebarCtrl.js"></script>
+    <script src="/views/team/teamCtrl.js"></script>
+    <script src="/views/verify/verifyCtrl.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:vendorcss vendors.css -->
+    <link rel="stylesheet" href="../../node_modules/semantic-ui-css/semantic.min.css">
     <link rel="stylesheet" href="stylesheets/normalize.css">
-
-    <!-- Angular stuff -->
-    <script src="plugins/angular/angular.min.js"></script>
-    <script src="plugins/angular-ui-router/release/angular-ui-router.min.js"></script>
-
-    <!-- Angular app -->
-    <script src="build/app.js"></script>
-
-    <!-- Semantic-UI -->
-    <link rel="stylesheet" href="plugins/semantic-ui/dist/semantic.min.css">
-    <script src="plugins/semantic-ui/dist/semantic.min.js"></script>
-
-    <!-- Sweet Alert -->
-    <script src="plugins/sweetalert/dist/sweetalert.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="plugins/sweetalert/dist/sweetalert.css">
-
-    <!-- Moment -->
-    <script src="plugins/moment/min/moment.min.js"></script>
-
-    <!-- showdown! -->
-    <script src="plugins/showdown/dist/showdown.min.js"></script>
+    <!-- endbuild -->
 
     <!-- Custom styling -->
-    <link rel="stylesheet" href="build/site.css">
+    <link rel="stylesheet" href="/site.css">
     <link href='//fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
 

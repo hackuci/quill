@@ -31,7 +31,7 @@ app.use(bodyParser.json());
 
 app.use(methodOverride());
 
-app.use(express.static(__dirname + '/app/client'));
+app.use(express.static(__dirname + '/build'));
 
 // Routers =====================================================================
 
