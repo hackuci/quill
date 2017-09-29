@@ -10,7 +10,6 @@ var ngAnnotate = require('gulp-ng-annotate');
 var usemin = require('gulp-usemin');
 var rev = require('gulp-rev');
 var clean = require('gulp-clean');
-var fs = require('fs');
 
 var environment = process.env.NODE_ENV;
 

@@ -14,7 +14,6 @@ At this point everything is downloaded onto your machine, now all that is left i
 
 ```bash
 npm install
-bower install
 npm run config
 ```
 
