@@ -33,13 +33,13 @@ gulp.task('default', function(){
 gulp.task('js', ['clean'], function () {
   if (environment !== 'dev'){
     // Minify for non-development
-    gulp.src(['app/client/src/**/*.js', 'app/client/views/**/*.js'])
-      .pipe(sourcemaps.init())
-        .pipe(concat('app.js'))
-        .pipe(ngAnnotate())
-        .on('error', swallowError)
-        .pipe(uglify())
-      .pipe(gulp.dest('./app/client/build'));
+    return gulp.src(['./app/client/index.html'])
+      .pipe(usemin({
+        vendorjs: [sourcemaps.init(), 'concat', uglify(), rev(), sourcemaps.write()],
+        js: [sourcemaps.init(), 'concat', uglify(), rev(), sourcemaps.write()],
+        vendorcss: [rev()]
+      }))
+      .pipe(gulp.dest('./build'));
   } else {
     return gulp.src(['./app/client/index.html'])
       .pipe(usemin({
