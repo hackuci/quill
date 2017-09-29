@@ -6,7 +6,7 @@ angular.module('reg')
 
       UserService
         .getStats()
-        .then(function(stats){
+        .success(function(stats){
           $scope.stats = stats;
           $scope.loading = false;
         });

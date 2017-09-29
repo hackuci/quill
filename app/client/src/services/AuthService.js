@@ -30,7 +30,7 @@ angular.module('reg')
             email: email,
             password: password
           })
-          .then(function(data){
+          .success(function(data){
             loginSuccess(data, onSuccess);
           })
           .error(function(data){
@@ -43,7 +43,7 @@ angular.module('reg')
           .post('/auth/login', {
             token: token
           })
-          .then(function(data){
+          .success(function(data){
             loginSuccess(data, onSuccess);
           })
           .error(function(data, statusCode){
@@ -65,7 +65,7 @@ angular.module('reg')
             email: email,
             password: password
           })
-          .then(function(data){
+          .success(function(data){
             loginSuccess(data, onSuccess);
           })
           .error(function(data){
@@ -76,7 +76,7 @@ angular.module('reg')
       authService.verify = function(token, onSuccess, onFailure) {
         return $http
           .get('/auth/verify/' + token)
-          .then(function(user){
+          .success(function(user){
             Session.setUser(user);
             if (onSuccess){
               onSuccess(user);
@@ -109,7 +109,7 @@ angular.module('reg')
             token: token,
             password: pass
           })
-          .then(onSuccess)
+          .success(onSuccess)
           .error(onFailure);
       };
 
