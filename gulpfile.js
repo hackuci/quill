@@ -7,6 +7,9 @@ var concat = require('gulp-concat');
 var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
 var ngAnnotate = require('gulp-ng-annotate');
+var usemin = require('gulp-usemin');
+var rev = require('gulp-rev');
+var clean = require('gulp-clean');
 
 var environment = process.env.NODE_ENV;
 
@@ -18,11 +21,16 @@ function swallowError (error) {
     this.emit('end');
 }
 
+gulp.task('clean', function(){
+    return gulp.src('./build/**/*.*', {read: false})
+      .pipe(clean());
+});
+
 gulp.task('default', function(){
   console.log('yo. use gulp watch or something');
 });
 
-gulp.task('js', function () {
+gulp.task('js', ['clean'], function () {
   if (environment !== 'dev'){
     // Minify for non-development
     gulp.src(['app/client/src/**/*.js', 'app/client/views/**/*.js'])
@@ -31,28 +39,37 @@ gulp.task('js', function () {
         .pipe(ngAnnotate())
         .on('error', swallowError)
         .pipe(uglify())
-      .pipe(gulp.dest('app/client/build'));
+      .pipe(gulp.dest('./app/client/build'));
   } else {
-    gulp.src(['app/client/src/**/*.js', 'app/client/views/**/*.js'])
-      .pipe(sourcemaps.init())
-        .pipe(concat('app.js'))
-        .pipe(ngAnnotate())
-        .on('error', swallowError)
-      .pipe(sourcemaps.write())
-      .pipe(gulp.dest('app/client/build'));
+    return gulp.src(['./app/client/index.html'])
+      .pipe(usemin({
+        vendorjs: [sourcemaps.init(), 'concat', rev(), sourcemaps.write()],
+        js: [sourcemaps.init(), 'concat', rev(), sourcemaps.write()],
+        vendorcss: [rev()]
+      }))
+      .pipe(gulp.dest('./build'));
   }
-
 });
 
-gulp.task('sass', function () {
+gulp.task('sass', ['clean'], function () {
   gulp.src('app/client/stylesheets/site.scss')
     .pipe(sass())
       .on('error', sass.logError)
     .pipe(minifyCss())
-    .pipe(gulp.dest('app/client/build'));
+    .pipe(gulp.dest('./build'));
 });
 
-gulp.task('build', ['js', 'sass'], function(){
+gulp.task('assets', ['clean'], function() {
+  gulp.src('app/client/assets/**/*.*')
+    .pipe(gulp.dest('./build/assets/'));
+});
+
+gulp.task('html', ['clean'], function() {
+  gulp.src(['app/client/**/*.html', '!app/client/index.html'])
+    .pipe(gulp.dest('./build'));
+  });
+
+gulp.task('build', ['js', 'sass', 'assets', 'html'], function(){
   // Yup, build the js and sass.
 });
 
