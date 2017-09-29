@@ -33,7 +33,7 @@ angular.module('reg')
       $scope.updateProfile = function(){
         UserService
           .updateProfile($scope.selectedUser._id, $scope.selectedUser.profile)
-          .success(function(data){
+          .then(function(data){
             $selectedUser = data;
             swal("Updated!", "Profile updated.", "success");
           })
