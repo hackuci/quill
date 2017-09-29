@@ -56,7 +56,7 @@ angular.module('reg')
 
         UserService
           .updateConfirmation(user._id, confirmation)
-          .success(function(data){
+          .then(function(data){
             sweetAlert({
               title: "Woo!",
               text: "You're confirmed!",

@@ -97,7 +97,7 @@ angular.module('reg')
 
             UserService
               .declineAdmission(user._id)
-              .success(function(user){
+              .then(function(user){
                 $rootScope.currentUser = user;
                 $scope.user = user;
               });

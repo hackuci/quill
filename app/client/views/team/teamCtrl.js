@@ -19,7 +19,7 @@ angular.module('reg')
       function _populateTeammates() {
         UserService
           .getMyTeammates()
-          .success(function(users){
+          .then(function(users){
             $scope.error = null;
             $scope.teammates = users;
           });
@@ -32,7 +32,7 @@ angular.module('reg')
       $scope.joinTeam = function(){
         UserService
           .joinOrCreateTeam($scope.code)
-          .success(function(user){
+          .then(function(user){
             $scope.error = null;
             $scope.user = user;
             _populateTeammates();
@@ -45,7 +45,7 @@ angular.module('reg')
       $scope.leaveTeam = function(){
         UserService
           .leaveTeam()
-          .success(function(user){
+          .then(function(user){
             $scope.error = null;
             $scope.user = user;
             $scope.teammates = [];

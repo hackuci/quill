@@ -8,7 +8,7 @@ angular.module('reg')
       $scope.settings = {};
       SettingsService
         .getPublicSettings()
-        .success(function(settings){
+        .then(function(settings){
           updateSettings(settings);
         });
 
@@ -26,14 +26,14 @@ angular.module('reg')
 
       SettingsService
         .getWhitelistedEmails()
-        .success(function(emails){
+        .then(function(emails){
           $scope.whitelist = emails.join(", ");
         });
 
       $scope.updateWhitelist = function(){
         SettingsService
           .updateWhitelistedEmails($scope.whitelist.replace(/ /g, '').split(','))
-          .success(function(settings){
+          .then(function(settings){
             swal('Whitelist updated.');
             $scope.whitelist = settings.whitelistedEmails.join(", ");
           });
@@ -77,7 +77,7 @@ angular.module('reg')
 
         SettingsService
           .updateRegistrationTimes(open, close)
-          .success(function(settings){
+          .then(function(settings){
             updateSettings(settings);
             swal("Looks good!", "Registration Times Updated", "success");
           });
@@ -90,7 +90,7 @@ angular.module('reg')
 
         SettingsService
           .updateConfirmationTime(confirmBy)
-          .success(function(settings){
+          .then(function(settings){
             updateSettings(settings);
             swal("Sounds good!", "Confirmation Date Updated", "success");
           });
@@ -108,7 +108,7 @@ angular.module('reg')
         var text = $scope.settings.waitlistText;
         SettingsService
           .updateWaitlistText(text)
-          .success(function(data){
+          .then(function(data){
             swal("Looks good!", "Waitlist Text Updated", "success");
             updateSettings(data);
           });
@@ -118,7 +118,7 @@ angular.module('reg')
         var text = $scope.settings.acceptanceText;
         SettingsService
           .updateAcceptanceText(text)
-          .success(function(data){
+          .then(function(data){
             swal("Looks good!", "Acceptance Text Updated", "success");
             updateSettings(data);
           });
@@ -128,7 +128,7 @@ angular.module('reg')
         var text = $scope.settings.confirmationText;
         SettingsService
           .updateConfirmationText(text)
-          .success(function(data){
+          .then(function(data){
             swal("Looks good!", "Confirmation Text Updated", "success");
             updateSettings(data);
           });

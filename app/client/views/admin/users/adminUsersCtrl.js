@@ -34,14 +34,14 @@ angular.module('reg')
 
       UserService
         .getPage($stateParams.page, $stateParams.size, $stateParams.query)
-        .success(function(data){
+        .then(function(data){
           updatePage(data);
         });
 
       $scope.$watch('queryText', function(queryText){
         UserService
           .getPage($stateParams.page, $stateParams.size, queryText)
-          .success(function(data){
+          .then(function(data){
             updatePage(data);
           });
       });
@@ -77,7 +77,7 @@ angular.module('reg')
             function(){
               UserService
                 .checkIn(user._id)
-                .success(function(user){
+                .then(function(user){
                   $scope.users[index] = user;
                   swal("Accepted", user.profile.name + ' has been checked in.', "success");
                 });
@@ -86,7 +86,7 @@ angular.module('reg')
         } else {
           UserService
             .checkOut(user._id)
-            .success(function(user){
+            .then(function(user){
               $scope.users[index] = user;
               swal("Accepted", user.profile.name + ' has been checked out.', "success");
             });
@@ -119,7 +119,7 @@ angular.module('reg')
 
                 UserService
                   .admitUser(user._id)
-                  .success(function(user){
+                  .then(function(user){
                     $scope.users[index] = user;
                     swal("Accepted", user.profile.name + ' has been admitted.', "success");
                   });
@@ -295,46 +295,3 @@ angular.module('reg')
       $scope.selectUser = selectUser;
 
     }]);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
