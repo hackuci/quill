@@ -18,7 +18,7 @@
       margin: 0 auto;
 
       .segment {
-	border-radius: 15px;
+        border-radius: 15px;
       }
 
       .logo {
@@ -43,6 +43,15 @@
       }
 
       .forgot {
+        text-align: center;
+      }
+
+      a {
+        display: inline-block;
+        margin-top: 1em;
+      }
+
+      .error {
         text-align: center;
       }
 
