@@ -216,6 +216,11 @@ angular.module('reg')
         var requireAdmin = toState.data.requireAdmin;
         var requireVerified = toState.data.requireVerified;
 
+        if (toState.name === 'app.apply') {
+          event.preventDefault();
+          $state.go('app.home');
+        }
+
         if (!$rootScope.fadeOut) {
           event.preventDefault();
           $rootScope.fadeOut = true;
