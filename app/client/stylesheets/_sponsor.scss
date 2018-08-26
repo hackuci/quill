@@ -501,6 +501,64 @@
 	}
 }
 
+#sponsors-info {
+	
+	padding: 5% 0;
+	color: #2c3e50;
+
+	#sponsors-info-content {
+		display: flex; 
+		flex-direction:column; 
+		align-items:center;
+	}
+	
+	.sponsors-info-body {
+		padding-top:8%;
+		padding-bottom: 5%;
+		
+	}
+
+	.sponsors-info-title {
+		margin-bottom: 5%;
+	}
+
+	.sponsors-info-description {
+		font-weight: 500;
+		color: black;
+		font-size: 1.8em;
+		letter-spacing: 0.025em;
+		line-height: 1.25em;
+		text-align: center;
+		margin-bottom: 5%;
+	}
+
+	.sponsors-info-description a:hover {
+		text-decoration: underline;
+	}
+	/* Mobile */
+	@media (max-width: 767px) {
+		.title {
+			text-align: center;
+			font-size: 1.6em;
+			font-weight: bold
+		}
+
+		.sponsors-info-description {
+			font-size: 1.4em;
+		}
+	}
+	/* Tablet */
+	@media (min-width: 768px) and (max-width: 991px) {
+
+	}
+
+	/* Large Screens */
+	@media (min-width: 1650px) {
+
+	}
+}
+
+
 /* Bootstrap override */
 .col-xs-5ths,
 .col-sm-5ths,
