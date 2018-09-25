@@ -103,7 +103,7 @@ emailService.sendAcceptanceEmail = function (email, confirmBy, callback) {
 
 /**
  * Send the waiver email to the participant.
- *@param  {string|string[]}  email         [Email address(s) to send to]
+ * @param  {string|string[]}  email         [Email address(s) to send to]
  * @param  {Function} callback  [description]
  */
 emailService.sendWaiverEmail = function (email, callback) {
