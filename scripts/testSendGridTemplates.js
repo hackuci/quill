@@ -19,6 +19,6 @@ var mailCheck = function( templateIndex )
 Mailer.sendVerificationEmail(email, 'testToken', mailCheck(0));
 Mailer.sendPasswordResetEmail(email, 'testToken', mailCheck(1));
 Mailer.sendPasswordChangedEmail(email, mailCheck(2));
-Mailer.sendAcceptanceEmail(email, mailCheck(3));
+Mailer.sendAcceptanceEmail(email, 0, mailCheck(3));
 Mailer.sendWaiverEmail(email, mailCheck(4));
 

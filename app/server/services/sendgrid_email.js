@@ -39,7 +39,7 @@ function sendOne(template, email, templateData, callback) {
     templateId: template,
     dynamic_template_data: templateData
   };
-  sgMail.send(msg, (err, data) => {
+  sgMail.send(msg, (err, info) => {
     if (err) {
       console.error('Error sending email through SendGrid: ' + err);
     }
