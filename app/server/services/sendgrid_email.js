@@ -1,13 +1,12 @@
 var moment = require('moment');
 var ROOT_URL = process.env.ROOT_URL;
 
-var ACCEPTANCE_TEMPLATE = process.env.ACCEPTANCE_TEMPLATE;
 var SENDGRID_API_KEY = process.env.SENDGRID_API_KEY;
 var HACKATHON_NAME = process.env.HACKATHON_NAME;
 var EMAIL_ADDRESS = process.env.EMAIL_ADDRESS;
 var TWITTER_HANDLE = process.env.TWITTER_HANDLE;
 var FACEBOOK_HANDLE = process.env.FACEBOOK_HANDLE;
-var ACCEPTANCE_EMAIL_TEMPLATE = process.env.ACCEPTANCE_TEMPLATE;
+var ACCEPTANCE_EMAIL_TEMPLATE = process.env.ACCEPTANCE_EMAIL_TEMPLATE;
 var VERIFICATION_EMAIL_TEMPLATE = process.env.VERIFICATION_EMAIL_TEMPLATE;
 var PASSWORD_RESET_EMAIL_TEMPLATE = process.env.PASSWORD_RESET_EMAIL_TEMPLATE;
 var PASSWORD_CHANGED_EMAIL_TEMPLATE = process.env.PASSWORD_CHANGED_EMAIL_TEMPLATE;
@@ -18,6 +17,7 @@ var EMAIL_HEADER_IMAGE = process.env.EMAIL_HEADER_IMAGE;
 if(EMAIL_HEADER_IMAGE.indexOf("https") == -1){
   EMAIL_HEADER_IMAGE = ROOT_URL + EMAIL_HEADER_IMAGE;
 }
+
 var NODE_ENV = process.env.NODE_ENV;
 
 const sgMail = require('@sendgrid/mail');
@@ -30,7 +30,7 @@ var emailService = {};
  * @param  {string}           template      [ID of SendGrid Dynamic Template]        
  * @param  {string|string[]}  email         [Email address(s) to send to]
  * @param  {Object}           templateData  [Mapping of template dynamic fields to values]
- * @param  {Function} callback              [Callback to be executed on success or error]
+ * @param  {Function}         callback      [Callback to be executed on success or error]
  */
 function sendOne(template, email, templateData, callback) {
   var msg = {
@@ -44,10 +44,11 @@ function sendOne(template, email, templateData, callback) {
       console.error('Error sending email through SendGrid: ' + err);
     }
     if (info) {
-      console.log(data);
+      console.warn('Email with template ' + template + ' sent to ' + email + ' with response:\n' );
+      console.warn( info[0].toJSON());
     }
     if (callback) {
-      callback(err, data);
+      callback(err, info);
     }
   });
 }
@@ -85,7 +86,7 @@ emailService.sendPasswordResetEmail = function (email, token, callback) {
  * @param  {Function} callback [description]
  */
 emailService.sendPasswordChangedEmail = function (email, callback) {
-  sendOne(PASSWORD_CHANGED_EMAIL_TEMPLATE, email, null, callback);
+  sendOne(PASSWORD_CHANGED_EMAIL_TEMPLATE, email, {}, callback);
 };
 
 /**
