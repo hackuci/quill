@@ -11,13 +11,6 @@ var VERIFICATION_EMAIL_TEMPLATE = process.env.VERIFICATION_EMAIL_TEMPLATE;
 var PASSWORD_RESET_EMAIL_TEMPLATE = process.env.PASSWORD_RESET_EMAIL_TEMPLATE;
 var PASSWORD_CHANGED_EMAIL_TEMPLATE = process.env.PASSWORD_CHANGED_EMAIL_TEMPLATE;
 var WAIVER_EMAIL_TEMPLATE = process.env.WAIVER_EMAIL_TEMPLATE;
-
-var EMAIL_CONTACT = process.env.EMAIL_CONTACT;
-var EMAIL_HEADER_IMAGE = process.env.EMAIL_HEADER_IMAGE;
-if(EMAIL_HEADER_IMAGE.indexOf("https") == -1){
-  EMAIL_HEADER_IMAGE = ROOT_URL + EMAIL_HEADER_IMAGE;
-}
-
 var NODE_ENV = process.env.NODE_ENV;
 
 const sgMail = require('@sendgrid/mail');
@@ -44,8 +37,15 @@ function sendOne(template, email, templateData, callback) {
       console.error('Error sending email through SendGrid: ' + err);
     }
     if (info) {
-      console.warn('Email with template ' + template + ' sent to ' + email + ' with response:\n' );
-      console.warn( info[0].toJSON());
+      console.warn('Email with template ' + template + ' sent to ' + email + ' with response:\n');
+      if (info[0] && info[0].toJSON)
+      {
+        console.warn(info[0].toJSON());
+      }
+      else
+      {
+        console.error("Ill-formed SendGrid response log"); 
+      }
     }
     if (callback) {
       callback(err, info);
