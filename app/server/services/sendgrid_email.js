@@ -38,12 +38,10 @@ function sendOne(template, email, templateData, callback) {
     }
     if (info) {
       console.warn('Email with template ' + template + ' sent to ' + email + ' with response:\n');
-      if (info[0] && info[0].toJSON)
-      {
+      if (info[0] && info[0].toJSON) {
         console.warn(info[0].toJSON());
       }
-      else
-      {
+      else {
         console.error("Ill-formed SendGrid response log"); 
       }
     }
