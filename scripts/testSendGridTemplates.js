@@ -6,7 +6,7 @@ var Mailer = require('../app/server/services/sendgrid_email');
 var email = process.env.EMAIL_ADDRESS;
 var templates = ['verification','passwordChanged','passwordReset','accepted', 'waiver'];
 var mailCheck = function (templateIndex) {
-    var ret = function(err, data) {
+    var ret = function (err, data) {
         if(!err && data) {
             console.warn('Email for template ' + templates[templateIndex] + ' sent');
         }
