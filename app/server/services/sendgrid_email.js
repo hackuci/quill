@@ -95,7 +95,7 @@ emailService.sendPasswordChangedEmail = function (email, callback) {
  */
 emailService.sendAcceptanceEmail = function (email, confirmBy, callback) {
   confirmDate = { 
-    'date': moment(confirmBy).format('MMMM D, YYYY h:mm A') 
+    date: moment(confirmBy).format('MMMM D, YYYY h:mm A') 
   };
   sendOne(ACCEPTANCE_EMAIL_TEMPLATE, email, confirmDate, callback);
 };
