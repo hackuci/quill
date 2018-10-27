@@ -107,7 +107,7 @@ emailService.sendAcceptanceEmail = function (email, confirmBy, callback) {
  */
 emailService.sendWaiverEmail = function (email, callback) {
   var userEmailData = {
-    'email': email
+    email
   };
   sendOne(WAIVER_EMAIL_TEMPLATE, email, userEmailData, callback);
 };
