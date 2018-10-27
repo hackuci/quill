@@ -73,7 +73,7 @@ emailService.sendVerificationEmail = function (email, token, callback) {
  */
 emailService.sendPasswordResetEmail = function (email, token, callback) {
   var resetUrlData = {
-    'url': ROOT_URL + '/reset/' + token
+    url: `${ROOT_URL}/reset/${token}`
   }
   sendOne(PASSWORD_RESET_EMAIL_TEMPLATE, email, resetUrlData, callback);
 };
