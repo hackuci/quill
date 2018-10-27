@@ -60,7 +60,7 @@ function sendOne(template, email, templateData, callback) {
  */
 emailService.sendVerificationEmail = function (email, token, callback) {
   var verifyUrlData = {
-    'url': ROOT_URL + '/verify/' + token
+    url: `${ROOT_URL}/verify/${token}`
   };
   sendOne(VERIFICATION_EMAIL_TEMPLATE, email, verifyUrlData, callback);
 };
