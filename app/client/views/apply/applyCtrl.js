@@ -227,6 +227,14 @@ angular.module('reg')
                 {
                   type: 'match[confirmPassword]',
                   prompt: 'Your passwords do not match.'
+                },
+                {
+                  type: 'minlength[6]',
+                  prompt: 'Your password needs to have at least 6 characters'
+                },
+                {
+                  type: 'maxLength[64]',
+                  prompt: 'Your password is too long'
                 }
               ]
             },
