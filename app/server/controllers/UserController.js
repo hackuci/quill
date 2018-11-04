@@ -50,6 +50,15 @@ function canRegister(email, password, callback){
       });
     }
 
+    if (!validator.isEmail(email)){
+      return callback({
+        message: "Not a valid email."
+      });
+    }
+
+    return callback(null, true);
+    /* Disabling whitelist feature 
+
     // Check for emails.
     Settings.getWhitelistedEmails(function(err, emails){
       if (err || !emails){
@@ -64,7 +73,7 @@ function canRegister(email, password, callback){
         message: "Not a valid educational email."
       }, false);
     });
-
+    */
   });
 }
 

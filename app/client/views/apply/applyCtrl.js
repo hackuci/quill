@@ -229,12 +229,12 @@ angular.module('reg')
                   prompt: 'Your passwords do not match.'
                 },
                 {
-                  type: 'minlength[6]',
-                  prompt: 'Your password needs to have at least 6 characters'
+                  type: 'minLength[6]',
+                  prompt: 'Your password needs to have at least 6 characters.'
                 },
                 {
-                  type: 'maxLength[64]',
-                  prompt: 'Your password is too long'
+                  type: 'maxLength[32]',
+                  prompt: 'Your password can only have at most 32 characters.'
                 }
               ]
             },
@@ -309,7 +309,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'allowMinors',
-                  prompt: 'You must be an adult, or an UCI student.'
+                  prompt: 'You must be an adult.'
                 }
               ]
             }
