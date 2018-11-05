@@ -235,6 +235,10 @@ angular.module('reg')
                 {
                   type: 'maxLength[32]',
                   prompt: 'Your password can only have at most 32 characters.'
+                },
+                {
+                  type: 'doesntContain[\" \"]',
+                  prompt: 'No spaces allowed'
                 }
               ]
             },
@@ -265,7 +269,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'empty',
-                  prompt: 'Please select your major.'
+                  prompt: 'Please type your major.'
                 }
               ]
             },
