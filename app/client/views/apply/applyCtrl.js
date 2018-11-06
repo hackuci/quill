@@ -269,7 +269,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'empty',
-                  prompt: 'Please type your major.'
+                  prompt: 'Please select your major.'
                 }
               ]
             },
