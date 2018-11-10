@@ -47,7 +47,7 @@
             left:0; 
             width: 100%;
             opacity: 0;
-            animation: fadeIn 0.5s ease-in 0.5s forwards;
+            animation: fadein 0.5s ease-in 0.5s forwards;
         }
 
         .after-logo {
@@ -56,24 +56,9 @@
             left:0;
             width: 100%;
             opacity: 0;
-            animation: fadeIn 0.8s ease-in 0.8s forwards;
-        }
-
-        @keyframes fadeIn {
-            0% {opacity: 0;}
-            100% {opacity: 1;}
+            animation: fadein 0.8s ease-in 0.8s forwards;
         }
     }
-
-    // #hero::before {
-    //     content: '';
-    //     background-image: linear-gradient(to right, #2a2a2a, #191919);
-    //     background-size: cover;
-    //     background-position: center center;
-    //     width: 100%;
-    //     height: calc(100% + 50px);
-    //     position: absolute;
-    // }
     
     .hero-content {
         height: 100%;
@@ -204,7 +189,7 @@
     }
     /* FAQs */
     #faq {
-        background-image:url("../assets/images/triangles.png"), linear-gradient(to right, #2a2a2a, #191919);
+        background-image:url('../assets/images/triangles.png'), linear-gradient(to right, #2a2a2a, #191919);
         background-position: center center;
         color: white;
         padding: 5% 0 3% 0;
@@ -284,7 +269,7 @@
     }
     /* Footer */
     #footer {
-        background-image:url("../assets/images/triangles.png"), linear-gradient(to right, #2a2a2a, #191919);
+        background-image:url('../assets/images/triangles.png'), linear-gradient(to right, #2a2a2a, #191919);
         background-position: center;
         color: white;
         text-align: center;
