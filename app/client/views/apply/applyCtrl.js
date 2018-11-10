@@ -18,7 +18,7 @@ angular.module('reg')
         uploadMultiple: false,
         acceptedFiles: 'application/pdf',
         autoProcessQueue: false,
-        clickable: ['.resume-dropzone', '.resume-dropzone>span']
+        clickable: ['.resume-dropzone', '.resume-dropzone>span', 'div#resume-direct-upload']
       };
 
       $scope.showResumeDropzoneIcon = true;
