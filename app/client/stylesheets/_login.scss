@@ -8,14 +8,14 @@
   &::before {
     content: '';
     background-image: linear-gradient(to right, #2a2a2a, #191919);
-    animation: fadeOut 0.8s ease-in 0.5s forwards;  
+    animation: fadeout 0.8s ease-in 0.5s forwards;  
     opacity: 1;
     width: 100%;
     height: calc(100% + 50px);
     position: absolute;
   }
   
-	@keyframes fadeOut {
+	@keyframes fadeout {
 		0% {opacity: 1;}
 		100% {opacity: 0;}
 	}
@@ -74,8 +74,7 @@
         animation-delay: .2s;
       }
 
-      .ui.login-password .field:nth-child(1) {
-        
+      .ui.login-password .field:nth-child(1) { 
         animation: fadein .5s both;
         animation-delay: .3s;
       }
@@ -145,8 +144,6 @@
           color: #83a8db;
         }
       }
-
     }
   }
-
 }
