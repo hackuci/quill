@@ -337,7 +337,7 @@ module.exports = function(router) {
    * Get a user's team member's names. Uses the code associated
    * with the user making the request.
    */
-  router.get('/users/:id/team', isOwnerOrAdmin, function(req, res){
+  router.get('/users/:id/team', isAdmin, function(req, res){
     var id = req.params.id;
     UserController.getTeammates(id, defaultResponse(req, res));
   });
@@ -348,7 +348,7 @@ module.exports = function(router) {
    *   code: STRING
    * }
    */
-  router.put('/users/:id/team', isOwnerOrAdmin, function(req, res){
+  router.put('/users/:id/team', isAdmin, function(req, res){
     var code = req.body.code;
     var id = req.params.id;
 
@@ -359,7 +359,7 @@ module.exports = function(router) {
   /**
    * Remove a user from a team.
    */
-  router.delete('/users/:id/team', isOwnerOrAdmin, function(req, res){
+  router.delete('/users/:id/team', isAdmin, function(req, res){
     var id = req.params.id;
 
     UserController.leaveTeam(id, defaultResponse(req, res));
