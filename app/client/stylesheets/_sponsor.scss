@@ -28,15 +28,16 @@
 	}
 
 	.title {
-		font-size: 2.8em;
+		font-size: 2.0em;
 		font-weight: 700;
 	}
 
 	/* Hero */
 	#hero {
 		background-image: linear-gradient(to right, #2a2a2a, #191919);
-		background-image: url('../assets/images/triangles.png'), linear-gradient(to right, #2a2a2a, #191919);
-		background-size: cover;
+		background-image: url('../assets/images/sponsorship_header_viv.png'), linear-gradient(to right, #2a2a2a, #191919);
+		background-size: contain ;
+		background-repeat: no-repeat;
 		background-position: center center;
 		height: calc(100% + 49px);		
 	}
@@ -98,15 +99,21 @@
 	}
 
 	.hero-title {
-		font-size: 3.75em;
-		line-height: 1.1em;
-		font-weight: 500;
-		text-align: center;
-		display: inline-block;
+		text-decoration: none;
+		color: #e7e7e7;
+		display: block;
+		position: relative;
+		left: -35%;
+		margin-top:150%;
+		font-weight: normal;
 		animation: fadein .5s both;
 		animation-delay: .3s;
+		padding:  5% 15%;
+		width:150%;
+		border-radius: 100px;
+		border: solid thin #e7e7e7;
 	}
-
+	
 	.hero-description {
 		font-weight: 300;
 		font-size: 1.42em;
@@ -136,44 +143,23 @@
 
 	/* Info */
 	#info {
-		padding: 7% 0;
+		background: #e7e7e7;
 	}
 
 	#info-content {
-		width: 80%;
-		margin-left: auto;
-		margin-right: auto;
+		width: 100%;
+		padding: 3% 0;
+		color: #2c3e50;
 	}
 
 	#info-content>.title {
 		margin-top: 0.5%;
 		padding-top: 0;
-		color: #2c3e50;
-	}
-
-	#info-content>.recap-description {
-		padding-top: 0;
-		padding-bottom: 0;
-	}
-
-	#info-content>.recap-description>span {
-		font-size: 1.4em;
-		letter-spacing: 0.01em;
-		font-weight: 300;
-	}
-
-	#info-content>.recap-description>span {
-		display: block;
-	}
-
-	#info-content>.recap-description>span+span {
-		padding-top: 0.5em;
+		
 	}
 
 	.recap-statistics {
 		text-align: center;
-		margin-top: 3.5%;
-		margin-bottom: 0.5%;
 	}
 
 	.recap-statistics>div {
@@ -184,25 +170,41 @@
 
 	.recap-statistics>div>strong {
 		display: block;
-		font-size: 2em;
+		font-size: 2.5em;
 		font-weight: 500;
-		color: #2c3e50;
+		color: #3e4389;
 	}
 
 	.recap-statistics>div>span {
-		font-weight: 300;
+		font-size: 1.2em;
+		color: #3e4389;
 	}
 
 	/* Winners */
 	#winners {
-		background-image: url('../assets/images/triangles.png'), linear-gradient(to right, #2a2a2a, #191919);
+		display: flex;
+		flex-direction: row;
+		align-content: center;
+		background: #9b92e3;
 		color: white;
-		padding: 5% 0 3% 0;
+		padding: 2% 0 3% 0;
+		
+		#recap {
+			flex: 2;
+			padding: 0 3%
+		}
+
+		.recap-description {
+			font-size: 1rem;
+			margin-bottom: 5%;
+		}
+		#winners-content {
+			flex:3;
+			padding: 0 3%;
+		}
 	}
 
-	#winners-content {
-		width: 85%;
-	}
+	
 
 	#winners-content>.title {
 		text-align: center;
@@ -233,7 +235,7 @@
 	}
 
 	.card-award-icon>i {
-		font-size: 3.5em;
+		font-size: 2.5em;
 	}
 
 	.card-award-icon>img {
@@ -242,7 +244,7 @@
 
 	.card-award-title {
 		font-weight: 300;
-		font-size: 0.8em;
+		font-size: 0.5em;
 		letter-spacing: 0.07em;
 		padding-top: 4%;
 		padding-bottom: 2%;
@@ -252,7 +254,7 @@
 	.card-name {
 		font-weight: 500;
 		color: white;
-		font-size: 1.4em;
+		font-size: 0.8em;
 		letter-spacing: 0.025em;
 	}
 
@@ -267,19 +269,17 @@
 
 	/* Sponsors */
 	#sponsors {
-		padding: 6% 0 5% 0;
+		padding: 3% 5% 3% 5%;
+		background: #e7e7e7;
 	}
 
 	#sponsors-content {
-		width: 80%;
-		margin-left: auto;
-		margin-right: auto;
+		width: 100%;
 	}
 
 	#sponsors-content>.title {
 		text-align: center;
-		padding-bottom: 1%;
-		color: #2c3e50;
+		color: #3e4389;
 	}
 
 	#sponsors-list {
@@ -309,13 +309,12 @@
 
 	/* Sponsorship */
 	#sponsorship {
-		padding: 4% 0 6% 0;
-		width: 80%;
-		margin-left: auto;
-		margin-right: auto;
+		padding: 4% 5% 6% 5%;
 		display:flex; 
 		flex-direction:column; 
-		justify-content:space-around
+		justify-content:space-around;
+		background: #83a8db;
+		color: white;
 	}
 
 	#sponsorship-packet {
@@ -325,7 +324,6 @@
 	#sponsorship>.title {
 		text-align: center;
 		line-height: 1em;
-		color: #2c3e50;
 	}
 
 	.sponsorship-content-title {
@@ -351,50 +349,18 @@
 
 	/* Footer */
 	#footer {
-		background-image: url('../assets/images/triangles.png'), linear-gradient(to right, #2a2a2a, #191919);
-		color: white;
+		background: #e7e7e7;
+		color: #3e4389;
 		text-align: center;
-		padding: 8% 0;
+		padding: 3% 0;
 	}
 
 	#footer-content {
 		width: 100%;
+		color: #3e4389;
+		font-size: 1.3rem;
+		font-weight: normal;
 	}
-
-	#footer-content>.title {
-		font-size: 5em;
-		line-height: 1.1em;
-	}
-
-	#footer-content>.details {
-		font-weight: 300;
-		font-size: 1.5em;
-		line-height: 2.5em;
-		letter-spacing: 0.12em;
-		padding-bottom: 2%;
-	}
-
-	#footer-content>button {
-		color: white;
-		font-weight: 300;
-		padding: 1% 2%;
-		border-radius: 5px;
-		letter-spacing: 0.05em;
-		font-size: 1.1em;
-		background: #9b92e3;
-		transition: all .2s ease;
-		border: none;
-	}
-
-	#footer-content>button:hover {
-		text-decoration: none;
-		transform: scale(1.08);
-	}
-
-	#footer-content>button:focus {
-		outline: none;
-	}
-
 	/* Mobile */
 	@media (max-width: 767px) {
 		.title {
@@ -436,14 +402,6 @@
 			padding-bottom: 0;
 		}
 
-		#info-content>.recap-description {
-			width: 100% !important;
-		}
-
-		.recap-statistics>div {
-			width: 50% !important;
-		}
-
 		#sponsors {
 			padding: 12.5% 0 5% 0;
 		}
@@ -461,7 +419,7 @@
 		}
 
 		#sponsorship {
-			padding: 5% 0 12.5% 0;
+			padding: 5% 5% 10% 5%;
 		}
 
 		.sponsorship-content-description+.sponsorship-content-title {
@@ -469,7 +427,7 @@
 		}
 
 		#footer {
-			padding: 20% 0;
+			padding: 8% 0;
 		}
 
 		#footer-content>.title {
@@ -489,8 +447,13 @@
 			padding: 2.5% 5%;
 		}
 		
-		.winners-list {
+		#recap > .title {
+			text-align: center;
+		}
+
+		#winners {
 			flex-direction: column;
+			align-items: center;
 		}
 	}
 
@@ -504,10 +467,6 @@
 
 		.recap-statistics>div {
 			width: 33.33333333% !important;
-		}
-
-		#sponsors-content, #sponsorship {
-			width: 85%;
 		}
 
 		#sponsors-list>div {
@@ -546,7 +505,8 @@
     .col-sm-5ths {
         width: 20%;
         float: left;
-    }
+	}
+	
 }
 
 @media (min-width: 992px) {

@@ -39,6 +39,10 @@
             position:relative;
             top:0; 
             left:0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         .before-logo {
@@ -128,12 +132,17 @@
         animation: fadein 1s ease-in both  1s;
         
         .btn {
+            position: relative;
+            left:-5%;
             background:  #9b92e3;
             border: none;
-            padding: 10% 7%;
+            padding: 8% 15%;
             border-radius: 25px;
             box-shadow: 0 2px 16px rgba(12, 123, 156, 0.35);
-            width:350px;
+            font-size: 1.32rem;
+            white-space: nowrap;
+            width: 100%;
+            font-weight: normal;
         }
 
         .btn:hover {
@@ -168,7 +177,7 @@
     /* Info */
     #info {
         padding: 7% 0;
-        background: #fff;
+        background: #e7e7e7;
     }
 
     #info-content {
@@ -189,7 +198,7 @@
     }
     /* FAQs */
     #faq {
-        background-image:url('../assets/images/triangles.png'), linear-gradient(to right, #2a2a2a, #191919);
+        background: #8e8bdc;
         background-position: center center;
         color: white;
         padding: 5% 0 3% 0;
@@ -233,14 +242,12 @@
     }
     /* Sponsors */
     #sponsors {
-        padding: 6% 0 8% 0;
-        background: #fff;
+        padding: 5% 0;
+        background: #e7e7e7;
     }
 
     #sponsors-content {
-        width: 80%;
-        margin-left: auto;
-        margin-right: auto;
+        font-size: 2em;  
     }
 
     #sponsors-content > .title {
@@ -269,7 +276,7 @@
     }
     /* Footer */
     #footer {
-        background-image:url('../assets/images/triangles.png'), linear-gradient(to right, #2a2a2a, #191919);
+        background-image:url('../assets/images/low_poly_strip_viv.png');
         background-position: center;
         color: white;
         text-align: center;
