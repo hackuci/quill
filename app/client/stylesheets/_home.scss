@@ -130,10 +130,13 @@
         .btn {
             background:  #9b92e3;
             border: none;
-            padding: 10% 7%;
+            padding: 8% 15%;
             border-radius: 25px;
             box-shadow: 0 2px 16px rgba(12, 123, 156, 0.35);
-            width:350px;
+            font-size: 1.32rem;
+            white-space: nowrap;
+            width:100%;
+            font-weight: normal;
         }
 
         .btn:hover {
