@@ -150,6 +150,9 @@
 		width: 100%;
 		padding: 3% 0;
 		color: #2c3e50;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
 	}
 
 	#info-content>.title {
@@ -165,7 +168,7 @@
 	.recap-statistics>div {
 		padding-left: 0;
 		padding-right: 0;
-		width: 16.66666667% !important;
+		width: 16%;
 	}
 
 	.recap-statistics>div>strong {
@@ -203,9 +206,7 @@
 			padding: 0 3%;
 		}
 	}
-
 	
-
 	#winners-content>.title {
 		text-align: center;
 	}
@@ -222,14 +223,17 @@
 		flex-wrap: wrap;
 		justify-content: space-around
 	}
+
 	.winners-list>div {
 		padding: 3.5% 0;
 		border-bottom: 1px solid transparent;
 		transition: all .2s ease;
 	}
+
 	.prize-category-icon{
 		color: white;
 	}
+
 	.winners-list>div:hover {
 		transform: scale(1.08);
 	}
@@ -321,6 +325,7 @@
 		text-decoration: underline;
 		font-weight: bold;
 	}
+
 	#sponsorship>.title {
 		text-align: center;
 		line-height: 1em;
@@ -361,6 +366,7 @@
 		font-size: 1.3rem;
 		font-weight: normal;
 	}
+	
 	/* Mobile */
 	@media (max-width: 767px) {
 		.title {
@@ -393,10 +399,6 @@
 			padding: 12.5% 0;
 		}
 
-		#info-content, #winners-content {
-			width: 90%;
-		}
-
 		#info-content>.title {
 			margin-bottom: 2%;
 			padding-bottom: 0;
@@ -407,7 +409,7 @@
 		}
 
 		#sponsors-list {
-			margin-top: 5%;
+			margin: 5%;
 		}
 
 		#sponsors-list>div {
@@ -430,6 +432,10 @@
 			padding: 8% 0;
 		}
 
+		#footer-content {
+			padding: 2.5%;
+		}
+		
 		#footer-content>.title {
 			font-size: 3.3em;
 			line-height: 1.1em;
@@ -455,18 +461,22 @@
 			flex-direction: column;
 			align-items: center;
 		}
+
+		.winners-list > div {
+			width:50%;	
+		}
+
+		.recap-statistics>div {
+			width: 50%;
+		}
 	}
 
 	/* Tablet */
 	@media (min-width: 768px) and (max-width: 991px) {
 		font-size: 12px;
 
-		#info-content, #winners-content {
-			width: 90%;
-		}
-
 		.recap-statistics>div {
-			width: 33.33333333% !important;
+			width: 33.33333333%;
 		}
 
 		#sponsors-list>div {
@@ -479,9 +489,7 @@
 
 	/* Large Screens */
 	@media (min-width: 1650px) {
-		#info-content, #winners-content, #sponsors-content, #sponsorship {
-			width: 70%;
-		}
+
 	}
 }
 
