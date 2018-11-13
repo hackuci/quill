@@ -38,7 +38,7 @@
 		background-image: url('../assets/images/triangles.png'), linear-gradient(to right, #2a2a2a, #191919);
 		background-size: cover;
 		background-position: center center;
-		height: calc(100% + 49px);		
+		height: calc(100% + 49px);
 	}
 
 	#hero::before {
@@ -48,12 +48,7 @@
 		width: 100%;
 		height: calc(100% + 50px);
 		position: absolute;
-		animation: fadeOut 0.8s ease-in 0.5s forwards;
-	}
-
-	@keyframes fadeOut {
-		0% {opacity: 1;}
-		100% {opacity: 0;}
+		animation: fadeout 0.8s ease-in 0.5s forwards;
 	}
 
 	.hero-content {

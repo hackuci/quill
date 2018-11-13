@@ -15,15 +15,9 @@
     position: absolute;
   }
   
-	@keyframes fadeout {
-		0% {opacity: 1;}
-		100% {opacity: 0;}
-	}
-
   > .container {
     position: relative;
     top: 50%;
-
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
