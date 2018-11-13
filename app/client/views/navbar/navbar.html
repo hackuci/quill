@@ -66,13 +66,13 @@
         class="menu-item">
         CONFIRMATION
       </a>
-      <a
+      <!--a
         ui-sref-active="menu-item-active"
         ui-sref="app.team"
         ng-if="regIsOpen && currentUser.verified && !currentUser.status.declined"
         class="menu-item">
         TEAM
-      </a>
+      </a-->
       <a
         ui-sref-active="menu-item-active"
         ui-sref="app.admin.stats"
@@ -244,14 +244,14 @@
         ng-click="onMenuClick()">
         CONFIRMATION
       </a>
-      <a
+      <!--a
         ui-sref-active="menu-item-active"
         ui-sref="app.team"
         ng-if="currentUser.verified && !currentUser.status.declined"
         class="menu-item"
         ng-click="onMenuClick()">
         TEAM
-      </a>
+      </a-->
       <a
         ui-sref-active="menu-item-active"
         ui-sref="app.admin.stats"
