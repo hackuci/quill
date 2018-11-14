@@ -68,7 +68,7 @@
         animation-delay: .2s;
       }
 
-      .ui.login-password .field:nth-child(1) { 
+      .ui.login-password .field:nth-child(1) {
         animation: fadein .5s both;
         animation-delay: .3s;
       }
@@ -106,7 +106,7 @@
         letter-spacing: 0.07em;
         border-radius: 25px;
         box-shadow: 0 2px 16px rgba(24,51,59,.2);
-          transition: background .2s ease;
+        transition: background .2s ease;
 
         &.login {
           background: #83a8db;

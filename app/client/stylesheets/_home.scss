@@ -105,7 +105,7 @@
         display: block;
         animation: fadein .5s both;
         animation-delay: .3s;
-        display:none;
+        display: none;
     }
 
     .hero-description-container {
@@ -125,17 +125,17 @@
 
     .hero-button-container {
         text-align: center;
-        animation: fadein 1s ease-in both  1s;
+        animation: fadein 1s ease-in both 1s;
         
         .btn {
-            background:  #9b92e3;
+            background: #9b92e3;
             border: none;
             padding: 8% 15%;
             border-radius: 25px;
             box-shadow: 0 2px 16px rgba(12, 123, 156, 0.35);
             font-size: 1.32rem;
             white-space: nowrap;
-            width:100%;
+            width: 100%;
             font-weight: normal;
         }
 
@@ -192,7 +192,7 @@
     }
     /* FAQs */
     #faq {
-        background-image:url('../assets/images/triangles.png'), linear-gradient(to right, #2a2a2a, #191919);
+        background-image: url('../assets/images/triangles.png'), linear-gradient(to right, #2a2a2a, #191919);
         background-position: center center;
         color: white;
         padding: 5% 0 3% 0;
@@ -272,7 +272,7 @@
     }
     /* Footer */
     #footer {
-        background-image:url('../assets/images/triangles.png'), linear-gradient(to right, #2a2a2a, #191919);
+        background-image: url('../assets/images/triangles.png'), linear-gradient(to right, #2a2a2a, #191919);
         background-position: center;
         color: white;
         text-align: center;
@@ -384,7 +384,7 @@
 
         .landing-page-logo-container {
             background-image: url('../assets/images/triangles.png');
-            background-size:cover;
+            background-size: cover;
         }
     }
     /* Tablet */
