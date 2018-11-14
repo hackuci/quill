@@ -338,8 +338,10 @@ module.exports = function(router) {
    * with the user making the request.
    */
   router.get('/users/:id/team', isOwnerOrAdmin, function(req, res){
-    var id = req.params.id;
-    UserController.getTeammates(id, defaultResponse(req, res));
+    defaultResponse(req, res)({
+      message: "You're not on a team."
+    });
+
   });
 
   /**
@@ -348,13 +350,11 @@ module.exports = function(router) {
    *   code: STRING
    * }
    */
-  router.put('/users/:id/team', isOwnerOrAdmin, function(req, res){
+  router.put('/users/:id/team', isAdmin, function(req, res){
     var code = req.body.code;
     var id = req.params.id;
-    defaultResponse(req, res)({
-      message: "You're not on a team."
-    });
-
+    
+    UserController.createOrJoinTeam(id, code, defaultResponse(req, res));
   });
 
   /**
