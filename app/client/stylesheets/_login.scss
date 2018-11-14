@@ -1,7 +1,7 @@
 #login {
   height: calc(100% + 49px);
   width: 100%;
-  background-image: url('../assets/images/login_pg_viv.png'), linear-gradient(to right, #2a2a2a, #191919);
+  background-image: url('../assets/images/login_bg.png'), linear-gradient(to right, #2a2a2a, #191919);
   background-size: cover;
   background-position: center center;
 
@@ -15,15 +15,9 @@
     position: absolute;
   }
   
-	@keyframes fadeout {
-		0% {opacity: 1;}
-		100% {opacity: 0;}
-	}
-
   > .container {
     position: relative;
     top: 50%;
-
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
@@ -74,7 +68,7 @@
         animation-delay: .2s;
       }
 
-      .ui.login-password .field:nth-child(1) { 
+      .ui.login-password .field:nth-child(1) {
         animation: fadein .5s both;
         animation-delay: .3s;
       }
@@ -112,7 +106,7 @@
         letter-spacing: 0.07em;
         border-radius: 25px;
         box-shadow: 0 2px 16px rgba(24,51,59,.2);
-          transition: background .2s ease;
+        transition: background .2s ease;
 
         &.login {
           background: #83a8db;

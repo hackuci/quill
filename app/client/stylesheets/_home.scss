@@ -109,7 +109,7 @@
         display: block;
         animation: fadein .5s both;
         animation-delay: .3s;
-        display:none;
+        display: none;
     }
 
     .hero-description-container {
@@ -129,12 +129,12 @@
 
     .hero-button-container {
         text-align: center;
-        animation: fadein 1s ease-in both  1s;
+        animation: fadein 1s ease-in both 1s;
         
         .btn {
             position: relative;
             left:-5%;
-            background:  #9b92e3;
+            background: #9b92e3;
             border: none;
             padding: 8% 15%;
             border-radius: 25px;
@@ -275,7 +275,7 @@
     }
     /* Footer */
     #footer {
-        background-image:url('../assets/images/low_poly_strip_viv.png');
+        background-image: url('../assets/images/low_poly_strip_viv.png');
         background-position: center;
         color: white;
         text-align: center;
@@ -387,7 +387,7 @@
 
         .landing-page-logo-container {
             background-image: url('../assets/images/triangles.png');
-            background-size:cover;
+            background-size: cover;
         }
     }
     /* Tablet */
