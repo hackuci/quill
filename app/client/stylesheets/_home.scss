@@ -34,6 +34,10 @@
         background-size: cover;
         background-position: center center;
         height: calc(100% + 49px);
+
+        .hero-container {
+            min-width: 30%;
+        }
     }
 
     #hero::before {
@@ -42,7 +46,7 @@
         width: 100%;
         height: calc(100% + 50px);
         position: absolute;
-        animation: 0.5s fadeout 0.5s linear forwards;
+        animation: fadeout 0.8s ease-in 0.5s forwards;
     }
 
     .hero-content {

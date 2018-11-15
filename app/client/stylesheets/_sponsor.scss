@@ -40,6 +40,10 @@
 		background-repeat: no-repeat;
 		background-position: center center;
 		height: calc(100% + 49px);
+		
+		.hero-container {
+			min-width:50%;
+		}
 	}
 
 	#hero::before {
@@ -374,6 +378,10 @@
 	@media (max-width: 767px) {
 		#hero {
 			background-image: linear-gradient(to right, #2a2a2a, #191919);
+
+			.hero-container {
+				min-width:100%;
+			}
 		}
 		
 		.hero-title-container {
@@ -481,7 +489,8 @@
 		}
 
 		.btn {
-			margin: 0;
+			margin: 0 3%;
+
 		}
 	}
 
