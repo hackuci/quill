@@ -34,28 +34,15 @@
         background-size: cover;
         background-position: center center;
         height: calc(100% + 49px);
-        
-
-        .landing-page-logo-container {
-            position:relative;
-            top:0; 
-            left:0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
     }
-    
+
     #hero::before {
         content: '';
-        background-image: url('../assets/images/landing_pg_bg_no_logo_viv.png'), linear-gradient(to right, #2a2a2a, #191919);
-        background-size: cover;
-        background-position: center center;
-        opacity: 0;
+        background-image: linear-gradient(to right, #2a2a2a, #191919);
         width: 100%;
         height: calc(100% + 50px);
         position: absolute;
+        animation: 0.5s fadeout 0.5s linear forwards;
     }
 
     .hero-content {
@@ -65,7 +52,7 @@
         z-index: 3;
 
         > div {
-            margin-top: -150px;
+            margin-top: -50px;
         }
     }
 
@@ -103,7 +90,6 @@
         display: block;
         animation: fadein .5s both;
         animation-delay: .3s;
-        display: none;
     }
 
     .hero-description-container {
@@ -117,38 +103,37 @@
         letter-spacing: 0.12em;
         text-align: center;
         display: inline-block;
-        animation: fadein .5s both 1s;
+        animation: fadein .5s both;
         animation-delay: .45s;
     }
 
     .hero-button-container {
         text-align: center;
-        animation: fadein 1s ease-in both 1s;
-        
+        margin-top: 75vh;
+        animation: fadein .5s both;
+        animation-delay: .6s;
+
         .btn {
-            position: relative;
-            left:-5%;
-            background: #9b92e3;
+            background: #8e8bdc;
             border: none;
-            padding: 8% 15%;
+            margin-top: 150%;
+            padding: 3.5% 8%;
             border-radius: 25px;
-            box-shadow: 0 2px 16px rgba(12, 123, 156, 0.35);
-            font-size: 1.32rem;
-            white-space: nowrap;
-            font-weight: normal;
+            box-shadow: 0 2px 16px rgba(24,51,59,.35);
         }
 
         .btn:hover {
             color: white;
+            background: #a5a2ff;
         }
 
         .btn--coming-soon {
             cursor: default;
-            background: #9b92e3;
+            background: rgba(252, 96, 118, 0.9);
         }
 
         .btn--coming-soon:hover {
-            background: #9b92e3;
+            background: #fc6076;
         }
     }
 
@@ -192,7 +177,6 @@
     /* FAQs */
     #faq {
         background: #8e8bdc;
-        background-position: center center;
         color: white;
         padding: 5% 0 3% 0;
     }
@@ -235,42 +219,14 @@
     }
     /* Sponsors */
     #sponsors {
-        padding: 5% 0;
+        padding: 6% 0 8% 0;
         background: #e7e7e7;
+        font-size: 1.2em;
     }
 
-    #sponsors-content {
-        font-size: 2em;  
-    }
-
-    #sponsors-content > .title {
-        text-align: center;
-        padding-bottom: 1%;
-        color: #2c3e50;
-    }
-
-    #sponsors-list > a {
-        height: 60px;
-        padding-right: 10px;
-        padding-left: 10px;
-        margin-top: 1%;
-        margin-bottom: 0.5%;
-        opacity: 0.6;
-        transition: opacity .2s ease;
-    }
-
-    #sponsors-list > a:hover {
-        opacity: 1;
-    }
-
-    #sponsors-list > a > img {
-        width: 100%;
-        padding: 0 7%;
-    }
     /* Footer */
     #footer {
         background-image: url('../assets/images/low_poly_strip_viv.png');
-        background-position: center;
         color: white;
         text-align: center;
         padding: 6% 0;
@@ -292,6 +248,9 @@
     }
     /* Mobile */
     @media (max-width: 767px) {
+        #hero {
+            background-image: linear-gradient(to right, #2a2a2a, #191919);
+        }
         .title {
             margin-bottom: 5%;
             font-size: 2em;
@@ -303,13 +262,14 @@
 
         .hero-title {
             display: block;
-            font-size: 2.75em;
+            font-size: 2.50em;
         }
 
         .hero-description {
             font-size: 1.2em;
             margin: 2% 10%;
         }
+
 
         .hero-button-container {
             margin-top: 20%;
@@ -366,26 +326,10 @@
         button, .btn {
             padding: 5% 10%;
         }
-
-        .hero-button-container {
-            animation: fadein 0.5s ease-in both 0.5s;  
-        }
-
-        .before-logo {
-            visibility: hidden;
-        }
-
-        .after-logo {
-            visibility: hidden;
-        }
-
-        .landing-page-logo-container {
-            background-image: url('../assets/images/triangles.png');
-            background-size: cover;
-        }
     }
     /* Tablet */
     @media (min-width: 768px) and (max-width: 991px) {
+        
         #info-content, #faq-content {
             width: 90%;
         }
@@ -401,15 +345,18 @@
             padding-bottom: 0 !important;
         }
 
-        .logo-header {
-            display: none;
+        .hero-button-container {
+            margin-top: 80vh;
         }
-
     }
     /* Large Screens */
     @media (min-width: 1650px) {
         #info-content, #faq-content, #sponsors-content, #sponsorship {
             width: 70%;
         }
+        .hero-button-container {
+            margin-top: 75vh;
+        }
+        
     }
 }

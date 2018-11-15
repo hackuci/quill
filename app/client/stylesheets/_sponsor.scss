@@ -91,24 +91,32 @@
 
 	.hero-title-container {
 		text-align: center;
+		margin-top: 45vh;
 	}
 
 	.hero-title {
-		text-decoration: none;
-		color: #e7e7e7;
-		display: block;
-		position: relative;
-		left: -35%;
-		margin-top:100%;
-		font-weight: normal;
+		font-size: 1.25em;
+		font-weight: lighter;
+		text-align: center;
+		display: inline-block;
 		animation: fadein .5s both;
 		animation-delay: .3s;
-		padding:  5% 15%;
-		width:150%;
-		border-radius: 100px;
-		border: solid thin #e7e7e7;
 	}
 	
+	.btn {
+		border-radius: 50px;
+		border: solid;
+		border-color: #9b92e3;
+		white-space: nowrap;
+		margin-left: -5%;
+	}
+	
+	.btn:hover {
+		color: #e7e7e7;
+		border: solid;
+		border-color: #a49af1;
+	}
+
 	.hero-description {
 		font-weight: 300;
 		font-size: 1.42em;
@@ -364,6 +372,14 @@
 	
 	/* Mobile */
 	@media (max-width: 767px) {
+		#hero {
+			background-image: linear-gradient(to right, #2a2a2a, #191919);
+		}
+		
+		.hero-title-container {
+			margin-top: 0;
+		}
+
 		.title {
 			margin-bottom: 5%;
 		}
@@ -374,7 +390,7 @@
 
 		.hero-title {
 			display: block;
-			font-size: 2.75em;
+			font-size: 1em;
 		}
 
 		.hero-description {
@@ -383,7 +399,6 @@
 		}
 
 		.hero-button-container {
-			margin-top: 20%;
 
 			.btn {
 				padding: 5% 10%;
@@ -464,6 +479,10 @@
 		.recap-statistics>div {
 			width: 50%;
 		}
+
+		.btn {
+			margin: 0;
+		}
 	}
 
 	/* Tablet */
@@ -479,6 +498,10 @@
 			text-align: center;
 			padding-top: 0 !important;
 			padding-bottom: 0 !important;
+		}
+
+		.btn {
+			margin-left: 0;
 		}
 	}
 
