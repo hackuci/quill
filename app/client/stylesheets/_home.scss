@@ -28,6 +28,7 @@
         font-size: 2.8em;
         font-weight: 700;
     }
+    
     /* Hero */
     #hero {
         background-image: url('../assets/images/landing_pg_bg_viv.png'), linear-gradient(to right, #2a2a2a, #191919);
@@ -333,7 +334,6 @@
     }
     /* Tablet */
     @media (min-width: 768px) and (max-width: 991px) {
-        
         #info-content, #faq-content {
             width: 90%;
         }
@@ -361,6 +361,5 @@
         .hero-button-container {
             margin-top: 75vh;
         }
-        
     }
 }
