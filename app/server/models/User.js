@@ -370,7 +370,8 @@ schema.statics.validateProfile = function(profile, cb){
     profile.adult &&
     profile.school.length > 0 &&
     ['2018', '2019', '2020', '2021', 'later'].indexOf(profile.graduationYear) > -1 &&
-    ['M', 'F', 'O', 'N'].indexOf(profile.gender) > -1
+    ['M', 'F', 'O', 'N'].indexOf(profile.gender) > -1 &&
+    profile.interestedTechs.split(',').length == 2
     ));
 };
 
