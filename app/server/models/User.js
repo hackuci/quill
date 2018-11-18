@@ -76,6 +76,12 @@ var profile = {
     type: String
   },
 
+  // Comma delimited technologies
+  interestedTechs: {
+    type: String,
+    max: 60
+  },
+
   // Optional info for demographics
   gender: {
     type: String,

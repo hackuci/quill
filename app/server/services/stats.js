@@ -53,7 +53,9 @@ function calculateStats(){
 
     dietaryRestrictions: {},
 
-    checkedIn: 0
+    checkedIn: 0,
+
+    interestedTechs: {}
   };
 
   User
@@ -174,6 +176,17 @@ function calculateStats(){
         // Count checked in
         newStats.checkedIn += user.status.checkedIn ? 1 : 0;
 
+        // Added interested technologies
+        user.interestedTechs.split(',').forEach(function(tech){
+          if(newStats.tech){
+            newStats.tech += 1;
+          }
+          else
+          {
+            newStats.tech = 1;
+          }
+        });
+        
         callback(); // let async know we've finished
       }, function() {
         // Transform dietary restrictions into a series of objects
