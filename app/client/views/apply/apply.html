@@ -112,6 +112,40 @@
         <div class="two fields">
           <div class="field">
             <label>
+              Select a technology of interest
+               <span class="required">*</span>
+            </label>
+            <select
+              name="interestedTech1"
+              ng-model="user.profile.interestedTech1">
+              <option value="">Primary tech</option>
+              <option value="0">VR</option>
+              <option value="1">AR</option>
+              <option value="2">Big Data</option>
+              <option value="3">Blockchain</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label>
+              Select another technology of interest
+               <span class="required">*</span>
+            </label>
+            <select
+              name="interestedTech2"
+              ng-model="user.profile.interestedTech2">
+              <option value="">Seconary tech</option>
+              <option value="0">VR</option>
+              <option value="1">AR</option>
+              <option value="2">Big Data</option>
+              <option value="3">Blockchain</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="two fields">
+          <div class="field">
+            <label>
               Major
                <span class="required">*</span>
             </label>
