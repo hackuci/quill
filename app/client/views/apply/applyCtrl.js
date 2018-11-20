@@ -66,7 +66,9 @@ angular.module('reg')
           graduationYear: '',
           description: '',
           essay: '',
-          adult: false
+          adult: false,
+          interestedTech1: '',
+          interestedTech2: ''
         },
       };
 
@@ -137,6 +139,9 @@ angular.module('reg')
 
       function _apply(e){
         AuthService.register($scope.user.email, $scope.user.password, function success(data) {
+          $scope.user.interestedTechs = $scope.user.interestedTech1 + ',' + $scope.user.interestedTech2;
+          delete $scope.user.interestedTech1;
+          delete $scope.user.interestedTech2;
           UserService
             .updateProfile(Session.getUserId(), $scope.user.profile)
             .success(function(data){
@@ -314,6 +319,18 @@ angular.module('reg')
                 {
                   type: 'allowMinors',
                   prompt: 'You must be an adult.'
+                }
+              ]
+            },
+            interestedTech1: {
+              identifier: 'interestedTech1',
+            },
+            interestedTech2: {
+              identifier: 'interestedTech2',
+              rules: [
+                {
+                  type: 'doesntContain[interestedTech1]',
+                  prompt: 'Please select a different technology'
                 }
               ]
             }
