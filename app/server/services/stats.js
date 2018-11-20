@@ -1,3 +1,5 @@
+import { type } from 'os';
+
 var _ = require('underscore');
 var async = require('async');
 var User = require('../models/User');
@@ -57,6 +59,10 @@ function calculateStats(){
 
     interestedTechs: {}
   };
+
+  User.techFields.forEach(function(tech){
+    interestedTechs[tech] = 0;
+  });
 
   User
     .find({})
@@ -177,16 +183,16 @@ function calculateStats(){
         newStats.checkedIn += user.status.checkedIn ? 1 : 0;
 
         // Added interested technologies
-        user.interestedTechs.split(',').forEach(function(tech){
-          if(newStats.tech){
-            newStats.tech += 1;
-          }
-          else
-          {
-            newStats.tech = 1;
-          }
-        });
-        
+        if( user.interestedTechPrimary )
+        {
+          newStats.interestedTechs[User.techFields[user.interestedTechPrimary]] += 1;
+        }
+
+        if( user.interestedTechSecondary )
+        {
+          newStats.interestedTechs[User.techFields[user.interestedTechSecondary]] += 1;
+        }
+
         callback(); // let async know we've finished
       }, function() {
         // Transform dietary restrictions into a series of objects

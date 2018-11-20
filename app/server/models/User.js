@@ -4,6 +4,7 @@ var mongoose   = require('mongoose'),
     jwt        = require('jsonwebtoken');
     JWT_SECRET = process.env.JWT_SECRET;
 
+const techFields = []
 var profile = {
 
   // Basic info
@@ -77,9 +78,11 @@ var profile = {
   },
 
   // Comma delimited technologies
-  interestedTechs: {
-    type: String,
-    max: 60
+  interestedTechPrimary: {
+    type: Number
+  },
+  interestedTechSecondary: {
+    type: Number
   },
 
   // Optional info for demographics
@@ -364,6 +367,8 @@ schema.statics.getByToken = function(token, callback){
   }.bind(this));
 };
 
+schema.statics.techFields = ['VR', 'AR', 'Big Data', 'Blockchain'];
+
 schema.statics.validateProfile = function(profile, cb){
   return cb(!(
     profile.name.length > 0 &&
@@ -371,7 +376,8 @@ schema.statics.validateProfile = function(profile, cb){
     profile.school.length > 0 &&
     ['2018', '2019', '2020', '2021', 'later'].indexOf(profile.graduationYear) > -1 &&
     ['M', 'F', 'O', 'N'].indexOf(profile.gender) > -1 &&
-    profile.interestedTechs.split(',').length == 2
+    0 <= profile.interestedTechPrimary < schema.statics.techFields &&
+    0 <= profile.interestedTechSecondary < schema.statics.techFields 
     ));
 };
 
