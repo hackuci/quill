@@ -1,5 +1,3 @@
-import { type } from 'os';
-
 var _ = require('underscore');
 var async = require('async');
 var User = require('../models/User');

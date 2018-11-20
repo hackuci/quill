@@ -4,7 +4,6 @@ var mongoose   = require('mongoose'),
     jwt        = require('jsonwebtoken');
     JWT_SECRET = process.env.JWT_SECRET;
 
-const techFields = []
 var profile = {
 
   // Basic info
@@ -77,7 +76,6 @@ var profile = {
     type: String
   },
 
-  // Comma delimited technologies
   interestedTechPrimary: {
     type: Number
   },
@@ -376,8 +374,8 @@ schema.statics.validateProfile = function(profile, cb){
     profile.school.length > 0 &&
     ['2018', '2019', '2020', '2021', 'later'].indexOf(profile.graduationYear) > -1 &&
     ['M', 'F', 'O', 'N'].indexOf(profile.gender) > -1 &&
-    0 <= profile.interestedTechPrimary < schema.statics.techFields &&
-    0 <= profile.interestedTechSecondary < schema.statics.techFields 
+    0 <= profile.interestedTechPrimary < schema.statics.techFields.length &&
+    0 <= profile.interestedTechSecondary < schema.statics.techFields.length 
     ));
 };
 
