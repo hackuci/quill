@@ -1,9 +1,11 @@
 <div id="dashboard" class="page" ng-class="{ 'fade-out': fadeOut }">
-  <div class="divided title">
+  <div class="divided title" style="height: 50%; padding: 1%;background: linear-gradient(to right, #7CE0FF 0%,#80BEEf 30%, #83A8DB 40%, #BB8CE5 60%, #CE83D1 90%, #e2a1e3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent">
     Dashboard
   </div>
 
-  <div class="ui stackable centered page grid">
+  <div class="ui stackable centered page grid dashboard-content" >
     <div class="column">
       <div class="ui status segment">
         <div class="small title">
@@ -23,7 +25,6 @@
           ng-if="dashState('admittedAndCannotConfirm')">
           Expired Admission
         </div>
-
 
         <div
           ng-if="showAppInReview"
@@ -224,9 +225,7 @@
             {{ DASHBOARD.DECLINED }}
           </p>
         </div>
-
       </div>
-
     </div>
   </div>
 </div>
