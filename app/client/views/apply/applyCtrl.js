@@ -67,8 +67,8 @@ angular.module('reg')
           description: '',
           essay: '',
           adult: false,
-          interestedTech1: '',
-          interestedTech2: ''
+          interestedTechPrimary: '',
+          interestedTechSecondary: ''
         },
       };
 
@@ -139,9 +139,8 @@ angular.module('reg')
 
       function _apply(e){
         AuthService.register($scope.user.email, $scope.user.password, function success(data) {
-          $scope.user.interestedTechs = $scope.user.interestedTech1 + ',' + $scope.user.interestedTech2;
-          delete $scope.user.interestedTech1;
-          delete $scope.user.interestedTech2;
+          $scope.interestedTechPrimary = parseInt($scope.interestedTechPrimary);
+          $scope.interestedTechSecondary = parseInt($scope.interestedTechSecondary);
           UserService
             .updateProfile(Session.getUserId(), $scope.user.profile)
             .success(function(data){
@@ -322,14 +321,14 @@ angular.module('reg')
                 }
               ]
             },
-            interestedTech1: {
-              identifier: 'interestedTech1',
+            interestedTechPrimary: {
+              identifier: 'interestedTechPrimary',
             },
-            interestedTech2: {
-              identifier: 'interestedTech2',
+            interestedTechSecondary: {
+              identifier: 'interestedTechSecondary',
               rules: [
                 {
-                  type: 'doesntContain[interestedTech1]',
+                  type: 'doesntContain[interestedTechPrimary]',
                   prompt: 'Please select a different technology'
                 }
               ]
