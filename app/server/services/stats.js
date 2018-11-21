@@ -59,7 +59,7 @@ function calculateStats(){
   };
 
   User.techFields.forEach(function(tech){
-    interestedTechs[tech] = 0;
+    newStats.interestedTechs[tech] = 0;
   });
 
   User
