@@ -328,7 +328,7 @@ angular.module('reg')
               identifier: 'interestedTechSecondary',
               rules: [
                 {
-                  type: 'doesntContain[interestedTechPrimary]',
+                  type: 'not[interestedTechPrimary]',
                   prompt: 'Please select a different technology'
                 }
               ]
