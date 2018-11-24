@@ -321,6 +321,12 @@ angular.module('reg')
             },
             interestedTech: {
               identifier: 'interestedTech',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: 'Please select an area of interest'
+                }
+              ]
             }
           }
         });
