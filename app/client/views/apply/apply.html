@@ -109,36 +109,19 @@
           </div>
         </div>
 
-        <div class="two fields">
-          <div class="field">
-            <label>
-              Select a technology of interest
-               <span class="required">*</span>
-            </label>
-            <select
-              name="interestedTechPrimary"
-              ng-model="user.profile.interestedTechPrimary">
-              <option value="0">VR</option>
-              <option value="1">AR</option>
-              <option value="2">Big Data</option>
-              <option value="3">Blockchain</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label>
-              Select another technology of interest
-               <span class="required">*</span>
-            </label>
-            <select
-              name="interestedTechSecondary"
-              ng-model="user.profile.interestedTechSecondary">
-              <option value="0">VR</option>
-              <option value="1">AR</option>
-              <option value="2">Big Data</option>
-              <option value="3">Blockchain</option>
-            </select>
-          </div>
+        <div class="field">
+          <label>
+            Select a technology of interest
+            <span class="required">*</span>
+          </label>
+          <select
+            name="interestedTech"
+            ng-model="user.profile.interestedTech">
+            <option value="0">VR</option>
+            <option value="1">AR</option>
+            <option value="2">Big Data</option>
+            <option value="3">Blockchain</option>
+          </select>
         </div>
 
         <div class="two fields">

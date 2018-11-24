@@ -181,14 +181,9 @@ function calculateStats(){
         newStats.checkedIn += user.status.checkedIn ? 1 : 0;
 
         // Added interested technologies
-        if( user.interestedTechPrimary )
+        if(user.interestedTech)
         {
-          newStats.interestedTechs[User.techFields[user.interestedTechPrimary]] += 1;
-        }
-
-        if( user.interestedTechSecondary )
-        {
-          newStats.interestedTechs[User.techFields[user.interestedTechSecondary]] += 1;
+          newStats.interestedTechs[User.techFields[user.interestedTech]] += 1;
         }
 
         callback(); // let async know we've finished

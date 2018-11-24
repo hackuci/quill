@@ -76,10 +76,7 @@ var profile = {
     type: String
   },
 
-  interestedTechPrimary: {
-    type: Number
-  },
-  interestedTechSecondary: {
+  interestedTech: {
     type: Number
   },
 
@@ -374,8 +371,7 @@ schema.statics.validateProfile = function(profile, cb){
     profile.school.length > 0 &&
     ['2018', '2019', '2020', '2021', 'later'].indexOf(profile.graduationYear) > -1 &&
     ['M', 'F', 'O', 'N'].indexOf(profile.gender) > -1 &&
-    0 <= profile.interestedTechPrimary < schema.statics.techFields.length &&
-    0 <= profile.interestedTechSecondary < schema.statics.techFields.length 
+    0 <= profile.interestedTech < schema.statics.techFields.length
     ));
 };
 

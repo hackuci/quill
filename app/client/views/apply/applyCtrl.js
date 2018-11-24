@@ -67,8 +67,7 @@ angular.module('reg')
           description: '',
           essay: '',
           adult: false,
-          interestedTechPrimary: '',
-          interestedTechSecondary: ''
+          interestedTech: ''
         },
       };
 
@@ -139,8 +138,7 @@ angular.module('reg')
 
       function _apply(e){
         AuthService.register($scope.user.email, $scope.user.password, function success(data) {
-          $scope.interestedTechPrimary = parseInt($scope.interestedTechPrimary);
-          $scope.interestedTechSecondary = parseInt($scope.interestedTechSecondary);
+          $scope.interestedTech = parseInt($scope.interestedTech);
           UserService
             .updateProfile(Session.getUserId(), $scope.user.profile)
             .success(function(data){
@@ -321,17 +319,8 @@ angular.module('reg')
                 }
               ]
             },
-            interestedTechPrimary: {
-              identifier: 'interestedTechPrimary',
-            },
-            interestedTechSecondary: {
-              identifier: 'interestedTechSecondary',
-              rules: [
-                {
-                  type: 'not[interestedTechPrimary]',
-                  prompt: 'Please select a different technology'
-                }
-              ]
+            interestedTech: {
+              identifier: 'interestedTech',
             }
           }
         });
