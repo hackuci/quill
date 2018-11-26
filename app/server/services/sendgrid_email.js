@@ -78,7 +78,7 @@ emailService.sendPasswordResetEmail = function (email, firstName, token, callbac
   var resetUrlData = {
     url: `${ROOT_URL}/reset/${token}`,
     firstName
-  }
+  };
   sendOne(PASSWORD_RESET_EMAIL_TEMPLATE, email, resetUrlData, callback);
 };
 
@@ -89,7 +89,10 @@ emailService.sendPasswordResetEmail = function (email, firstName, token, callbac
  * @param  {Function} callback [description]
  */
 emailService.sendPasswordChangedEmail = function (email, firstName, callback) {
-  sendOne(PASSWORD_CHANGED_EMAIL_TEMPLATE, email, { firstName }, callback);
+  var confirmChangeData = {
+    firstName
+  };
+  sendOne(PASSWORD_CHANGED_EMAIL_TEMPLATE, email, confirmChangeData, callback);
 };
 
 /**
