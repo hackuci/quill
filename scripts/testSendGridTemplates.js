@@ -15,8 +15,8 @@ var mailCheck = function (templateIndex) {
 };
 
 Mailer.sendVerificationEmail(email, 'firstName', 'testToken', mailCheck(0));
-Mailer.sendPasswordResetEmail(email, 'firstName', 'testToken', mailCheck(1));
-Mailer.sendPasswordChangedEmail(email, 'firstName', mailCheck(2));
+Mailer.sendPasswordChangedEmail(email, 'firstName', mailCheck(1));
+Mailer.sendPasswordResetEmail(email, 'firstName', 'testToken', mailCheck(2));
 Mailer.sendAcceptanceEmail(email, 0, mailCheck(3));
 Mailer.sendWaiverEmail(email, mailCheck(4));
 
