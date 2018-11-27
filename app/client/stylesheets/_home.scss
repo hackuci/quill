@@ -36,7 +36,7 @@
   #hero {
     background-image: url("../assets/images/landing_pg_longer_bg_viv.png"),
       linear-gradient(to right, #2a2a2a, #191919);
-    background-size: 100%;
+    background-size: 130%;
     background-repeat: no-repeat;
     background-position: center center;
     height: calc(100% + 49px);
@@ -230,9 +230,10 @@
     color: white;
     text-align: left;
   }
+
   /* Sponsors */
   #sponsors {
-    padding: 3% 5%;
+    padding: 3% 5% 5%;
     background: #e7e7e7;
   }
 
@@ -247,6 +248,8 @@
 
   #sponsors-list {
     margin-top: 1%;
+    display: flex;
+    justify-content: space-around;
   }
 
   #sponsors-list> div {
@@ -294,6 +297,26 @@
   }
   /* Mobile */
   @media (max-width: 767px) {
+
+    #sponsors-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      padding-bottom: 10%;
+    }
+    #sponsors-content> .title {
+      font-size: 2.4em;
+    }
+    #sponsors-list>div {
+      height: 70px;
+      width: 50%!important;
+      text-align: center;
+      padding-top: 0!important;
+      padding-bottom: 0!important;
+      margin-bottom: 5px;
+    }
+
     #hero {
       background-image: linear-gradient(to right, #2a2a2a, #191919);
     }
@@ -355,12 +378,16 @@
       margin-top: 5%;
     }
 
-    #sponsors-list > a {
-      height: 110px;
-      text-align: center;
-      padding-top: 0 !important;
-      padding-bottom: 0 !important;
+    #sponsor #sponsors-list>div>img {
+      width: 100%;
     }
+
+    // #sponsors-list > a {
+    //   height: 110px;
+    //   text-align: center;
+    //   padding-top: 0 !important;
+    //   padding-bottom: 0 !important;
+    // }
 
     #footer {
       padding: 20% 0;
@@ -387,11 +414,16 @@
       width: 85%;
     }
 
-    #sponsors-list > a {
-      height: 110px;
+    #sponsors-list > div {
+      height: 40px;
       text-align: center;
       padding-top: 0 !important;
       padding-bottom: 0 !important;
+    }
+
+    #sponsors .title {
+      font-size: 1.8em;
+      font-weight: 700;
     }
 
     .hero-description-container {
