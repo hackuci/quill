@@ -67,7 +67,7 @@
   }
 
   .logo-header-container {
-    height: 125px;
+    height: 200px;
     margin-top: 0;
     margin-bottom: 5%;
     animation: fadein 0.5s both;
@@ -75,7 +75,7 @@
   }
 
   .logo-header {
-    height: 125px;
+    height: 175px;
     position: absolute;
     left: 0;
     right: 0;
@@ -336,7 +336,7 @@
 
     .hero-description {
       font-size: 1.2em;
-      margin: 5% 10%;
+      margin: 5% auto;
     }
 
     .hero-button-container {
