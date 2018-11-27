@@ -34,9 +34,9 @@
 
   /* Hero */
   #hero {
-    background-image: url("../assets/images/landing_pg_longer_bg_viv.png"),
+    background-image: url("../assets/images/landing-page-banner.png"),
       linear-gradient(to right, #2a2a2a, #191919);
-    background-size: 130%;
+    background-size: 100%;
     background-repeat: no-repeat;
     background-position: center center;
     height: calc(100% + 49px);
@@ -131,7 +131,6 @@
       margin-top: 150%;
       padding: 3.5% 8%;
       border-radius: 25px;
-      margin-left: 5%;
       box-shadow: 0 2px 16px rgba(24, 51, 59, 0.35);
     }
 
