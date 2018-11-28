@@ -26,6 +26,11 @@
 		color: red;
 		font-weight: 500;
 	}
+	
+	.field > .rounded-border {
+		border: solid #e7e7e7;
+		border-radius: 15px;
+	}
 
 	.error-red-color {
 		color: red;
@@ -40,6 +45,7 @@
 		display: flex;
 		justify-content: flex-end;
 		flex: 1 0 auto;
+		color: #e7e7e7;
 	}
 
 	.ui.checkbox {
