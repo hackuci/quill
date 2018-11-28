@@ -1,7 +1,6 @@
 /* Home */
 #sponsor {
   height: 100%;
-  overflow-x: hidden;
   font-family: "Rubik", sans-serif;
   font-size: 0.85em;
   line-height: 1.42857143;
@@ -406,6 +405,10 @@
 
   /* Mobile */
   @media (max-width: 767px) {
+    #sponsor {
+      width: 100%;
+    }
+    
     #hero {
       background-image: linear-gradient(to right, #2a2a2a, #191919);
 
