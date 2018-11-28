@@ -2,6 +2,8 @@
 #home {
   height: 100%;
   font-family: "Rubik", sans-serif;
+  background: linear-gradient(to right, #2a2a2a, #191919);
+
   /* Global */
   button,
   .btn {
@@ -9,7 +11,6 @@
     font-weight: 300;
     border: 1px solid white;
     padding: 1.75% 4%;
-    margin: 0 5px;
     border-radius: 4px;
     letter-spacing: 0.12em;
     transition: all 0.3s ease;
@@ -38,8 +39,10 @@
       linear-gradient(to right, #2a2a2a, #191919);
     background-size: 100%;
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: center 40%;
     height: calc(100% + 49px);
+    animation: fadein 0.5s both;
+    animation-delay: 0.3s;
 
     .hero-container {
       min-width: 30%;
@@ -48,11 +51,13 @@
 
   #hero::before {
     content: "";
-    background-image: linear-gradient(to right, #2a2a2a, #191919);
+    background-image: url("../assets/images/desktop-hack-v-logo.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center 40%;
     width: 100%;
     height: calc(100% + 50px);
     position: absolute;
-    animation: fadeout 0.8s ease-in 0.5s forwards;
   }
 
   .hero-content {
@@ -104,7 +109,7 @@
 
   .hero-description-container {
     text-align: center;
-    padding-top: 1.5%;
+    padding-top: 25vh;
   }
 
   .hero-description {
@@ -323,6 +328,12 @@
     #hero {
       background-image: linear-gradient(to right, #2a2a2a, #191919);
     }
+
+    #hero::before {
+        background-image: url("../assets/images/mobile-landing-page-banner.png");
+        background-size: 60%;
+        background-position: center 35%;
+    }
     
     .logo-header-container {
         margin-bottom: -10%;
@@ -351,7 +362,6 @@
     }
 
     .hero-button-container {
-      margin-top: 5%;
       .btn {
         padding: 5% 10%;
         margin-left: 0%;
@@ -359,7 +369,7 @@
     }
     
     .hero-description-container {
-      margin-top: 1%;
+      padding-top: 15vh;
     }
 
     #info,
