@@ -98,7 +98,7 @@
   }
 
   .gradient-description{ 
-    background-image: linear-gradient(
+    background: linear-gradient(
 		  to right,
 		  #7ce0ff 0%,
 		  #80beef 30%,
@@ -106,10 +106,11 @@
 		  #bb8ce5 60%,
 		  #ce83d1 90%,
 		  #e2a1e3 100%
-		);
-		-webkit-background-clip: text;
+    );    
     -webkit-text-fill-color: transparent;
+		-webkit-background-clip: text;
   }
+
   .title-header {
     margin: 0;
     text-align: center;
