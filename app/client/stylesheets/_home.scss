@@ -317,7 +317,7 @@
       text-align: center;
       padding-top: 0!important;
       padding-bottom: 0!important;
-      margin-bottom: 5px;
+      margin-bottom: 10%;
     }
 
     #hero {
@@ -447,6 +447,15 @@
 
     .logo-header-container {
         margin-bottom: -5%;
+    }
+
+    #sponsors-list>div {
+      height: 70px;
+      width: 30%!important;
+      text-align: center;
+      padding-top: 0!important;
+      padding-bottom: 0!important;
+      margin-bottom: 5px;
     }
   }
   /* Large Screens */
