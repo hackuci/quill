@@ -68,14 +68,6 @@ angular.module('reg')
       $scope.toggleResumeDropzone = function() {
         $scope.showResumeDropzone = !$scope.showResumeDropzone;
       }
-      
-      // Is the student from UCI?
-      $scope.isUciStudent = $scope.user.email.split('@')[1] == 'uci.edu';
-
-      // If so, default them to adult: true
-      if ($scope.isUciStudent){
-        $scope.user.profile.adult = true;
-      }
 
       $scope.$watch('user', function(newValue, oldValue) {
         if (newValue !== oldValue) {
@@ -212,6 +204,15 @@ angular.module('reg')
                 }
               ]
             },
+            description: {
+              identifier: 'description',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: 'Please describe yourself in at least a word or two.'
+                }
+              ]
+            },
             essay: {
               identifier: 'essay',
               rules: [
@@ -243,7 +244,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'allowMinors',
-                  prompt: 'You must be an adult, or an MIT student.'
+                  prompt: 'You must be an adult.'
                 }
               ]
             }

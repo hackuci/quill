@@ -20,15 +20,15 @@ function calculateStats(){
       schools: {},
       majors: {},
       year: {
-        '2018': 0,
         '2019': 0,
         '2020': 0,
         '2021': 0,
-	      'later': 0
+        '2022': 0,
+        'later': 0,
+        'graduate': 0
       }
     },
 
-    teams: {},
     verified: 0,
     submitted: 0,
     admitted: 0,
@@ -143,14 +143,6 @@ function calculateStats(){
           newStats.demo.year[user.profile.graduationYear] += 1;
         }
 
-        // Grab the team name if there is one
-        // if (user.teamCode && user.teamCode.length > 0){
-        //   if (!newStats.teams[user.teamCode]){
-        //     newStats.teams[user.teamCode] = [];
-        //   }
-        //   newStats.teams[user.teamCode].push(user.profile.name);
-        // }
-
         // Count shirt sizes
         if (user.confirmation.shirtSize in newStats.shirtSizes){
           newStats.shirtSizes[user.confirmation.shirtSize] += 1;
@@ -247,17 +239,6 @@ function calculateStats(){
             });
           });
         newStats.demo.majors = majors;
-
-        // Likewise, transform the teams into an array of objects
-        // var teams = [];
-        // _.keys(newStats.teams)
-        //   .forEach(function(key){
-        //     teams.push({
-        //       name: key,
-        //       users: newStats.teams[key]
-        //     });
-        //   });
-        // newStats.teams = teams;
 
         console.log('Stats updated!');
         newStats.lastUpdated = new Date();

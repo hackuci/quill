@@ -1,31 +1,69 @@
 #apply {
-	#school .title {
-		text-align: left;
-		text-transform: none;
-		letter-spacing: 0;
-	}
-	
-	.required {
-		color: red;
-		font-weight: 500;
-	}
+  background: linear-gradient(to right, #2a2a2a, #191919);
+  // set font and color (very light grey) to label and p classes
+  label {
+    color: rgb(228, 228, 228);
+    font-family: "Lato", sans-serif;
+  }
 
-	.error-red-color {
-		color: red;
-	}
+  p {
+    color: rgb(228, 228, 228);
+    font-family: "Lato", sans-serif;
+  }
 
-	.essay-feedback-container {
-		display: flex;
-		flex-direction: row;
-	}
+  // set font of headers to Open Sans
+  .font {
+    font-family: "Open Sans", sans-serif;
+  }
 
-	.essay-character-count {
-		display: flex;
-		justify-content: flex-end;
-		flex: 1 0 auto;
-	}
+  #school .title {
+    text-align: left;
+    text-transform: none;
+    letter-spacing: 0;
+  }
 
-	.ui.checkbox {
-		backface-visibility: unset;
-	}
+  .required {
+    color: red;
+    font-weight: 500;
+  }
+
+  .field > .rounded-border {
+    border: solid #e7e7e7;
+    border-radius: 15px;
+  }
+
+  .error-red-color {
+    color: red;
+  }
+
+  .essay-feedback-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .essay-character-count {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1 0 auto;
+    color: #e7e7e7;
+  }
+
+  .ui.checkbox {
+    backface-visibility: unset;
+  }
+
+  // created color classes to override current text and header font/bg colors
+  .white {
+    color: white;
+  }
+
+  > .title {
+    color: #bb8ce5;
+    margin-bottom: 5%;
+  }
+
+  // changed the background to the gradient dark grey - black
+  .bg {
+    background: linear-gradient(to right, #2a2a2a, #191919);
+  }
 }

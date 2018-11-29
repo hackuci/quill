@@ -35,6 +35,22 @@
 	animation-iteration-count: 1 !important;
 }
 
+.blue {
+	color: #80beef !important;
+}
+
+.lilac {
+	color: #c2aafe !important;
+}
+
+.pink {
+	color: #e2a1e3 !important;
+}
+
+.dark-purple-bg {
+	background: #8e88cf !important;
+}
+
 /* Resume Dropzone */
 .resume-dropzone {
 	width: 225px;
@@ -43,7 +59,7 @@
 	line-height: 1.2142em;
 	padding: .67861429em 1em;
 	font-size: 1em;
-	background: #fff;
+	background: transparent;
 	border: 1px dashed rgba(34,36,38,.25);
 	color: rgba(0,0,0,.87);
 	cursor: pointer;
@@ -75,13 +91,15 @@
 	}
 
 	.dz-details {
+		z-index: -1;
+		color: white;
+		
 		>div {
 			padding: 4px 0;
 		}
 
 		i {
 			font-size: 2em;
-			color: rgba(0,0,0,0.75);
 		}
 
 		span[data-dz-name] {
@@ -98,6 +116,11 @@
 			color: rgba(231,76,60,1);
 		}
 	}
+}
+
+.light-purple {
+	background: #d3a1ff !important;
+	color: white !important;
 }
 
 /* Keyframes */

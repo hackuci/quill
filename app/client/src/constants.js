@@ -1,13 +1,13 @@
 angular.module('reg')
     .constant('EVENT_INFO', {
-        NAME: 'HackUCI 2018',
-        START_DATE: 'Feb 2, 2018',
+        NAME: 'HackUCI 2019',
+        START_DATE: 'Feb 15, 2018',
         START_TIME: '21:00',
-        END_DATE: 'Feb 4, 2018',
+        END_DATE: 'Feb 17, 2018',
         END_TIME: '10:00',
-        EXPO_START_DATE: 'Feb 4, 2018',
+        EXPO_START_DATE: 'Feb 17, 2018',
         EXPO_START_TIME: '12:00',
-        EXPO_END_DATE: 'Feb 4, 2018',
+        EXPO_END_DATE: 'Feb 17, 2018',
         EXPO_END_TIME: '14:30',
     })
     .constant('DASHBOARD', {
@@ -24,6 +24,3 @@ angular.module('reg')
         CONFIRMED_NOT_PAST_TITLE: 'You can edit your confirmation information until [CONFIRM_DEADLINE]',
         DECLINED: 'We\'re sorry to hear that you won\'t be able to make it to HackMIT 2015! :(\nMaybe next year! We hope you see you again soon.',
     })
-    .constant('TEAM',{
-        NO_TEAM_REG_CLOSED: 'Unfortunately, it\'s too late to apply with a team.\nHowever, you can still form teams on your own before or during the event!',
-    });

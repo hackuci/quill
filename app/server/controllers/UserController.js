@@ -1,7 +1,7 @@
 var _ = require('underscore');
 var User = require('../models/User');
 var Settings = require('../models/Settings');
-var Mailer = require('../services/email');
+var Mailer = require('../services/sendgrid_email');
 var Stats = require('../services/stats');
 // var Waiver = require('../services/waiver');
 
@@ -9,9 +9,6 @@ var validator = require('validator');
 var moment = require('moment');
 
 var UserController = {};
-
-var maxTeamSize = process.env.TEAM_MAX_SIZE || 4;
-
 
 // Tests a string if it ends with target s
 function endsWith(s, test){
@@ -50,21 +47,13 @@ function canRegister(email, password, callback){
       });
     }
 
-    // Check for emails.
-    Settings.getWhitelistedEmails(function(err, emails){
-      if (err || !emails){
-        return callback(err);
-      }
-      for (var i = 0; i < emails.length; i++) {
-        if (validator.isEmail(email) && endsWith(emails[i], email)){
-          return callback(null, true);
-        }
-      }
+    if (!validator.isEmail(email)) {
       return callback({
-        message: "Not a valid educational email."
-      }, false);
-    });
+        message: 'Not a valid email.'
+      });
+    }
 
+    return callback(null, true);
   });
 }
 
@@ -170,7 +159,7 @@ UserController.createUser = function(email, password, callback) {
 
         // Send over a verification email
         var verificationToken = u.generateEmailVerificationToken();
-        Mailer.sendVerificationEmail(email, verificationToken);
+        Mailer.sendVerificationEmail(email, u.profile.firstname, verificationToken);
 
         return callback(
           null,
@@ -215,7 +204,6 @@ UserController.getPage = function(query, callback){
     var re = new RegExp(searchText, 'i');
     queries.push({ email: re });
     queries.push({ 'profile.name': re });
-    queries.push({ 'teamCode': re });
     queries.push({ 'profile.school': re });
 
     findQuery.$or = queries;
@@ -432,100 +420,6 @@ UserController.verifyByToken = function(token, callback){
 };
 
 /**
- * Get a specific user's teammates. NAMES ONLY.
- * @param  {String}   id       id of the user we're looking for.
- * @param  {Function} callback args(err, users)
- */
-UserController.getTeammates = function(id, callback){
-  User.findById(id, function(err, user){
-    if (err || !user){
-      return callback(err, user);
-    }
-
-    var code = user.teamCode;
-
-    if (!code){
-      return callback({
-        message: "You're not on a team."
-      });
-    }
-
-    User
-      .find({
-        teamCode: code
-      })
-      .select('profile.name')
-      .exec(callback);
-  });
-};
-
-/**
- * Given a team code and id, join a team.
- * @param  {String}   id       Id of the user joining/creating
- * @param  {String}   code     Code of the proposed team
- * @param  {Function} callback args(err, users)
- */
-UserController.createOrJoinTeam = function(id, code, callback){
-
-  if (!code){
-    return callback({
-      message: "Please enter a team name."
-    });
-  }
-
-  if (typeof code !== 'string') {
-    return callback({
-      message: "Get outta here, punk!"
-    });
-  }
-
-  User.find({
-    teamCode: code
-  })
-  .select('profile.name')
-  .exec(function(err, users){
-    // Check to see if this team is joinable (< team max size)
-    if (users.length >= maxTeamSize){
-      return callback({
-        message: "Team is full."
-      });
-    }
-
-    // Otherwise, we can add that person to the team.
-    User.findOneAndUpdate({
-      _id: id,
-      verified: true
-    },{
-      $set: {
-        teamCode: code
-      }
-    }, {
-      new: true
-    },
-    callback);
-
-  });
-};
-
-/**
- * Given an id, remove them from any teams.
- * @param  {[type]}   id       Id of the user leaving
- * @param  {Function} callback args(err, user)
- */
-UserController.leaveTeam = function(id, callback){
-  User.findOneAndUpdate({
-    _id: id
-  },{
-    $set: {
-      teamCode: null
-    }
-  }, {
-    new: true
-  },
-  callback);
-};
-
-/**
  * Resend an email verification email given a user id.
  */
 UserController.sendVerificationEmailById = function(id, callback){
@@ -559,7 +453,7 @@ UserController.sendPasswordResetEmail = function(email, callback){
       }
 
       var token = user.generateTempAuthToken();
-      Mailer.sendPasswordResetEmail(email, token, callback);
+      Mailer.sendPasswordResetEmail(email, user.profile.firstname, token, callback);
     });
 };
 
@@ -639,7 +533,7 @@ UserController.resetPassword = function(token, password, callback){
           return callback(err);
         }
 
-        Mailer.sendPasswordChangedEmail(user.email);
+        Mailer.sendPasswordChangedEmail(user.email, user.profile.firstname);
         return callback(null, {
           message: 'Password successfully reset!'
         });

@@ -76,13 +76,6 @@ angular.module('reg')
           if ($scope.user.email && $scope.user.email.includes('@')) {
             var domain = $scope.user.email.split('@')[1];
 
-            // Is the student from UCI?
-            $scope.isUciStudent = domain === 'uci.edu';
-            // If so, default them to adult: true
-            if ($scope.isUciStudent) {
-              $scope.user.profile.adult = true;
-            }
-
             if ($scope.schoolList[domain]) {
               $scope.user.profile.school = $scope.schoolList[domain].school;
               $scope.autoFilledSchool = true;
@@ -225,8 +218,16 @@ angular.module('reg')
                   prompt: 'Please enter a password.'
                 },
                 {
-                  type: 'match[confirmPassword]',
-                  prompt: 'Your passwords do not match.'
+                  type: 'minLength[6]',
+                  prompt: 'Your password needs to have at least 6 characters.'
+                },
+                {
+                  type: 'maxLength[32]',
+                  prompt: 'Your password can only have at most 32 characters.'
+                },
+                {
+                  type: 'doesntContain[\" \"]',
+                  prompt: 'No spaces allowed'
                 }
               ]
             },
@@ -270,6 +271,15 @@ angular.module('reg')
                 }
               ]
             },
+            description: {
+              identifier: 'description',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: 'Please describe yourself in at least a word or two.'
+                }
+              ]
+            },
             essay: {
               identifier: 'essay',
               rules: [
@@ -301,7 +311,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'allowMinors',
-                  prompt: 'You must be an adult, or an UCI student.'
+                  prompt: 'You must be an adult.'
                 }
               ]
             }
