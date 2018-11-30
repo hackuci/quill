@@ -75,7 +75,8 @@
     height: 125px;
     margin-top: 0;
     margin-bottom: 1%;
-    animation: fadein 0.5s both;
+    // animation: fadein 0.5s both;
+    // -moz-animation: fadein 0.5s both;
     animation-delay: 0.15s;
   }
 
@@ -115,6 +116,9 @@
     text-align: center;
     font-size: 4.5vmax;
     font-weight:500;
+  }
+
+  .logo-content {
     animation: 1s fadein 0.3s both;
   }
 
