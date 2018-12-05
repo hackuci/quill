@@ -263,6 +263,7 @@ UserController.updateProfileById = function (id, profile, callback){
   User.validateProfile(profile, function(err){
 
     if (err){
+      console.log(`UserController.js: cannot update id ${id} to invalid profile:\n${profile}`);
       return callback({message: 'invalid profile'});
     }
 

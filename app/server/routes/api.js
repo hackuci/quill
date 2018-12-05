@@ -217,6 +217,17 @@ module.exports = function(router) {
   router.put('/users/:id/profile', isOwnerOrAdmin, function(req, res){
     var profile = req.body.profile;
     var id = req.params.id;
+    if(id && profile){
+      console.log(`api.js: Update id: ${id} to profile:\n${profile}`);
+    }
+    else{
+      if(!id){
+        console.log(`api.js: Empty id`);
+      }
+      if(!profile){
+        console.log(`api.js: Empty profile`);
+      }
+    }
 
     UserController.updateProfileById(id, profile , defaultResponse(req, res));
   });
