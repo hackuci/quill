@@ -24,10 +24,11 @@ angular.module('reg')
         return $http.get(base);
       },
 
-      getPage: function(page, size, text){
+      getPage: function(page, size, text, sortMode){
         return $http.get(users + '?' + $.param(
           {
             text: text,
+            sortMode: sortMode,
             page: page ? page : 0,
             size: size ? size : 50
           })

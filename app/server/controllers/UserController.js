@@ -197,7 +197,7 @@ UserController.getPage = function(query, callback){
   var page = query.page;
   var size = parseInt(query.size);
   var searchText = query.text;
-
+  var sortMode = query.sortMode ? query.sortMode : {'profile.name' : 'asc'};
   var findQuery = {};
   if (searchText.length > 0){
     var queries = [];
@@ -211,9 +211,7 @@ UserController.getPage = function(query, callback){
 
   User
     .find(findQuery)
-    .sort({
-      'profile.name': 'asc'
-    })
+    .sort(sortMode)
     .select('+status.admittedBy')
     .skip(page * size)
     .limit(size)
