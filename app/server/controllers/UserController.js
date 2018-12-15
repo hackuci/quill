@@ -205,12 +205,12 @@ UserController.getPage = function(query, callback){
     queries.push({ email: re });
     queries.push({ 'profile.name': re });
     queries.push({ 'profile.school': re });
-
     findQuery.$or = queries;
   }
 
   User
     .find(findQuery)
+    .project({'essay_length': {$strLenCP: '$profile.essay'}})
     .sort(sortMode)
     .select('+status.admittedBy')
     .skip(page * size)
