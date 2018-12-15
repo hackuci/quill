@@ -208,6 +208,8 @@ UserController.getPage = function(query, callback){
     queries.push({'essay_length': {$strLenCP: '$profile.essay'}});
     findQuery.$or = queries;
   }
+  console.log("\nSorting\n ");
+  console.log(sortMode);
 
   User
     .find(findQuery)
