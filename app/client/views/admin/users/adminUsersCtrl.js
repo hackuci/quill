@@ -112,6 +112,24 @@ angular.module('reg')
         }
       };
 
+      $scope.sortBySchool = function() {
+        $scope.sortMode = [['profile.school', 1], ['essay_length',-1]];
+        UserService
+        .getPage($stateParams.page, $stateParams.size, $scope.queryText, $scope.sortMode)
+        .success(function(data){
+          updatePage(data);
+        });
+      };
+
+      $scope.sortByEssayLength = function() {
+        $scope.sortMode = [['essay_length',-1],['profile.school', 1]];
+        UserService
+        .getPage($stateParams.page, $stateParams.size, $scope.queryText, $scope.sortMode)
+        .success(function(data){
+          updatePage(data);
+        });
+      };
+
       $scope.acceptUser = function($event, user, index) {
         $event.stopPropagation();
 
