@@ -344,7 +344,7 @@ UserController.updateConfirmationById = function (id, confirmation, callback){
         new: true
       }, function(err, user){
         if (!err && user && typeof user.confirmation.signatureLiability === 'undefined') {
-          Mailer.sendWaiverEmail(user.email, (err, info) => {
+          Mailer.sendWaiverEmail(user.email, user.profile.firstname, (err, info) => {
             if (!err) {
               User.findOneAndUpdate({
                 '_id': id
@@ -655,7 +655,7 @@ UserController.sendAcceptanceEmailById = function(id, callback) {
        if (err || !user) {
          return callback(err);
        }
-       Mailer.sendAcceptanceEmail(user.email, callback);
+       Mailer.sendAcceptanceEmail(user.email, user.profile.firstname, user.status.confirmBy, callback);
        return callback(err, user);
    });
  };
@@ -678,7 +678,7 @@ UserController.sendAcceptanceEmailByEmail = function(email, callback) {
        if (err || !user) {
          return callback(err || 'no user');
        }
-       Mailer.sendAcceptanceEmail(email, user.status.confirmBy, callback);
+       Mailer.sendAcceptanceEmail(email, user.profile.firstname, user.status.confirmBy, callback);
    });
  };
 
@@ -705,7 +705,7 @@ UserController.sendWaiverEmail = function(id, callback) {
     }
 
     if (typeof user.confirmation.signatureLiability === 'undefined') {
-      Mailer.sendWaiverEmail(user.email, (err, info) => {
+      Mailer.sendWaiverEmail(user.email, user.profile.firstname, (err, info) => {
         if (!err) {
           User.findOneAndUpdate({
             '_id': id
@@ -724,7 +724,7 @@ UserController.sendWaiverEmail = function(id, callback) {
         }
       });
     } else {
-      Mailer.sendWaiverEmail(user.email, (err, info) => {
+      Mailer.sendWaiverEmail(user.email, user.profile.firstname, (err, info) => {
         return callback(err, info);
       });
     }
@@ -734,6 +734,131 @@ UserController.sendWaiverEmail = function(id, callback) {
 
 UserController.getStats = function(callback){
   return callback(null, Stats.getUserStats());
+};
+
+UserController.addUserAcceptedQueue = function(id, callback){
+  User.findOneAndUpdate({
+    _id: id,
+    'verified': true,
+    'status.admitted': false,
+    'status.completedProfile': true,
+    'status.queued': { $in : [0, null]}
+  },{
+    $set: {
+      'status.queued': Date.now(),
+    }
+  },
+  {
+    new: true
+  },
+  callback);
+};
+
+UserController.removeUserAcceptedQueue = function(id, callback){
+  User.findOneAndUpdate({
+    _id: id,
+    'status.queued' : {$gt: 0}
+  },{
+    $set: {
+      'status.queued': 0
+    }
+  },
+  {
+    new: true
+  },
+  callback);
+};
+
+UserController.emailAcceptanceToAdmitted = function(callback){
+  User
+  .find({
+    'status.admitted': true,
+    'status.notified': false,
+    'status.declined': false,
+    'status.confirmed': false
+  })
+  .exec(function (err, users){
+    if (err || !users){
+      return callback(err);
+    }
+    users.forEach(function(user){
+      Mailer.sendAcceptanceEmail(user.email, user.profile.firstname, user.status.confirmBy, function(err, data){
+        if(err){
+          return callback(err,{user});
+        }
+        user.status.notified = true;
+        user.markModified('status');
+        user.save(function(err){
+          if(err){
+            return callback(err,{user});
+          }
+        });
+      });
+    });
+    return callback(null, {users});
+  });
+};
+
+UserController.acceptAllInAcceptedQueue = function(admitterEmail, callback){
+  Settings.getRegistrationTimes(function(err, times){
+    User
+    .updateMany({
+      'status.queued' : {$gt: 0},
+      'status.admitted' : false,
+      'status.completedProfile': true
+    },{
+      $set: {
+        'status.admitted': true,
+        'status.admittedBy': admitterEmail,
+        'status.confirmBy': times.timeConfirm,
+        'status.queued': 0,
+        'status.notified': false
+      }
+    },
+    callback);
+  });
+};
+
+UserController.viewAcceptedQueue = function(callback){
+  User
+  .find({
+    'status.queued' : {$gt: 0},
+    'status.admitted' : false
+  })
+  .sort({
+    'status.queued': 'asc'
+  })
+  .exec(function (err, users){
+    if (err || !users){
+      return callback(err);
+    }
+    queueStats = {
+      gender: {},
+      school: {},
+      year: {}
+    };
+    users.forEach(function(user){
+      if(user.profile.gender in queueStats.gender){
+        queueStats.gender[user.profile.gender] += 1;
+      } else {
+        queueStats.gender[user.profile.gender] = 1;
+      }
+      if(user.profile.school in queueStats.school){
+        queueStats.school[user.profile.school] += 1;
+      } else {
+        queueStats.school[user.profile.school] = 1;
+      }
+      if(user.profile.graduationYear in queueStats.year){
+        queueStats.year[user.profile.graduationYear] += 1;
+      } else {
+        queueStats.year[user.profile.graduationYear] = 1;
+      }
+    });
+    return callback(null, {
+      users,
+      stats: queueStats
+    });
+  });
 };
 
 module.exports = UserController;
