@@ -1,7 +1,7 @@
 @import 'branding';
 @import 'custom';
-$font-body: 'Lato', 'Helvetica Neue', 'Helvetica', sans-serif;
-$font-header: 'Montserrat', 'Helvetica Neue', 'Helvetica', sans-serif;
+$font-body: 'Rubik', 'Helvetica Neue', 'Helvetica', sans-serif;
+$font-header: 'Rubik', 'Montserrat', 'Helvetica Neue', 'Helvetica', sans-serif;
 
 // Login screen variables
 $login-bg-color: $secondary;
@@ -61,7 +61,7 @@ body {
 
 body {
   margin: 0;
-  font-family: 'Rubik', 'Lato', 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-family: 'Rubik', 'Lato', 'Helvetica Neue', 'Helvetica', sans-serif !important;
   font-weight: 300;
 
   > .container {

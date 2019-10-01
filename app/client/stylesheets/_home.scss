@@ -1,8 +1,10 @@
+@import "./_hack_styles.scss";
+
 /* Home */
 #home {
-  height: 100%;
   font-family: "Rubik", sans-serif;
-  background: linear-gradient(to right, #2a2a2a, #191919);
+  background: linear-gradient(to bottom, $cyan, $lightPurple);
+
 
   /* Global */
   button,
@@ -35,23 +37,67 @@
 
   /* Hero */
   #hero {
-    background-image: url("../assets/images/triangles-background.png"),
-      linear-gradient(to right, #2a2a2a, #191919);
+    // background-image: url("../assets/images/triangles-background.png"),
+    //   linear-gradient(to right, #2a2a2a, #191919);
+
     background-size: 110%;
     background-repeat: no-repeat;
     background-position: 45% 40%;
     height: calc(100% + 49px);
     animation: fadein 0.5s both;
     animation-delay: 0.3s;
+    height: 100vh;
 
     .hero-container {
       min-width: 30%;
+    }
+    
+    .hero-logo {
+      width: 300px;
+      height: 350px;
+    }
+
+    .hero-content-information { 
+      display: grid;
+      grid-template-columns: 50% 50%;
+      width: 60vw;
+
+      .information-logo {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+      }
+
+      .information-text {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+
+        .information-title {
+          margin-bottom: .75em;
+          font-size: 5.6em;
+        }
+
+        .information-title-year {
+          font-size: 5.6em;
+        }
+  
+        .information-date {
+          margin-bottom: 1.5em;
+          font-size: 1.8em;
+        }
+  
+        span {
+          font-weight: 400;
+        }
+      }
     }
   }
 
   #hero::before {
     content: "";
-    background-image: url("../assets/images/desktop-hack-v-logo.png");
+    // background-image: url("../assets/images/desktop-hack-v-logo.png");
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center 40%;
@@ -65,10 +111,6 @@
     position: relative;
     color: white;
     z-index: 3;
-
-    > div {
-      margin-top: 10%;
-    }
   }
 
   .logo-header-container {
@@ -171,10 +213,11 @@
     position: absolute;
     vertical-align: bottom;
   }
+  
   /* Info */
   #info {
     padding: 7% 0;
-    background: #e7e7e7;
+    // background: #e7e7e7;
   }
 
   #info-content {
@@ -195,7 +238,7 @@
   }
   /* FAQs */
   #faq {
-    background: #7673c9;
+    // background: #7673c9;
     color: white;
     padding: 5% 0 3% 0;
   }
@@ -240,7 +283,7 @@
   /* Sponsors */
   #sponsors {
     padding: 3% 5% 5%;
-    background: #e7e7e7;
+    // background: #e7e7e7;
   }
 
   #sponsors-content {
@@ -249,10 +292,13 @@
 
   #sponsors-content > .title {
     text-align: center;
-    color: #3e4389;
+    color: $white;
+    margin-bottom: 1em;
   }
 
   #sponsors-list {
+    background-color: $white;
+    border-radius: 20px;
     margin-top: 1%;
     display: flex;
     justify-content: center;
@@ -277,7 +323,7 @@
 
   /* Footer */
   #footer {
-    background-image: url("../assets/images/footer.png");
+    // background-image: url("../assets/images/footer.png");
     color: white;
     text-align: center;
     padding: 6% 0;
@@ -325,11 +371,11 @@
     }
 
     #hero {
-      background-image: linear-gradient(to right, #2a2a2a, #191919);
+      // background-image: linear-gradient(to right, #2a2a2a, #191919);
     }
 
     #hero::before {
-      background-image: url("../assets/images/mobile-landing-page-banner.png");
+      // background-image: url("../assets/images/mobile-landing-page-banner.png");
       background-size: 60%;
       background-position: center 35%;
     }
@@ -428,6 +474,25 @@
   }
   /* Tablet */
   @media (min-width: 768px) and (max-width: 991px) {
+
+    #hero {
+  
+      .hero-content-information {
+        grid-template-columns: 100%;
+  
+        .information-logo {
+          align-items: center;
+          transform: translateX(-30px);
+          margin-bottom: 3em;
+        }
+
+        .information-text { 
+          align-items: center;
+          text-align: center;
+        }
+      }
+    }
+    
     #info-content,
     #faq-content {
       width: 90%;
