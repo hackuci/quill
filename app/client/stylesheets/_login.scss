@@ -1,5 +1,5 @@
 #login {
-  height: calc(100% + 49px);
+  height: calc(100% + 100px);
   width: 100%;
   background-image: linear-gradient(#91dfe1, #cca2ff);
   background-size: cover;
@@ -11,7 +11,7 @@
     animation: fadeout 0.8s ease-in 0.5s forwards;
     opacity: 1;
     width: 100%;
-    height: calc(100% + 500px);
+    height: calc(100% + 100px);
     position: absolute;
   }
 
@@ -167,11 +167,16 @@
       position: relative;
       width: 100%;
       
-      .login-cube {
+      .login-cube-container {
         position: absolute;
         top: -2.5em;
         width: 100%;
+        text-align: center;
         z-index: -1;
+
+        .login-cube {
+          width: 100%;
+        }
       }
     }
   }
@@ -184,6 +189,14 @@
 
     > .container>.content .segment {
       margin: 5%;
+    }
+
+    > .container .cube .login-cube-container {
+      top: -4em;
+    }
+
+    > .container .cube .login-cube-container .login-cube {
+      width: 95%;
     }
   }
 }
