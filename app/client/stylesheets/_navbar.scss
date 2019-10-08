@@ -100,10 +100,8 @@
     font-size: 1.2em;
     line-height: 2em;
     transition: all 0.2s ease;
-
-    padding: 6px 16px;
+    padding: 5px 15px;
     border-radius: 25px;
-    // border: 1px solid white;
 
     i {
       margin-left: 1px;
@@ -179,21 +177,21 @@
 
   .menu-item:hover {
     color: inherit;
-    // border: 1px solid #ffffff;
-    padding: 6px 16px;
+    box-shadow: inset 0px 0px 0px 2px #ffffff;
+    padding: 5px 15px;
     border-radius: 25px;
   }
 
   .menu-item-active {
     color: inherit;
-    border: 1px solid #827cdf;
+    box-shadow: inset 0px 0px 0px 2px #827cdf;
     background-color: #827cdf;
     padding: 5px 15px;
     border-radius: 25px;
   }
 
   .menu-item--sponsor {
-    margin-left: 1em;
+    margin-left: .7em;
     background-color: transparent;
     transition: all 0.2s ease;
     color: #827cdf;
@@ -202,13 +200,15 @@
 
   .menu-item--sponsor.menu-item-active {
     background-color: rgba(255, 255, 255, 0.1);
+    background-color: #ffffff;
+    color: #827cdf;
+    box-shadow: inset 0px 0px 0px 2px #ffffff;
   }
 
   .menu-item--sponsor:hover {
     background-color: white;
-    color: #6b8dd6;
-    border: 1px solid rgba(255, 255, 255, 1);
-    box-sizing: border-box;
+    color: #827cdf;
+    box-shadow: inset 0px 0px 0px 2px #ffffff;
   }
 
   .navbar-mobile {
