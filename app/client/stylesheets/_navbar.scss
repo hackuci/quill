@@ -99,8 +99,11 @@
     font-weight: 300;
     font-size: 1.2em;
     line-height: 2em;
-    border-bottom: 1px solid rgba(255, 255, 255, 0);
     transition: all 0.2s ease;
+
+    padding: 6px 16px;
+    border-radius: 25px;
+    // border: 1px solid white;
 
     i {
       margin-left: 1px;
@@ -108,76 +111,80 @@
   }
 
   #menu-item-home {
-    color: #6fd3f4;
+    color: #ffffff;
   }
 
   #menu-item-login {
-    color: #d3a1ff;
+    color: #ffffff;
   }
 
   #menu-item-sponsor {
-    color: #f2b3f5;
+    color: #ffffff;
   }
 
   #menu-item-welcome {
-    color: #7CE0FF;
+    color: #ffffff;
   }
 
   #menu-item-logistic {
-    color: #80BEEF;
+    color: #ffffff;
   }
 
   #menu-item-corporate {
-    color: #9398E1;
+    color: #ffffff;
   }
 
   #menu-item-market {
-    color: #BB8CE5;
+    color: #ffffff;
   }
 
   #menu-item-technology {
-    color: #E2A1E3;
+    color: #ffffff;
   }
 
   #menu-item-sponsor-logged-in {
-    color: #b8bbef;
+    color: #ffffff;
   }
 
   #menu-item-dashboard {
-    color: #99cdf7;
+    color: #ffffff;
   }
 
   #menu-item-application {
-    color: #c9b0ea;
+    color: #ffffff;
   }
 
   #menu-item-logout {
-    color: #e2a1e3;
+    color: #ffffff;
   }
   #menu-item-confirmation {
-    color: #daa6e5;
+    color: #ffffff;
   }
   .menu-item + .menu-item:not(.menu-item--sponsor) {
-    margin-left: 3%;
+    margin-left: 1em;
   }
 
   .menu-item:hover {
     color: inherit;
-    border-bottom: 1px solid;
+    // border: 1px solid #ffffff;
+    padding: 6px 16px;
+    border-radius: 25px;
   }
 
   .menu-item-active {
     color: inherit;
-    border-bottom: 1px solid;
+    border: 1px solid #827cdf;
+    background-color: #827cdf;
+    padding: 5px 15px;
+    border-radius: 25px;
   }
 
   .menu-item--sponsor {
-    border: 1px solid rgba(255, 255, 255, 0.95);
-    border-radius: 25px;
-    padding: 9px 25px;
-    margin-left: 2.5%;
+    margin-left: 1em;
     background-color: transparent;
     transition: all 0.2s ease;
+    color: #827cdf;
+    font-weight: bold;
   }
 
   .menu-item--sponsor.menu-item-active {
@@ -188,6 +195,7 @@
     background-color: white;
     color: #6b8dd6;
     border: 1px solid rgba(255, 255, 255, 1);
+    box-sizing: border-box;
   }
 
   .navbar-mobile {
