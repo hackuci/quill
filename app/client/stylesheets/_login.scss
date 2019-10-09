@@ -126,7 +126,7 @@
         }
 
         &.login:hover {
-          background: #9a96e3; // not sure about hover colors
+          background: #9a96e3;
         }
 
         &.register {
@@ -176,6 +176,7 @@
 
         .cube-cube {
           position: absolute;
+          animation: MoveUpDown 2s linear infinite;
           width: 55%;
           top: 25%;
           left: 50%;
@@ -192,11 +193,24 @@
     }
 
     > .container>.content .segment {
-      margin: 5% 5% 0;
+      margin: 10% 5% 0;
     }
 
     >.container .cube .login-cube-container .login-cube {
       width: 90%;
     }
+
+    >.container .cube .login-cube-container .cube-cube {
+      width: 50%;
+    }
+  }
+}
+
+@keyframes MoveUpDown {
+  0%, 100% {
+    top: 24%;
+  }
+  50% {
+    top: 26%;
   }
 }

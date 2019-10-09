@@ -215,7 +215,7 @@
     width: 100%;
     height: 70px;
     padding: 10px 30px;
-    background: linear-gradient(to right, #2a2a2a, #191919);
+    background: linear-gradient(#91dfe1, #cca2ff);
     display: flex;
     animation: fadein 0.2s both;
     transition: all 0.2s ease;
@@ -271,9 +271,10 @@
     padding-right: 30px !important;
     height: 70px;
     align-items: center;
+    border: none;
     border-radius: 0;
     color: white;
-    background: linear-gradient(to right, #2a2a2a, #191919);
+    background: linear-gradient(to right, #91dfe1, #cca2ff);
   }
 
   .content {
@@ -296,5 +297,6 @@
     display: block;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
+    color: #827cdf;
   }
 }
