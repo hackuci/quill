@@ -176,7 +176,7 @@
 
         .cube-cube {
           position: absolute;
-          animation: MoveUpDown 2s linear infinite;
+          animation: MoveUpDown 2.5s ease-in-out infinite;
           width: 55%;
           top: 25%;
           left: 50%;
