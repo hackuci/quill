@@ -1,5 +1,5 @@
 #login {
-  height: calc(100% + 100px);
+  height: calc(100% + 49px);
   width: 100%;
   background: linear-gradient(#91dfe1, #cca2ff);
   background-size: cover;
@@ -11,8 +11,7 @@
     animation: fadeout 0.8s ease-in 0.5s forwards;
     opacity: 1;
     width: 100%;
-    height: calc(100% + 100px);
-    // position: absolute;
+    height: calc(100% + 49px);
   }
 
   > .container {
@@ -23,7 +22,7 @@
 
     > .content {
       max-width: 320px;
-      margin: 15% auto;
+      margin: 15% auto 0;
 
       .logo-header-container {
         height: 125px;
@@ -169,9 +168,18 @@
       .login-cube-container {
         width: 100%;
         text-align: center;
+        position: relative;
 
         .login-cube {
           width: 100%;
+        }
+
+        .cube-cube {
+          position: absolute;
+          width: 55%;
+          top: 25%;
+          left: 50%;
+          transform: translateX(-50%);
         }
       }
     }
@@ -184,15 +192,11 @@
     }
 
     > .container>.content .segment {
-      margin: 5%;
+      margin: 5% 5% 0;
     }
 
-    > .container .cube .login-cube-container {
-      top: -4em;
-    }
-
-    > .container .cube .login-cube-container .login-cube {
-      width: 95%;
+    >.container .cube .login-cube-container .login-cube {
+      width: 90%;
     }
   }
 }
