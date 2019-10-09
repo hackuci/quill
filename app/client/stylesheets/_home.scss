@@ -54,8 +54,8 @@
     }
     
     .hero-logo {
-      width: 300px;
-      height: 350px;
+      width: 400px;
+      height: 500px;
     }
 
     .hero-content-information { 
@@ -171,15 +171,16 @@
 
   .hero-button-container {
     text-align: center;
-    margin-top: 8%;
+    margin-top: 60px;
     animation: 1s fadein 1.5s both;
     animation-delay: 0.6s;
+    width: 112px;
 
     .btn {
       background: #8e8bdc;
       border: none;
       margin-top: 150%;
-      padding: 3.5% 8%;
+      padding: 10% 12%;
       border-radius: 25px;
       box-shadow: 0 2px 16px rgba(24, 51, 59, 0.35);
     }
@@ -219,13 +220,39 @@
   #info {
     padding: 7% 0;
     // background: #e7e7e7;
+    display: flex;
+    flex-direction: column;
+
+    .secondary {
+      color: $white;
+      margin-top: 8%;
+    }
   }
+
 
   #info-content {
     width: 80%;
+    color: $darkPurple;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 2em;
+
+    div {
+      margin-top: 8%;
+    }
+
+    .info-description {
+      color: white;
+      font-weight: 300;
+      font-size: .6em;
+    }
+
+    .info-description:last-of-type {
+      margin-top: 2%;
+    }
   }
 
   .headline {
@@ -426,6 +453,8 @@
     #info-content,
     #faq-content {
       width: 90%;
+      display: flex;
+      flex-direction: column;
     }
 
     .headline {
@@ -532,8 +561,5 @@
       padding-bottom: 0 !important;
       margin-bottom: 5px;
     }
-  }
-  /* Large Screens */
-  @media (min-width: 1650px) {
   }
 }
