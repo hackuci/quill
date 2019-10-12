@@ -1,8 +1,9 @@
 #apply {
   background: linear-gradient(#91dfe1, #cca2ff);
+  padding-top: 125px;
   // set font and color (very light grey) to label and p classes
   label {
-    color: rgb(228, 228, 228);
+    color: #827cdf;
     font-family: "Lato", sans-serif;
   }
 
@@ -30,7 +31,7 @@
 
   .field > .rounded-border {
     border: solid #e7e7e7;
-    border-radius: 15px;
+    border-radius: 25px;
   }
 
   .error-red-color {
@@ -66,5 +67,27 @@
   // changed the background to the gradient dark grey - black
   .bg {
     background: transparent;
+  }
+
+  .purple-btn {
+    background: #827cdf;
+    color: #ffffff;
+    border-radius: 1em;
+  }
+
+  input {
+    border-radius: 1em;
+  }
+
+  select {
+    border-radius: 1em;
+  }
+
+  textarea {
+    border-radius: 1em;
+  }
+
+  .adult-checkbox {
+    color: white;
   }
 }
