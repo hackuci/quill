@@ -1,5 +1,16 @@
 #confirmation {
   color: white;
+  background: linear-gradient(#91dfe1, #cca2ff);
+
+  > .title {
+    color: #ffffff;
+  }
+
+  .required {
+    color: red;
+    font-weight: 500;
+  }
+
   .ui.form .field > label {
     color: white;
   }
@@ -8,5 +19,19 @@
   }
   .ui.checkbox label {
     color: white;
+  }
+
+  .purple-btn {
+    background: #827cdf;
+    border-radius: 1em;
+    color: #ffffff;
+  }
+
+  input {
+    border-radius: 1em;
+  }
+
+  select {
+    border-radius: 1em;
   }
 }
