@@ -164,6 +164,7 @@
     .cube {
       // position: relative;
       width: 100%;
+      animation: fadein 0.5s both;
       
       .login-cube-container {
         width: 100%;
