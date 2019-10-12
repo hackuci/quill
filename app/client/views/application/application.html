@@ -4,7 +4,7 @@
   <div class="ui stackable page grid">
     <div class="column">
       <form class="ui form">
-        <div class="divided title blue">Basic Information</div>
+        <div class="divided title purple-text">Basic Information</div>
 
         <fieldset ng-disabled="regIsClosed">
           <div class="two fields">
@@ -43,7 +43,7 @@
 
           <br />
 
-          <div class="divided title lilac">School Information</div>
+          <div class="divided title purple-text">School Information</div>
 
           <div class="field" ng-show="autoFilledSchool">
             <label> School <span class="required">*</span> </label>
@@ -119,7 +119,7 @@
 
           <br />
 
-          <div class="divided title pink">Profile Information</div>
+          <div class="divided title purple-text">Profile Information</div>
 
           <div class="two fields">
             <div class="field">
@@ -179,7 +179,7 @@
               >
 
               <div
-                class="essay-character-count"
+                class="essay-character-count dark-purple-text"
                 ng-class="{'error-red-color': user.profile.essay.length > 1500}"
               >
                 {{ user.profile.essay.length }}/1500
@@ -192,13 +192,13 @@
               Resume (PDF, 0.5 MB max) <span class="required">*</span>
             </label>
             <button
-              class="ui light-purple tiny button"
+              class="ui tiny button btn-general upload-btn"
               ng-show="!showResumeDropzone"
               ng-click="toggleResumeDropzone()"
             >
               Upload New Resume
             </button>
-            <button class="ui pink tiny button" ng-click="openResume()">
+            <button class="ui tiny button btn-general view-btn" ng-click="openResume()">
               View Resume
             </button>
             <div
@@ -219,9 +219,9 @@
           <div class="field" ng-hide="isUciStudent">
             <p>
               Because of limitations imposed by UCI, we are not legally allowed
-              to host minors (those under 18) for HackUCI 2019. Checking the box
+              to host minors (those under 18) for HackUCI 2020. Checking the box
               below affirms that you are or will be 18 years or older by
-              Feburary 15th, 2019.
+              January 31st, 2020.
             </p>
             <p>
               <strong>
@@ -236,7 +236,7 @@
                 id="adult"
                 ng-model="user.profile.adult"
               />
-              <label for="adult">I am 18 or older.</label>
+              <label class="adult-checkbox" for="adult">I am 18 or older.</label>
             </div>
           </div>
 
@@ -245,7 +245,7 @@
           <div class="field" ng-hide="regIsClosed">
             <button
               type="submit"
-              class="fluid ui light-purple button"
+              class="fluid ui purple-btn button btn-general"
               ng-class="{'disabled': submitButtonDisabled}"
               ng-click="submitForm()"
             >
