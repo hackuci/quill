@@ -56,6 +56,7 @@
     .hero-logo {
       width: 400px;
       height: 500px;
+      transform: translateX(-30px);
     }
 
     .hero-content-information { 
@@ -226,6 +227,7 @@
     .secondary {
       color: $white;
       margin-top: 8%;
+      line-height: 65px;
     }
   }
 
@@ -259,11 +261,72 @@
     font-weight: 300;
     font-size: 2em;
     display: inline-block;
+    line-height: 65px;
 
     .bold {
       font-weight: 500;
     }
   }
+
+  #previous-winners {
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .title {
+      font-size: 2.4em;
+      font-weight: 600;
+      text-align: center;
+      color: $white;
+      margin-bottom: 2em;
+    }
+
+    #previous-winners-content {
+      width: 80%;
+      display: grid;
+      grid-template-columns: 60% 40%;
+
+      #winners {
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        flex-wrap: wrap;
+
+        a {
+          width: 100%;
+          margin-bottom: 2em;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+        }
+
+        .winner-card {
+          color: white;
+          text-align: center;
+          
+          .card-award-title {
+            font-weight: 600;
+          
+          }
+        }
+      }
+
+      #previous-winners-trophy {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          width: 350px;
+          height: 450px;
+          transform: translateX(20px);
+        }
+      }
+    }
+  }
+
   /* FAQs */
   #faq {
     // background: #7673c9;
@@ -399,7 +462,36 @@
     }
 
     #hero {
-      // background-image: linear-gradient(to right, #2a2a2a, #191919);
+
+      .hero-logo {
+        width: 250px !important;
+        height: 340px !important;
+        margin-bottom: 40px;
+      }
+
+      .hero-content-information {
+        grid-template-columns: 100% !important;
+        width: 80vw;
+
+        .information-text {
+          div {
+            width: 100%;
+            text-align: center !important;
+          }
+
+          .information-date {
+            font-size: 1.2em !important;
+          }
+
+          .information-title {
+            font-size: 4.2em !important;
+          }
+
+          .information-title-year {
+            font-size: 3.8em !important;
+          }
+        }
+      }
     }
 
     #hero::before {
@@ -452,7 +544,7 @@
 
     #info-content,
     #faq-content {
-      width: 90%;
+      width: 80%;
       display: flex;
       flex-direction: column;
     }
@@ -501,6 +593,32 @@
     .btn {
       padding: 5% 10%;
     }
+
+    #previous-winners {
+      margin-top: 4em;
+
+      #previous-winners-content {
+        display: flex !important;
+        flex-direction: column-reverse;
+        align-items: center;
+
+        #previous-winners-trophy {
+          display: none;
+        }
+
+        #winners {
+          grid-template-columns: 50% 50% !important;
+
+          a {
+            margin-bottom: 1.5em;
+          }
+        }
+      }
+      
+      #previous-winners-trophy {
+        margin-bottom: 2em;
+      }
+    }  
   }
   /* Tablet */
   @media (min-width: 768px) and (max-width: 991px) {
@@ -525,9 +643,26 @@
     
     #info-content,
     #faq-content {
-      width: 90%;
+      width: 80%;
     }
 
+    #previous-winners {
+      #previous-winners-content {
+        #winners {
+          grid-template-columns: 50% 50% !important;
+
+          a {
+            margin-bottom: 1.5em;
+          }
+        }
+      }
+
+      #previous-winners-trophy img {
+        width: 300px !important;
+        height: 420px !important;
+      }
+    }
+    
     #sponsors-content,
     #sponsorship {
       width: 85%;
