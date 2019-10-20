@@ -1,4 +1,4 @@
-@import "./_hack_styles.scss";
+// @import "./_global.scss";
 
 
 /* Home */
@@ -272,6 +272,7 @@
     min-height: 100vh;
     min-width: 100vw;
     display: flex;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
 
@@ -611,6 +612,7 @@
 
           a {
             margin-bottom: 1.5em;
+            color: white;
           }
         }
       }
