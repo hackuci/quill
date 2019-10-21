@@ -8,15 +8,19 @@
     .tower-side {
       width: 50%;
       text-align: center;
+      justify-content: center;
+      align-items: center;
       position: relative;
 
       #tower {
         width: 70%;
+        max-width: 400px;
       }
 
       .cloud {
         z-index: -1;
         width: 40%;
+        max-width: 200px;
         position: absolute;
       }
 
@@ -49,10 +53,9 @@
 
     .content-side {
       width: 50%;
-      position: relative;
+      text-align: left;
 
       .dashboard-content {
-        position: absolute;
         width: 100%;
         max-width: 400px;
         min-width: 288px; 
@@ -61,7 +64,9 @@
         .title {
           margin-left: auto;
           margin-right: auto;
+          font-family: "Catamaran Bold", sans-serif;
         }
+        
         .segment {
           padding: 36px 36px 36px 36px;
           border-radius: 30px;
@@ -73,6 +78,11 @@
             color: #ffffff !important;
             font-weight: normal;
             border-radius: 30px;
+            font-family: "Catamaran Bold", sans-serif;
+          }
+
+          .generic-btn:hover {
+            opacity: .8;
           }
 
           .edit-apply-btn {

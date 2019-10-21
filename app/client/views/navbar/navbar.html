@@ -27,7 +27,7 @@
     <div class="logo-header_live center" ng-if="showLiveNavbar">LIVE</div>
 
     <div class="logo-header_live center" ng-if="showCheckInNavbar">
-      CHECK-IN
+      Check-In
     </div>
 
     <div
@@ -40,7 +40,7 @@
         class="menu-item"
         id="menu-item-home"
       >
-        HOME
+        Home
       </a>
       <a
         ui-sref="app.dashboard"
@@ -49,7 +49,7 @@
         ng-if="isLoggedIn"
         id="menu-item-dashboard"
       >
-        DASHBOARD
+        Dashboard
       </a>
       <a
         ui-sref="app.login"
@@ -58,7 +58,7 @@
         ng-if="!isLoggedIn"
         id="menu-item-login"
       >
-        LOGIN
+        Login
       </a>
       <a
         ui-sref-active="menu-item-active"
@@ -68,7 +68,7 @@
           isLoggedIn ? 'menu-item-sponsor-logged-in' : 'menu-item-sponsor'
         }}"
       >
-        SPONSORS
+        Sponsors
       </a>
       <!-- <a
         ui-sref-active="menu-item-active"
@@ -84,7 +84,7 @@
         class="menu-item"
         id="menu-item-application"
       >
-        APPLICATION
+        Application
       </a>
       <a
         ui-sref-active="menu-item-active"
@@ -93,7 +93,7 @@
         class="menu-item"
         id="menu-item-confirmation"
       >
-        CONFIRMATION
+        Confirmation
       </a>
       <a
         ui-sref-active="menu-item-active"
@@ -101,7 +101,7 @@
         class="menu-item"
         ng-if="currentUser.verified && currentUser.admin"
       >
-        ADMIN
+        Admin
       </a>
       <a
         class="menu-item"
@@ -109,27 +109,27 @@
         ng-if="isLoggedIn"
         id="menu-item-logout"
       >
-        LOGOUT
+        Logout
       </a>
       <a
         ui-sref-active="menu-item-active"
         ui-sref="app.schedule"
         class="menu-item menu-item--sponsor"
       >
-        LIVE
+        Live
       </a>
     </div>
 
     <div class="navbar-menu" ng-if="showLiveNavbar">
       <a ui-sref="app.home" ui-sref-active="menu-item-active" class="menu-item">
-        HOME
+        Home
       </a>
       <a
         ui-sref="app.schedule"
         ui-sref-active="menu-item-active"
         class="menu-item"
       >
-        SCHEDULE
+        Schedule
       </a>
       <a
         href="https://github.com/raopg/hackuci-resources"
@@ -137,17 +137,17 @@
         ui-sref-active="menu-item-active"
         class="menu-item"
       >
-        STARTER PACKS
+        Starter Packs
       </a>
       <a href="https://hackuci2019.slack.com" target="_blank" class="menu-item">
-        SLACK <i class="fa fa-external-link"></i>
+        Slack <i class="fa fa-external-link"></i>
       </a>
       <a
         href="https://hackuci2019.devpost.com/"
         target="_blank"
         class="menu-item"
       >
-        DEVPOST <i class="fa fa-external-link"></i>
+        Devpost <i class="fa fa-external-link"></i>
       </a>
       <a
         ui-sref-active="menu-item-active"
@@ -155,14 +155,14 @@
         class="menu-item"
         ng-if="currentUser.verified && currentUser.admin"
       >
-        ADMIN
+        Admin
       </a>
       <a
         ui-sref-active="menu-item-active"
         ui-sref="app.expo"
         class="menu-item menu-item--sponsor"
       >
-        EXPO
+        Expo
       </a>
     </div>
 
@@ -173,7 +173,7 @@
         class="menu-item"
         id="menu-item-welcome"
       >
-        WELCOME
+        Welcome
       </a>
       <a
         ui-sref="app.logistics"
@@ -181,7 +181,7 @@
         class="menu-item"
         id="menu-item-logistic"
       >
-        LOGISTICS
+        Logistics
       </a>
       <a
         ui-sref="app.corporate"
@@ -189,7 +189,7 @@
         class="menu-item"
         id="menu-item-corporate"
       >
-        CORPORATE
+        Corporate
       </a>
       <a
         ui-sref="app.marketing"
@@ -197,7 +197,7 @@
         class="menu-item"
         id="menu-item-market"
       >
-        MARKETING
+        Marketing
       </a>
       <a
         ui-sref="app.technology"
@@ -205,14 +205,14 @@
         class="menu-item"
         id="menu-item-technology"
       >
-        TECHNOLOGY
+        Technology
       </a>
       <a
         ui-sref-active="menu-item-active"
         ui-sref="app.home"
         class="menu-item menu-item--sponsor"
       >
-        EVENT
+        Event
       </a>
     </div>
   </div>
@@ -254,7 +254,7 @@
         class="menu-item"
         ng-click="onMenuClick()"
       >
-        HOME
+        Home
       </a>
       <a
         ui-sref="app.dashboard"
@@ -263,7 +263,7 @@
         ng-if="isLoggedIn"
         ng-click="onMenuClick()"
       >
-        DASHBOARD
+        Dashboard
       </a>
       <a
         ui-sref="app.login"
@@ -272,7 +272,7 @@
         ng-if="!isLoggedIn"
         ng-click="onMenuClick()"
       >
-        LOGIN
+        Login
       </a>
       <a
         ui-sref-active="menu-item-active"
@@ -281,14 +281,14 @@
         class="menu-item"
         ng-click="onMenuClick()"
       >
-        APPLY
+        Apply
       </a>
       <a
         ui-sref-active="menu-item-active"
         ui-sref="app.schedule"
         class="menu-item menu-item--sponsor"
       >
-        LIVE
+        Live
       </a>
       <a
         ui-sref-active="menu-item-active"
@@ -297,7 +297,7 @@
         class="menu-item"
         ng-click="onMenuClick()"
       >
-        APPLICATION
+        Application
       </a>
       <a
         ui-sref-active="menu-item-active"
@@ -306,7 +306,7 @@
         class="menu-item"
         ng-click="onMenuClick()"
       >
-        CONFIRMATION
+        Confirmation
       </a>
       <a
         ui-sref-active="menu-item-active"
@@ -315,7 +315,7 @@
         ng-if="currentUser.verified && currentUser.admin"
         ng-click="onMenuClick()"
       >
-        ADMIN
+        Admin
       </a>
       <a
         class="menu-item"
@@ -323,7 +323,7 @@
         ng-if="isLoggedIn"
         ng-click="onMenuClick()"
       >
-        LOGOUT
+        Logout
       </a>
       <a
         ui-sref="app.sponsor"
@@ -331,7 +331,7 @@
         class="menu-item"
         ng-click="onMenuClick()"
       >
-        SPONSOR
+        Sponsor
       </a>
     </div>
 
@@ -342,7 +342,7 @@
         class="menu-item"
         ng-click="onMenuClick()"
       >
-        HOME
+        Home
       </a>
       <a
         ui-sref="app.schedule"
@@ -350,7 +350,7 @@
         class="menu-item"
         ng-click="onMenuClick()"
       >
-        SCHEDULE
+        Schedule
       </a>
       <a
         href="https://hackuci2019.slack.com"
@@ -358,7 +358,7 @@
         class="menu-item"
         ng-click="onMenuClick()"
       >
-        SLACK <i class="fa fa-external-link"></i>
+        Slack <i class="fa fa-external-link"></i>
       </a>
       <a
         href="https://hackuci2019.devpost.com/"
@@ -366,7 +366,7 @@
         class="menu-item"
         ng-click="onMenuClick()"
       >
-        DEVPOST <i class="fa fa-external-link"></i>
+        Devpost <i class="fa fa-external-link"></i>
       </a>
       <a
         ui-sref-active="menu-item-active"
@@ -375,7 +375,7 @@
         ng-if="currentUser.verified && currentUser.admin"
         ng-click="onMenuClick()"
       >
-        ADMIN
+        Admin
       </a>
       <a
         ui-sref-active="menu-item-active"
@@ -383,7 +383,7 @@
         class="menu-item"
         ng-click="onMenuClick()"
       >
-        EXPO
+        Expo
       </a>
     </div>
 
@@ -394,7 +394,7 @@
         class="menu-item"
         ng-click="onMenuClick()"
       >
-        WELCOME
+        Welcome
       </a>
       <a
         ui-sref="app.logistics"
@@ -402,7 +402,7 @@
         class="menu-item"
         ng-click="onMenuClick()"
       >
-        LOGISTICS
+        Logistics
       </a>
       <a
         ui-sref="app.corporate"
@@ -410,7 +410,7 @@
         class="menu-item"
         ng-click="onMenuClick()"
       >
-        CORPORATE
+        Corporate
       </a>
       <a
         ui-sref="app.marketing"
@@ -418,7 +418,7 @@
         class="menu-item"
         ng-click="onMenuClick()"
       >
-        MARKETING
+        Marketing
       </a>
       <a
         ui-sref="app.technology"
@@ -426,7 +426,7 @@
         class="menu-item"
         ng-click="onMenuClick()"
       >
-        TECHNOLOGY
+        Technology
       </a>
       <a
         ui-sref-active="menu-item-active"
@@ -434,7 +434,7 @@
         class="menu-item"
         ng-click="onMenuClick()"
       >
-        EVENT
+        Event
       </a>
     </div>
   </div>

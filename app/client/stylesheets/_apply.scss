@@ -1,20 +1,18 @@
 #apply {
   background: linear-gradient(#91dfe1, #cca2ff);
   padding-top: 125px;
+  font-family: 'Catamaran Bold', sans-serif;
   // set font and color (very light grey) to label and p classes
   label {
     color: #7069b1;
-    font-family: "Lato", sans-serif;
   }
 
   p {
     color: rgb(228, 228, 228);
-    font-family: "Lato", sans-serif;
   }
 
   // set font of headers to Open Sans
   .font {
-    font-family: "Open Sans", sans-serif;
     color: #827cdf;
   }
 
@@ -73,6 +71,10 @@
     background: #827cdf;
     color: #ffffff;
     border-radius: 1em;
+  }
+
+  .purple-btn:hover {
+    opacity: .8;
   }
 
   input {
