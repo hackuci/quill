@@ -2,7 +2,7 @@
 #navbar {
   width: 100%;
   z-index: 999;
-  font-family: "Rubik", sans-serif;
+  font-family: "Catamaran Bold", sans-serif;
   color: white;
   font-weight: 300;
   font-size: 0.8em;
@@ -11,10 +11,16 @@
   .navbar {
     width: 100%;
     height: 100px;
-    background: linear-gradient(to right, #2a2a2a, #191919);
+    position: static;
+    background: transparent;
+    padding-top: 35px;
     display: flex;
     animation: fadein 0.5s both;
     animation-delay: 0.1s;
+    
+    .logo-header {
+      margin-top: 0;
+    }
   }
 
   .navbar-transparent {
@@ -99,8 +105,9 @@
     font-weight: 300;
     font-size: 1.2em;
     line-height: 2em;
-    border-bottom: 1px solid rgba(255, 255, 255, 0);
     transition: all 0.2s ease;
+    padding: 5px 15px;
+    border-radius: 25px;
 
     i {
       margin-left: 1px;
@@ -171,43 +178,50 @@
     // color: #daa6e5;
   }
   .menu-item + .menu-item:not(.menu-item--sponsor) {
-    margin-left: 3%;
+    margin-left: 1em;
   }
 
   .menu-item:hover {
     color: inherit;
-    border-bottom: 1px solid;
+    box-shadow: inset 0px 0px 0px 2px #ffffff;
+    padding: 5px 15px;
+    border-radius: 25px;
   }
 
   .menu-item-active {
     color: inherit;
-    border-bottom: 1px solid;
+    box-shadow: inset 0px 0px 0px 2px #827cdf;
+    background-color: #827cdf;
+    padding: 5px 15px;
+    border-radius: 25px;
   }
 
   .menu-item--sponsor {
-    border: 1px solid rgba(255, 255, 255, 0.95);
-    border-radius: 25px;
-    padding: 9px 25px;
-    margin-left: 2.5%;
+    margin-left: .7em;
     background-color: transparent;
     transition: all 0.2s ease;
+    color: #827cdf;
+    font-weight: bold;
   }
 
   .menu-item--sponsor.menu-item-active {
     background-color: rgba(255, 255, 255, 0.1);
+    background-color: #ffffff;
+    color: #827cdf;
+    box-shadow: inset 0px 0px 0px 2px #ffffff;
   }
 
   .menu-item--sponsor:hover {
     background-color: white;
-    color: #6b8dd6;
-    border: 1px solid rgba(255, 255, 255, 1);
+    color: #827cdf;
+    box-shadow: inset 0px 0px 0px 2px #ffffff;
   }
 
   .navbar-mobile {
     width: 100%;
     height: 70px;
     padding: 10px 30px;
-    background: linear-gradient(to right, #2a2a2a, #191919);
+    background: transparent;
     display: flex;
     animation: fadein 0.2s both;
     transition: all 0.2s ease;
@@ -263,9 +277,10 @@
     padding-right: 30px !important;
     height: 70px;
     align-items: center;
+    border: none;
     border-radius: 0;
     color: white;
-    background: linear-gradient(to right, #2a2a2a, #191919);
+    background: linear-gradient(to right, #91dfe1, #cca2ff);
   }
 
   .content {
@@ -288,5 +303,6 @@
     display: block;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
+    color: #827cdf;
   }
 }

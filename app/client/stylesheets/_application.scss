@@ -1,9 +1,14 @@
 #application {
-  background: linear-gradient(to right, #2a2a2a, #191919);
+  background: linear-gradient(#91dfe1, #cca2ff);
   color: white;
+  font-family: "Catamaran Bold", sans-serif;
+
+  label {
+    color: #7069b1 !important;
+  }
 
   > .title {
-    color: #bb8ce5;
+    color: #ffffff;
   }
 
   #school .title {
@@ -57,5 +62,43 @@
   .ui.checkbox label,
   .ui.checkbox + label {
     color: white;
+  }
+
+  .purple-btn {
+    background: #827cdf;
+  }
+
+  .upload-btn {
+    background: #91dfe1;
+    margin-bottom: .5em;
+  }
+
+  .view-btn {
+    background: #827cdf;
+  }
+
+  .btn-general {
+    border-radius: 1em;
+    color: #ffffff
+  }
+
+  .btn-general:hover {
+    opacity: .8;
+  }
+
+  input {
+    border-radius: 1em;
+  }
+
+  select {
+    border-radius: 1em;
+  }
+
+  textarea {
+    border-radius: 1em;
+  }
+
+  .adult-checkbox {
+    color: white !important;
   }
 }

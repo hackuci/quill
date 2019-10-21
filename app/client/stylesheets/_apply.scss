@@ -1,19 +1,19 @@
 #apply {
-  background: linear-gradient(to right, #2a2a2a, #191919);
+  background: linear-gradient(#91dfe1, #cca2ff);
+  padding-top: 125px;
+  font-family: 'Catamaran Bold', sans-serif;
   // set font and color (very light grey) to label and p classes
   label {
-    color: rgb(228, 228, 228);
-    font-family: "Lato", sans-serif;
+    color: #7069b1;
   }
 
   p {
     color: rgb(228, 228, 228);
-    font-family: "Lato", sans-serif;
   }
 
   // set font of headers to Open Sans
   .font {
-    font-family: "Open Sans", sans-serif;
+    color: #827cdf;
   }
 
   #school .title {
@@ -29,7 +29,7 @@
 
   .field > .rounded-border {
     border: solid #e7e7e7;
-    border-radius: 15px;
+    border-radius: 25px;
   }
 
   .error-red-color {
@@ -58,12 +58,38 @@
   }
 
   > .title {
-    color: #bb8ce5;
+    color: #ffffff;
     margin-bottom: 5%;
   }
 
   // changed the background to the gradient dark grey - black
   .bg {
-    background: linear-gradient(to right, #2a2a2a, #191919);
+    background: transparent;
+  }
+
+  .purple-btn {
+    background: #827cdf;
+    color: #ffffff;
+    border-radius: 1em;
+  }
+
+  .purple-btn:hover {
+    opacity: .8;
+  }
+
+  input {
+    border-radius: 1em;
+  }
+
+  select {
+    border-radius: 1em;
+  }
+
+  textarea {
+    border-radius: 1em;
+  }
+
+  .adult-checkbox {
+    color: white;
   }
 }
