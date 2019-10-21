@@ -1,9 +1,12 @@
 #confirmation {
   color: white;
   background: linear-gradient(#91dfe1, #cca2ff);
+  font-family: "Catamaran Bold", sans-serif !important;
+  font-size: 1em !important;
 
   > .title {
     color: #ffffff;
+    font-family: "Catamaran Bold", sans-serif;
   }
 
   .required {
@@ -13,10 +16,14 @@
 
   .ui.form .field > label {
     color: white;
+    font-family: "Catamaran Bold", sans-serif;
+    font-size: 1em;
   }
+
   .ui.checkbox {
     backface-visibility: unset;
   }
+  
   .ui.checkbox label {
     color: white;
   }
@@ -25,6 +32,14 @@
     background: #827cdf;
     border-radius: 1em;
     color: #ffffff;
+  }
+
+  .purple-btn:hover {
+    opacity: .8;
+  }
+
+  .hover-effect:hover {
+    opacity: .8;
   }
 
   input {

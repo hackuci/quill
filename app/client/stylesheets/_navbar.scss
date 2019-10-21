@@ -2,7 +2,7 @@
 #navbar {
   width: 100%;
   z-index: 999;
-  font-family: "Rubik", sans-serif;
+  font-family: "Catamaran Bold", sans-serif;
   color: white;
   font-weight: 300;
   font-size: 0.8em;
@@ -115,56 +115,6 @@
   }
 
   #menu-item-home {
-<<<<<<< HEAD
-    color: #ffffff;
-  }
-
-  #menu-item-login {
-    color: #ffffff;
-  }
-
-  #menu-item-sponsor {
-    color: #ffffff;
-  }
-
-  #menu-item-welcome {
-    color: #ffffff;
-  }
-
-  #menu-item-logistic {
-    color: #ffffff;
-  }
-
-  #menu-item-corporate {
-    color: #ffffff;
-  }
-
-  #menu-item-market {
-    color: #ffffff;
-  }
-
-  #menu-item-technology {
-    color: #ffffff;
-  }
-
-  #menu-item-sponsor-logged-in {
-    color: #ffffff;
-  }
-
-  #menu-item-dashboard {
-    color: #ffffff;
-  }
-
-  #menu-item-application {
-    color: #ffffff;
-  }
-
-  #menu-item-logout {
-    color: #ffffff;
-  }
-  #menu-item-confirmation {
-    color: #ffffff;
-=======
     color: $white;
     // color: #6fd3f4;
   }
@@ -226,7 +176,6 @@
   #menu-item-confirmation {
     color: $white;
     // color: #daa6e5;
->>>>>>> develop
   }
   .menu-item + .menu-item:not(.menu-item--sponsor) {
     margin-left: 1em;
