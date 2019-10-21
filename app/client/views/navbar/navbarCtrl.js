@@ -68,6 +68,12 @@ angular.module("reg").controller("NavbarCtrl", [
           $scope.showCheckInNavbar = false;
         }
 
+        if (newPath == "app.home" || newPath == "app.sponsor") {
+          $scope.showSponsorLink = true;
+        } else {
+          $scope.showSponsorLink = false;
+        }
+
         $scope.isLoggedIn = !!$rootScope.currentUser;
 
         if ($scope.isLoggedIn) {

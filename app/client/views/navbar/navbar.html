@@ -43,6 +43,17 @@
         Home
       </a>
       <a
+        ui-sref-active="menu-item-active"
+        ui-sref="app.sponsor"
+        class="menu-item"
+        ng-if="showSponsorLink"
+        id="{{
+          isLoggedIn ? 'menu-item-sponsor-logged-in' : 'menu-item-sponsor'
+        }}"
+      >
+        Sponsors
+      </a>
+      <a
         ui-sref="app.dashboard"
         ui-sref-active="menu-item-active"
         class="menu-item"
@@ -59,16 +70,6 @@
         id="menu-item-login"
       >
         Login
-      </a>
-      <a
-        ui-sref-active="menu-item-active"
-        ui-sref="app.sponsor"
-        class="menu-item"
-        id="{{
-          isLoggedIn ? 'menu-item-sponsor-logged-in' : 'menu-item-sponsor'
-        }}"
-      >
-        Sponsors
       </a>
       <!-- <a
         ui-sref-active="menu-item-active"
@@ -111,13 +112,13 @@
       >
         Logout
       </a>
-      <a
+      <!-- <a
         ui-sref-active="menu-item-active"
         ui-sref="app.schedule"
         class="menu-item menu-item--sponsor"
       >
         Live
-      </a>
+      </a> -->
     </div>
 
     <div class="navbar-menu" ng-if="showLiveNavbar">
@@ -257,6 +258,15 @@
         Home
       </a>
       <a
+        ui-sref="app.sponsor"
+        ui-sref-active="menu-item-active"
+        class="menu-item"
+        ng-click="onMenuClick()"
+        ng-if="showSponsorLink"
+      >
+        Sponsor
+      </a>
+      <a
         ui-sref="app.dashboard"
         ui-sref-active="menu-item-active"
         class="menu-item"
@@ -283,13 +293,13 @@
       >
         Apply
       </a>
-      <a
+      <!-- <a
         ui-sref-active="menu-item-active"
         ui-sref="app.schedule"
         class="menu-item menu-item--sponsor"
       >
         Live
-      </a>
+      </a> -->
       <a
         ui-sref-active="menu-item-active"
         ui-sref="app.application"
@@ -324,14 +334,6 @@
         ng-click="onMenuClick()"
       >
         Logout
-      </a>
-      <a
-        ui-sref="app.sponsor"
-        ui-sref-active="menu-item-active"
-        class="menu-item"
-        ng-click="onMenuClick()"
-      >
-        Sponsor
       </a>
     </div>
 
