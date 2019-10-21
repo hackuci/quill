@@ -71,6 +71,10 @@
 	background: #80beef !important;
 }
 
+.box-shadow { 
+  box-shadow: 3px 10px 18px rgba(0, 0, 0, 0.1);
+}
+
 /* Resume Dropzone */
 .resume-dropzone {
 	width: 225px;
@@ -170,3 +174,10 @@
 		transform: rotate(360deg);
 	}
 }
+
+// Color Variables
+$white: #ffffff;
+$cyan: #91dfe1;
+$pink: #cca2ff;
+$lightPurple: #827cdf;
+$darkPurple: #7069b1;

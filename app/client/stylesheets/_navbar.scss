@@ -115,6 +115,7 @@
   }
 
   #menu-item-home {
+<<<<<<< HEAD
     color: #ffffff;
   }
 
@@ -163,6 +164,69 @@
   }
   #menu-item-confirmation {
     color: #ffffff;
+=======
+    color: $white;
+    // color: #6fd3f4;
+  }
+
+  #menu-item-login {
+    color: $white;
+    // color: #d3a1ff;
+  }
+
+  #menu-item-sponsor {
+    color: $white;
+    // color: #f2b3f5;
+  }
+
+  #menu-item-welcome {
+    color: $white;
+    // color: #7CE0FF;
+  }
+
+  #menu-item-logistic {
+    color: $white;
+    // color: #80BEEF;
+  }
+
+  #menu-item-corporate {
+    color: $white;
+    // color: #9398E1;
+  }
+
+  #menu-item-market {
+    color: $white;
+    // color: #BB8CE5;
+  }
+
+  #menu-item-technology {
+    color: $white;
+    // color: #E2A1E3;
+  }
+
+  #menu-item-sponsor-logged-in {
+    color: $white;
+    // color: #b8bbef;
+  }
+
+  #menu-item-dashboard {
+    color: $white;
+    // color: #99cdf7;
+  }
+
+  #menu-item-application {
+    color: $white;
+    // color: #c9b0ea;
+  }
+
+  #menu-item-logout {
+    color: $white;
+    // color: #e2a1e3;
+  }
+  #menu-item-confirmation {
+    color: $white;
+    // color: #daa6e5;
+>>>>>>> develop
   }
   .menu-item + .menu-item:not(.menu-item--sponsor) {
     margin-left: 1em;
