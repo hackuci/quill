@@ -59,11 +59,12 @@ angular.module('reg')
         $state.go('app.login');
       };
 
-      authService.register = function(email, password, onSuccess, onFailure) {
+      authService.register = function(email, password, profile, onSuccess, onFailure) {
         return $http
           .post('/auth/register', {
             email: email,
-            password: password
+            password: password,
+            profile: profile
           })
           .success(function(data){
             loginSuccess(data, onSuccess);
@@ -77,7 +78,8 @@ angular.module('reg')
         return $http
           .post('/auth/register', {
             email: email,
-            password: password
+            password: password,
+            profile: profile
           })
           .success(function(data){
             return onSuccess(data.user);

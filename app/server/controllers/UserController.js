@@ -118,9 +118,31 @@ UserController.loginWithPassword = function(email, password, callback){
 };
 
 /**
+ * Creates and validates a new user given an email, password annd profile.
+ * @param  {String}   email    User's email.
+ * @param  {String}   password User's password
+ * @param  {Object}   profile  Profile object
+ * @param  {Function} callback args(err, user)
+ */
+UserController.createValidUser = function(email, password, profile, callback){
+  User.validateProfile(profile, function(err){
+    if (err){
+      return callback({message: 'invalid profile'});
+    }
+    UserController.createUser(email, password,
+      function(err, user){
+        if (err){
+          return res.status(400).send(err);
+        }
+        return res.json(user);
+    });
+  });
+}; 
+
+/**
  * Create a new user given an email and a password.
  * @param  {String}   email    User's email.
- * @param  {String}   password [description]
+ * @param  {String}   password User's password.
  * @param  {Function} callback args(err, user)
  */
 UserController.createUser = function(email, password, callback) {
