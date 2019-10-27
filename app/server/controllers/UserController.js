@@ -118,7 +118,7 @@ UserController.loginWithPassword = function(email, password, callback){
 };
 
 /**
- * Creates and validates a new user given an email, password annd profile.
+ * Creates and validates a new user given an email, password and profile.
  * @param  {String}   email    User's email.
  * @param  {String}   password User's password
  * @param  {Object}   profile  Profile object
