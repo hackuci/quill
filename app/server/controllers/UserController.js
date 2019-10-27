@@ -129,13 +129,7 @@ UserController.createValidUser = function(email, password, profile, callback){
     if (err){
       return callback({message: 'invalid profile'});
     }
-    UserController.createUser(email, password,
-      function(err, user){
-        if (err){
-          return res.status(400).send(err);
-        }
-        return res.json(user);
-    });
+    UserController.createUser(email, password, callback);
   });
 }; 
 
