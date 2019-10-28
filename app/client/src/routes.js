@@ -267,7 +267,7 @@ angular.module('reg')
         }
       })
       .state('verify', {
-        url: "/verify/:token",
+        url: "/verify",
         templateUrl: "views/verify/verify.html",
         controller: 'VerifyCtrl',
         data: {
