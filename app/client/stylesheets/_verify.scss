@@ -4,7 +4,7 @@
   font-family: 'Catamaran Bold', sans-serif;
 
   .email-title {
-    color: #FFFFFF;
+    color: #FFFFFF !important;
   }
 
   .segment {
@@ -13,10 +13,17 @@
     max-width: 300px;
     margin: 0 auto;
     text-align: center;
-    border-radius: 30px;
+    border-radius: 30px !important;
     border: none;
     font-family: 'Catamaran Bold', sans-serif;
 
+    .btn {
+      color: #ffffff !important;
+      font-weight: normal;
+      border-radius: 30px;
+      font-family: "Catamaran Bold", sans-serif;
+      background: #7069B1;
+    }
 
     .icon {
       font-size: 5em;
