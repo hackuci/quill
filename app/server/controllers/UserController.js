@@ -129,7 +129,7 @@ UserController.createValidUser = function(email, password, profile, callback){
     if (err){
       return callback({message: 'invalid profile'});
     }
-    UserController.createUser(email, password, callback);
+    UserController.createUser(email, password, profile, callback);
   });
 }; 
 
@@ -139,7 +139,7 @@ UserController.createValidUser = function(email, password, profile, callback){
  * @param  {String}   password User's password.
  * @param  {Function} callback args(err, user)
  */
-UserController.createUser = function(email, password, callback) {
+UserController.createUser = function(email, password, profile, callback) {
 
   if (typeof email !== "string"){
     return callback({
@@ -159,6 +159,9 @@ UserController.createUser = function(email, password, callback) {
     var u = new User();
     u.email = email;
     u.password = User.generateHash(password);
+    u.lastUpdated = Date.now()
+    u.profile = profile
+    u.status = { completedProfile : true }
     u.save(function(err){
       if (err){
         // Duplicate key error codes
