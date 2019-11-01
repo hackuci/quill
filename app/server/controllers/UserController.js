@@ -159,9 +159,9 @@ UserController.createUser = function(email, password, profile, callback) {
     var u = new User();
     u.email = email;
     u.password = User.generateHash(password);
-    u.lastUpdated = Date.now()
-    u.profile = profile
-    u.status = { completedProfile : true }
+    u.lastUpdated = Date.now();
+    u.profile = profile;
+    u.status.completedProfile = true;
     u.save(function(err){
       if (err){
         // Duplicate key error codes
