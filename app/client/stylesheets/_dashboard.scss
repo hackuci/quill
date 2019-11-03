@@ -28,7 +28,6 @@
   
         .cloud {
           z-index: -1;
-          width: 50%;
           max-width: 300px;
           position: absolute;
         }
@@ -36,6 +35,7 @@
         #cloud4 {
           right: -20%;
           top: 6%;
+          width: 70%;
           animation: SidetoSide4 7s ease-in-out infinite;
         }
   
@@ -47,9 +47,9 @@
         }
   
         #cloud3 {
-          bottom: 30%;
+          bottom: 25%;
           right: -10%;
-          width: 30%;
+          width: 60%;
           animation: SidetoSide3 5s ease-in-out infinite;
         }
   
@@ -152,6 +152,7 @@
 
   .description {
     margin: 16px 0;
+    text-align: center;
     .markdown {
       text-align: center;
       margin-bottom: 24px;
@@ -214,18 +215,18 @@
 
 @keyframes SidetoSide3 {
   0%, 100% {
-    right: -13%;
+    right: -30%;
   }
   50% {
-    right: -9%;
+    right: -25%;
   }
 }
 
 @keyframes SidetoSide4 {
   0%, 100% {
-    right: -17%;
+    right: -28%;
   }
   50% {
-    right: -25%;
+    right: -36%;
   }
 }
