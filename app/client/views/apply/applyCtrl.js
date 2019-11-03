@@ -129,7 +129,7 @@ angular.module('reg')
       }
 
       function _apply(e){
-        AuthService.register($scope.user.email, $scope.user.password, function success(data) {
+        AuthService.register($scope.user.email, $scope.user.password, $scope.user.profile, function success(data) {
           UserService
             .updateProfile(Session.getUserId(), $scope.user.profile)
             .success(function(data){

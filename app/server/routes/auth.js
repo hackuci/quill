@@ -71,8 +71,9 @@ module.exports = function(router){
       // Register with an email and password
       var email = req.body.email;
       var password = req.body.password;
+      var profile = req.body.profile;
 
-      UserController.createUser(email, password,
+      UserController.createValidUser(email, password, profile,
         function(err, user){
           if (err){
             return res.status(400).send(err);
