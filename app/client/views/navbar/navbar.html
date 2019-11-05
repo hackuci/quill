@@ -46,7 +46,6 @@
         ui-sref-active="menu-item-active"
         ui-sref="app.sponsor"
         class="menu-item"
-        ng-if="showSponsorLink"
         id="{{
           isLoggedIn ? 'menu-item-sponsor-logged-in' : 'menu-item-sponsor'
         }}"
@@ -262,7 +261,6 @@
         ui-sref-active="menu-item-active"
         class="menu-item"
         ng-click="onMenuClick()"
-        ng-if="showSponsorLink"
       >
         Sponsor
       </a>
