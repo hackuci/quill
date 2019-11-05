@@ -2,9 +2,52 @@
   background: linear-gradient(#91dfe1, #cca2ff);
   font-family: "Catamaran Bold", sans-serif;
 
+  .subtitle {
+    text-align: center;
+    font-family: "Catamaran Bold", sans-serif;
+    color: #FFFFFF;
+    font-size: 2.2em;
+    letter-spacing: 1px;
+    font-weight: bold;
+  }
+
   .title-section {
     height: 100vh;
     position: relative;
+
+    .cloud {
+      position: absolute;
+      width: 45%;
+      opacity: .5;
+      z-index: -1;
+    }
+
+    #cloud4 {
+      top: -35%;
+      right: -5%;
+      animation: SidetoSide4 10s ease-in-out infinite;
+    }
+
+    #cloud3 {
+      bottom: 0;
+      right: 15%;
+      width: 35%;
+      animation: SidetoSide3 5s ease-in-out infinite;
+    }
+
+    #cloud2 {
+      bottom: 10%;
+      left: 7%;
+      width: 35%;
+      animation: SidetoSide2 10s ease-in-out infinite;
+    }
+
+    #cloud1 {
+      top: -35%;
+      left: 15%;
+      width: 27%;
+      animation: SidetoSide1 8s ease-in-out infinite;
+    }
 
     .inner-section {
       width: 80%;
@@ -20,7 +63,7 @@
         font-size: 3em;
         font-family: "Catamaran Bold", sans-serif;
         display: inline;
-        font-weight: normal;
+        font-weight: bold;
         letter-spacing: 1.5px;
 
         .sponsor {
@@ -48,10 +91,10 @@
     }    
 
     .stats {
-      width: 10%;
+      width: 75%;
 
       position: absolute;
-      bottom: 0;
+      bottom: -10%;
       left: 50%;
       transform: translateX(-50%);
 
@@ -59,5 +102,165 @@
         width: 100%;
       }
     }
+  }
+
+  .benefits-section {
+    width: 80%;
+    margin: 9em auto 1.5em;
+    font-family: "Catamaran Bold", sans-serif;
+
+    .benefits-grid {
+      margin-top: 2em;
+      display: flex;
+      flex-wrap: wrap;
+
+      .benefit-box {
+        text-align: center;
+        width: 50%;
+        padding: .7em 1.5em;
+
+        .benefit-subtitle {
+          font-size: 1.5em;
+          margin-bottom: .4em;
+        }
+
+        .benefit-description {
+          color: #FFFFFF;
+          text-align: left;
+        }
+      }
+
+      .sponsor-icon {
+        width: 12%;
+      }
+    }
+  }
+
+  .footer {
+    background-color: #FFFFFF;
+    font-family: "Catamaran Bold", sans-serif;
+    color: #827cdf;
+    text-align: center;
+    padding: 1.2em 0;
+    font-size: 1.1em;
+
+    a {
+      color: #7069b1;
+    }
+  }
+}
+
+/* Sponsors */
+#sponsors {
+  padding: 3% 5% 5%;
+  // background: #e7e7e7;
+}
+
+#sponsors-content {
+  width: 100%;
+}
+
+#sponsors-content > .title {
+  text-align: center;
+  color: $white;
+  margin-bottom: 1em;
+}
+
+#sponsors-list {
+  background-color: $white;
+  border-radius: 20px;
+  margin-top: 1%;
+  display: flex;
+  justify-content: center;
+}
+
+#sponsors-list > div {
+  padding: 0 20px;
+  margin-top: 1%;
+  opacity: 0.87;
+  width: 20% !important;
+  transition: all 0.2s ease;
+}
+
+#sponsors-list > div:hover {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+#sponsors-list > div > a > img {
+  width: 100%;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  #sponsors-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding-bottom: 10%;
+  }
+
+  #sponsors-content > .title {
+    font-size: 2.4em;
+  }
+
+  .logo-header {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  #sponsors-list > div {
+    height: 70px;
+    width: 65% !important;
+    text-align: center;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 7%;
+  }
+}
+
+@keyframes SidetoSide1 {
+  0%, 100% {
+    left: 10%;
+  }
+  50% {
+    left: 20%;
+  }
+}
+
+@keyframes SidetoSide2 {
+  0%, 100% {
+    left: 7%;
+  }
+  50% {
+    left: 0%;
+  }
+}
+
+@keyframes SidetoSide3 {
+  0%, 100% {
+    right: 18%;
+  }
+  50% {
+    right: 13%;
+  }
+}
+
+@keyframes SidetoSide4 {
+  0%, 100% {
+    right: -8%;
+  }
+  50% {
+    right: 0%;
+  }
+}
+
+@keyframes MoveUpDown {
+  0%, 100% {
+    bottom: -20%;
+  }
+  50% {
+    bottom: -22%;
   }
 }
