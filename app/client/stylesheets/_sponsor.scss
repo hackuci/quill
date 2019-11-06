@@ -15,6 +15,7 @@
   .title-section {
     height: 100vh;
     max-height: 650px;
+    min-height: 600px;
     position: relative;
 
     .cloud {
@@ -246,7 +247,7 @@
   }
 
   #sponsor .benefits-section {
-    margin: 37em auto 1.5em;
+    margin: 40em auto 1.5em;
   }
 
   #sponsor .title-section #cloud1 {
