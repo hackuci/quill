@@ -240,6 +240,7 @@
     animation: UpDownMobile 3s ease-in-out infinite;
     .robot {
       width: 100%;
+      max-width: 282px;
       content: url("../../assets/images/building-blocks/mobile_robo.png");
     }
   }
@@ -254,6 +255,15 @@
 
   #sponsor .title-section #cloud3 {
     display: none;
+  }
+
+  #sponsor .title-section #cloud4 {
+    top: -17%;
+    animation: Cloud4Mobile 10s ease-in-out infinite;
+  }
+
+  #sponsor .title-section #cloud2 {
+    animation: Cloud2Mobile 8s ease-in-out infinite;
   }
 }
 
@@ -271,6 +281,7 @@
     animation: UpDownTablet 3s ease-in-out infinite;
     .robot {
       width: 80%;
+      max-width: 470px;
       content: url("../../assets/images/building-blocks/tablet_robo.png");
     }
   }
@@ -340,5 +351,23 @@
   }
   50% {
     bottom: -87%;
+  }
+}
+
+@keyframes Cloud4Mobile {
+  0%, 100% {
+    right: -50%;
+  }
+  50% {
+    right: -25%;
+  }
+}
+
+@keyframes Cloud2Mobile {
+  0%, 100% {
+    left: -40%;
+  }
+  50% {
+    left: 0%;
   }
 }
