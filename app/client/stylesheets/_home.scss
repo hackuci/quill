@@ -379,8 +379,16 @@
   /* Sponsors */
   #sponsors {
     padding: 3% 5% 5%;
-    // background: #e7e7e7;
-  }
+    display: flex;
+    flex-direction: column;
+    margin-top: -140px;
+
+      .sponsor-mini-robo {
+        height: 200px;
+        width: 300px;
+        margin-right: 60%;
+      }
+    }
 
   #sponsors-content {
     width: 100%;
@@ -483,7 +491,7 @@
 
         .hero-logo-mobile {
           width: 180px !important;
-          height: 240px !important;
+          height: 200px !important;
           margin-bottom: 40px;
           display: block;
         }
@@ -582,6 +590,11 @@
 
     #sponsors {
       padding: 12.5% 0 5% 0;
+      margin-top: 0;
+
+      .sponsor-mini-robo {
+        display: none;
+      }
     }
 
     #sponsors-list {
@@ -680,6 +693,15 @@
       #previous-winners-trophy img {
         width: 300px !important;
         height: 420px !important;
+      }
+    }
+
+    #sponsors {
+      margin-top: 0;
+
+      .sponsor-mini-robo {
+        height: 160px;
+        width: 220px;
       }
     }
     
