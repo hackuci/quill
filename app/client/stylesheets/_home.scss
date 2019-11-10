@@ -4,7 +4,7 @@
 /* Home */
 #home {
   font-family: "Rubik", sans-serif;
-  background: linear-gradient(to bottom, $cyan, $lightPurple);
+  background: linear-gradient(to bottom, $cyan, $pink);
 
 
   /* Global */
@@ -12,7 +12,7 @@
   .btn {
     color: white;
     font-weight: 300;
-    border: 1px solid white;
+    border: 4px solid white !important;
     padding: 1.75% 4%;
     border-radius: 4px;
     letter-spacing: 0.12em;
@@ -47,22 +47,27 @@
     height: calc(100% + 49px);
     animation: fadein 0.5s both;
     animation-delay: 0.3s;
-    height: 100vh;
+    height: 80vh;
 
     .hero-container {
       min-width: 30%;
     }
     
     .hero-logo {
-      width: 400px;
-      height: 500px;
+      width: 460px;
+      height: 600px;
       transform: translateX(-30px);
+    }
+
+    .hero-logo-mobile {
+      display: none;
     }
 
     .hero-content-information { 
       display: grid;
       grid-template-columns: 50% 50%;
       width: 60vw;
+      margin-top: 20vh;
 
       .information-logo {
         display: flex;
@@ -175,15 +180,14 @@
     margin-top: 60px;
     animation: 1s fadein 1.5s both;
     animation-delay: 0.6s;
-    width: 112px;
+    width: 140px;
 
     .btn {
       background: #8e8bdc;
       border: none;
       margin-top: 150%;
-      padding: 10% 12%;
-      border-radius: 25px;
-      box-shadow: 0 2px 16px rgba(24, 51, 59, 0.35);
+      padding: 11px 40px;
+      border-radius: 30px;
     }
 
     .btn:hover {
@@ -228,6 +232,10 @@
       color: $white;
       margin-top: 8%;
       line-height: 65px;
+
+      span {
+        color: $yellow;
+      }
     }
   }
 
@@ -247,7 +255,7 @@
     }
 
     .info-description {
-      color: white;
+      color: $darkPurple;
       font-weight: 300;
       font-size: .6em;
     }
@@ -269,7 +277,6 @@
   }
 
   #previous-winners {
-    min-height: 100vh;
     min-width: 100vw;
     display: flex;
     justify-content: center;
@@ -306,11 +313,20 @@
         .winner-card {
           color: white;
           text-align: center;
+
+          i {
+            font-size: 2.4em;
+            margin-bottom: 16px;
+          }
           
           .card-award-title {
             font-weight: 600;
-          
+            width: 80%;
           }
+        }
+
+        .winner-card:last-child {
+          margin-left: 100%;
         }
       }
 
@@ -320,9 +336,9 @@
         align-items: center;
 
         img {
-          width: 350px;
-          height: 450px;
-          transform: translateX(20px);
+          width: 500px;
+          height: 600px;
+          transform: translateX(60px) translateY(-40px);
         }
       }
     }
@@ -375,8 +391,17 @@
   /* Sponsors */
   #sponsors {
     padding: 3% 5% 5%;
-    // background: #e7e7e7;
-  }
+    display: flex;
+    flex-direction: column;
+    margin-top: -160px;
+
+      .sponsor-mini-robo {
+        height: 280px;
+        width: 400px;
+        margin-right: 60%;
+        transform: translateY(-40px);
+      }
+    }
 
   #sponsors-content {
     width: 100%;
@@ -390,14 +415,14 @@
 
   #sponsors-list {
     background-color: $white;
-    border-radius: 20px;
+    border-radius: 40px;
     margin-top: 1%;
     display: flex;
     justify-content: center;
   }
 
   #sponsors-list > div {
-    padding: 0 20px;
+    padding: 0 40px;
     margin-top: 1%;
     opacity: 0.87;
     width: 20% !important;
@@ -413,27 +438,41 @@
     width: 100%;
   }
 
+  .footer-robot {
+    width: 230px;
+    height: 220px;
+    right: 0;
+    margin-left: 67%;
+    transform: translateY(48px);
+  }
+
   /* Footer */
   #footer {
     // background-image: url("../assets/images/footer.png");
-    color: white;
     text-align: center;
-    padding: 6% 0;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    height: 16vh;
+    margin-top: -56px;
   }
 
   #footer-content {
-    font-size: 2em;
+    font-size: 2.4em;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   #footer-content > a {
-    color: rgba(255, 255, 255, 0.95);
+    color: $darkPurple !important;
     padding: 0 1%;
     transition: all 0.2s ease;
   }
 
   #footer-content > a:hover {
-    color: rgba(255, 255, 255, 1);
+    color: $lightPurple !important;
   }
   /* Mobile */
   @media (max-width: 767px) {
@@ -463,16 +502,26 @@
     }
 
     #hero {
-
-      .hero-logo {
-        width: 250px !important;
-        height: 340px !important;
-        margin-bottom: 40px;
-      }
+      height: 100vh;
 
       .hero-content-information {
         grid-template-columns: 100% !important;
         width: 80vw;
+        margin-top: 0vh;
+
+        .hero-logo {
+          width: 250px !important;
+          height: 340px !important;
+          margin-bottom: 40px;
+          display: none;
+        }
+
+        .hero-logo-mobile {
+          width: 180px !important;
+          height: 200px !important;
+          margin-bottom: 40px;
+          display: block;
+        }
 
         .information-text {
           div {
@@ -505,9 +554,6 @@
       margin-bottom: -10%;
     }
 
-    .logo-header > img {
-      height: 80%;
-    }
     .title {
       margin-bottom: 5%;
       font-size: 2em;
@@ -529,7 +575,7 @@
 
     .hero-button-container {
       .btn {
-        padding: 5% 10%;
+        padding: 11px 40px;
         margin-left: 0%;
       }
     }
@@ -551,8 +597,14 @@
     }
 
     .headline {
-      font-size: 1.1em;
+      margin-top: 0 !important;
+      font-size: .9em;
       padding: 2.5% 0;
+      line-height: 45px;
+    }
+
+    .secondary {
+      font-size: .7em;
     }
 
     #faq-content .column:nth-child(1) {
@@ -565,6 +617,11 @@
 
     #sponsors {
       padding: 12.5% 0 5% 0;
+      margin-top: 0;
+
+      .sponsor-mini-robo {
+        display: none;
+      }
     }
 
     #sponsors-list {
@@ -582,8 +639,13 @@
     //   padding-bottom: 0 !important;
     // }
 
+    .footer-robot {
+      display: none;
+    }
+
     #footer {
       padding: 20% 0;
+      margin-top: 128px;
     }
 
     #footer-content > a {
@@ -614,6 +676,10 @@
             margin-bottom: 1.5em;
             color: white;
           }
+          
+          .winner-card:last-child {
+            margin-left: 0;
+          }
         }
       }
       
@@ -629,6 +695,7 @@
   
       .hero-content-information {
         grid-template-columns: 100%;
+        margin-top: 0vh;
   
         .information-logo {
           align-items: center;
@@ -650,8 +717,9 @@
 
     #previous-winners {
       #previous-winners-content {
+        grid-template-columns: 100%;
         #winners {
-          grid-template-columns: 50% 50% !important;
+          grid-template-columns: 33% 33% 33% !important;
 
           a {
             margin-bottom: 1.5em;
@@ -660,8 +728,16 @@
       }
 
       #previous-winners-trophy img {
-        width: 300px !important;
-        height: 420px !important;
+        display: none;
+      }
+    }
+
+    #sponsors {
+      margin-top: 0;
+
+      .sponsor-mini-robo {
+        height: 160px;
+        width: 220px;
       }
     }
     
