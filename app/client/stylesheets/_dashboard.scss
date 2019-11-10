@@ -1,12 +1,17 @@
 #dashboard {
   background: linear-gradient(#91dfe1, #cca2ff);
   min-height: calc(100% + 49px);
+  
 
   .flex-box {
     display: flex;
-
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    
     .tower-side {
       display: flex;
+      max-width: 580px;
       flex-direction: column;
       width: 50%;
       text-align: center;
@@ -65,6 +70,7 @@
     .content-side {
       width: 50%;
       text-align: left;
+      max-width: 580px;
 
       .dashboard-content {
         width: 100%;
