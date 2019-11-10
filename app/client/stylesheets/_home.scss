@@ -3,9 +3,7 @@
 
 /* Home */
 #home {
-  font-family: "Rubik", sans-serif;
   background: linear-gradient(to bottom, $cyan, $pink);
-
 
   /* Global */
   button,
@@ -32,8 +30,8 @@
   }
 
   .title {
-    font-size: 2.8em;
-    font-weight: 700;
+    font-size: 3em;
+    font-weight: 600;
   }
 
   /* Hero */
@@ -56,7 +54,7 @@
     .hero-logo {
       width: 460px;
       height: 600px;
-      transform: translateX(-30px);
+      transform: translateX(-80px);
     }
 
     .hero-logo-mobile {
@@ -88,11 +86,13 @@
 
         .information-title-year {
           font-size: 5.6em;
+          font-weight: 300;
         }
   
         .information-date {
           margin-bottom: 1.5em;
           font-size: 1.8em;
+          font-weight: 300;
         }
   
         span {
@@ -232,6 +232,7 @@
       color: $white;
       margin-top: 8%;
       line-height: 65px;
+      font-size: 2em;
 
       span {
         color: $yellow;
@@ -251,13 +252,14 @@
     font-size: 2em;
 
     div {
-      margin-top: 8%;
+      margin-top: 5%;
     }
 
     .info-description {
       color: $darkPurple;
       font-weight: 300;
-      font-size: .6em;
+      font-size: .8em;
+      line-height: 1.35em;
     }
 
     .info-description:last-of-type {
@@ -273,6 +275,7 @@
 
     .bold {
       font-weight: 500;
+      font-size: 1.4em !important;
     }
   }
 
@@ -284,7 +287,7 @@
     flex-direction: column;
 
     .title {
-      font-size: 2em;
+      font-size: 3em;
       font-weight: 600;
       text-align: center;
       color: $white;
@@ -313,6 +316,8 @@
         .winner-card {
           color: white;
           text-align: center;
+          transition: .2s ease;
+          font-weight: 600;
 
           i {
             font-size: 2.4em;
@@ -320,9 +325,14 @@
           }
           
           .card-award-title {
-            font-weight: 600;
+            font-weight: 300;
+            font-size: .8em;
             width: 80%;
           }
+        }
+
+        .winner-card:hover {
+          transform: scale(1.1);
         }
 
         .winner-card:last-child {
@@ -474,6 +484,13 @@
   #footer-content > a:hover {
     color: $lightPurple !important;
   }
+
+  @media (min-width: 991px) {
+    .information-date {
+      width: 500px;
+    }
+  }
+
   /* Mobile */
   @media (max-width: 767px) {
     #sponsors-list {
@@ -531,6 +548,7 @@
 
           .information-date {
             font-size: 1.2em !important;
+            font-weight: 300;
           }
 
           .information-title {
@@ -556,7 +574,7 @@
 
     .title {
       margin-bottom: 5%;
-      font-size: 2em;
+      font-size: 3em;
     }
 
     .hero-border {
@@ -604,7 +622,11 @@
     }
 
     .secondary {
-      font-size: .7em;
+      font-size: .8em !important;
+    }
+
+    .info-description {
+      font-size: .7em !important;
     }
 
     #faq-content .column:nth-child(1) {
@@ -616,7 +638,7 @@
     }
 
     #sponsors {
-      padding: 12.5% 0 5% 0;
+      padding: 12.5% 0% 5% 0%;
       margin-top: 0;
 
       .sponsor-mini-robo {
@@ -626,6 +648,16 @@
 
     #sponsors-list {
       margin-top: 5%;
+      width: 80vw;
+      margin-left: 10vw;
+    }
+
+    #sponsors-list > div {
+      padding: 0 !important;
+    }
+
+    #sponsors-list > div:first-child {
+      padding-top: 20px !important;
     }
 
     #sponsor #sponsors-list > div > img {
@@ -660,6 +692,10 @@
     #previous-winners {
       margin-top: 4em;
 
+      .title {
+        font-size: 2.4em;
+      }
+
       #previous-winners-content {
         display: flex !important;
         flex-direction: column-reverse;
@@ -692,6 +728,13 @@
   @media (min-width: 768px) and (max-width: 991px) {
 
     #hero {
+
+      .hero-logo {
+        width: 300px;
+        height: 400px;
+        transform: translateX(0);
+        margin-top: 12vh;
+      }
   
       .hero-content-information {
         grid-template-columns: 100%;
@@ -713,6 +756,10 @@
     #info-content,
     #faq-content {
       width: 80%;
+    }
+
+    #info-content {
+      margin-top: 20vh;
     }
 
     #previous-winners {
