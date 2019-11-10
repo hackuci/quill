@@ -47,7 +47,7 @@
     height: calc(100% + 49px);
     animation: fadein 0.5s both;
     animation-delay: 0.3s;
-    height: 100vh;
+    height: 80vh;
 
     .hero-container {
       min-width: 30%;
@@ -63,6 +63,7 @@
       display: grid;
       grid-template-columns: 50% 50%;
       width: 60vw;
+      margin-top: 20vh;
 
       .information-logo {
         display: flex;
@@ -269,7 +270,6 @@
   }
 
   #previous-winners {
-    min-height: 100vh;
     min-width: 100vw;
     display: flex;
     justify-content: center;
@@ -463,6 +463,7 @@
     }
 
     #hero {
+      height: 100vh;
 
       .hero-logo {
         width: 250px !important;
@@ -473,6 +474,7 @@
       .hero-content-information {
         grid-template-columns: 100% !important;
         width: 80vw;
+        margin-top: 0vh;
 
         .information-text {
           div {
@@ -551,8 +553,14 @@
     }
 
     .headline {
-      font-size: 1.1em;
+      margin-top: 0 !important;
+      font-size: .9em;
       padding: 2.5% 0;
+      line-height: 45px;
+    }
+
+    .secondary {
+      font-size: .7em;
     }
 
     #faq-content .column:nth-child(1) {
@@ -629,6 +637,7 @@
   
       .hero-content-information {
         grid-template-columns: 100%;
+        margin-top: 0vh;
   
         .information-logo {
           align-items: center;
