@@ -469,10 +469,6 @@
     #hero {
       height: 100vh;
 
-      .hero-logo {
-        
-      }
-
       .hero-content-information {
         grid-template-columns: 100% !important;
         width: 80vw;
@@ -486,8 +482,8 @@
         }
 
         .hero-logo-mobile {
-          width: 250px !important;
-          height: 340px !important;
+          width: 180px !important;
+          height: 240px !important;
           margin-bottom: 40px;
           display: block;
         }
