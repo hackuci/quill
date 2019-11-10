@@ -13,9 +13,7 @@
   }
 
   .title-section {
-    height: 100vh;
-    max-height: 650px;
-    min-height: 600px;
+    height: 650px;
     position: relative;
 
     .cloud {
@@ -103,7 +101,9 @@
     }    
 
     .stats {
+      margin: auto;
       width: 75%;
+      max-width: 900px;
       position: absolute;
       bottom: -10%;
       left: 50%;
@@ -176,6 +176,7 @@
 
 #sponsors-content {
   width: 100%;
+  max-width: 900px;
 }
 
 #sponsors-content > .title {
@@ -211,16 +212,23 @@
 
 /* Mobile */
 @media (max-width: 767px) {
+  #sponsors-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   #sponsors-list {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     padding-bottom: 10%;
+    width: 93%;
   }
 
   #sponsors-content > .title {
-    font-size: 2.4em;
+    font-size: 2.8em;
   }
 
   .logo-header {
@@ -248,6 +256,10 @@
 
   #sponsor .benefits-section {
     margin: 40em auto 1.5em;
+  }
+
+  #sponsor .title-section {
+    height: 100vh;
   }
 
   #sponsor .title-section #cloud1 {
