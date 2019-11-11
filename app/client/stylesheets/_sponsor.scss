@@ -65,6 +65,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      animation: 1s fadein .3s both;
 
       .sponsor-title {
         color: #FFFFFF;
@@ -116,6 +117,7 @@
       transform: translateX(-50%);
       animation: UpDownDesktop 3s ease-in-out infinite;
       text-align: center;
+      animation: 1s fadein .6s both;
 
       .robot {
         width: 100%;
@@ -129,6 +131,7 @@
     margin: 7.5em auto 1.5em;
     font-family: "Catamaran", sans-serif;
     font-weight: 400;
+    animation: 1s fadein 1s both;
 
     .benefits-grid {
       margin-top: 2em;
