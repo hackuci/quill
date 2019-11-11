@@ -190,10 +190,16 @@
 
   .menu-item-active {
     color: inherit;
-    box-shadow: inset 0px 0px 0px 2px #827cdf;
+    box-shadow: inset 0px 0px 0px 2px #827cdf;   
+    border: 4px solid white;
     background-color: #827cdf;
     padding: 5px 15px;
     border-radius: 25px;
+  }
+
+  .menu-item-active:hover { 
+    background-color: #a5a2ff !important;
+    box-shadow: none !important; 
   }
 
   .menu-item--sponsor {
