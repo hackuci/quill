@@ -156,7 +156,7 @@ angular.module('reg')
       }
 
       function minorsAreAllowed() {
-        return Settings.data.allowMinors;
+        return Settings.allowMinors;
       }
 
       function minorsValidation() {
@@ -175,7 +175,6 @@ angular.module('reg')
 
         // Semantic-UI form validation
         $('.ui.form').form({
-          inline: true,
           fields: {
             name: {
               identifier: 'name',
@@ -204,21 +203,29 @@ angular.module('reg')
                 }
               ]
             },
-            description: {
-              identifier: 'description',
+            question1: {
+              identifier: 'question1',
               rules: [
                 {
                   type: 'empty',
-                  prompt: 'Please describe yourself in at least a word or two.'
+                  prompt: 'Please type your response here.'
+                },
+                {
+                  type: 'minLength[100]',
+                  prompt: 'Your response must be at least 100 characters.'
+                },
+                {
+                  type: 'maxLength[1500]',
+                  prompt: 'Your response must be at most 1500 characters.'
                 }
               ]
             },
-            essay: {
-              identifier: 'essay',
+            question2: {
+              identifier: 'question2',
               rules: [
                 {
                   type: 'empty',
-                  prompt: 'Please type your resonse here.'
+                  prompt: 'Please type your response here.'
                 },
                 {
                   type: 'minLength[100]',
@@ -262,17 +269,26 @@ angular.module('reg')
           })
       }
 
-      $scope.activateCharCount = false
+      $scope.activateCharCount1 = false;
+      $scope.activateCharCount2 = false;
 
       /* Watching for character changes to trigger error only 
        if the user has reach a 100 characters at least once */
-      $scope.$watch(
-        "user.profile.essay.length",
-        function (newValue, oldValue){
-          if (!$scope.activateCharCount && newValue >= 100)
-            $scope.activateCharCount = true
-        }
-      );
+       $scope.$watch(
+        "user.profile.question1.length",
+          function (newValue, oldValue){
+            if (!$scope.activateCharCount1 && newValue >= 100)
+              $scope.activateCharCount1 = true
+          }
+        );
+
+       $scope.$watch(
+        "user.profile.question2.length",
+          function (newValue, oldValue){
+            if (!$scope.activateCharCount2 && newValue >= 100)
+              $scope.activateCharCount2 = true
+          }
+        );
 
       $scope.submitForm = function(){
         if ($('.ui.form').form('is valid')){
