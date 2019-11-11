@@ -331,11 +331,11 @@ angular.module('reg')
                 type: 'link',
                 text: user.profile.portfolio
               },{
-                name: 'Description',
-                value: user.profile.description
+                name: 'What is your favorite memory from a hackathon? If you have not been, what is something that you are looking forward to at your first one?',
+                value: user.profile.question1
               },{
-                name: 'Essay',
-                value: user.profile.essay
+                name: 'What would you do if the power goes out at HackUCI?',
+                value: user.profile.question2
               },{
                 name: 'Resume',
                 value: 'openResume',

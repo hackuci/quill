@@ -209,20 +209,21 @@
 
       <div class="field">
         <label>
-          I would describe myself as a...
-          <span class="required">*</span>
+            What is your favorite memory from a hackathon? If you have not been, what is something that you are looking forward to at your first one?
+            <span class="required">*</span>
         </label>
-        <input type="text"
-               placeholder="Designer, Data Scientist, iOS Wizard, Hacker Extraordinaire"
-               ng-model="selectedUser.profile.description">
+        <textarea ng-model="selectedUser.profile.question1"
+          name="essay"
+          placeholder="Please enter your response here (100 chars min, 1500 max)">
+        </textarea>
       </div>
 
       <div class="field">
         <label>
-            What would you like to learn or get out of HackUCI?
+            What would you do if the power goes out at HackUCI?
             <span class="required">*</span>
         </label>
-        <textarea ng-model="selectedUser.profile.essay"
+        <textarea ng-model="selectedUser.profile.question2"
           name="essay"
           placeholder="Please enter your response here (100 chars min, 1500 max)">
         </textarea>
