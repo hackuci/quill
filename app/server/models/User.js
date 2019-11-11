@@ -48,12 +48,6 @@ var profile = {
     }
   },
 
-  description: {
-    type: String,
-    min: 0,
-    max: 300
-  },
-
   linkedin: {
     type: String,
     min: 0,
@@ -66,7 +60,13 @@ var profile = {
     max: 100
   },
 
-  essay: {
+  question1: {
+    type: String,
+    min: 0,
+    max: 1500
+  },
+
+  question2: {
     type: String,
     min: 0,
     max: 1500

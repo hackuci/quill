@@ -138,7 +138,7 @@
                 <option value="2022">2022</option>
                 <option value="2023">2023</option>
                 <option value="later">Later than 2023</option>
-                <option value="grad">I am a graduate student</option>
+                <option value="graduate">I am a graduate student</option>
               </select>
             </div>
           </div>
@@ -168,47 +168,68 @@
             </div>
           </div>
 
-          <div class="field">
-            <label>
-              I would describe myself as a... <span class="required">*</span>
-            </label>
-            <input
-              type="text"
-              name="description"
-              placeholder="Designer, Data Scientist, iOS Wizard, Hacker Extraordinaire"
-              ng-model="user.profile.description"
-            />
-          </div>
-
           <div
             class="field"
-            ng-class="{error: user.profile.essay.length > 1500}"
+            ng-class="{error: user.profile.question1.length > 1500}"
           >
             <label>
-              What would you like to learn or get out of HackUCI?
+              What is your favorite memory from a hackathon? If you have not been, what is something that you are looking forward to at your first one?
               <span class="required">*</span>
             </label>
 
             <textarea
-              ng-model="user.profile.essay"
-              name="essay"
+              ng-model="user.profile.question1"
+              name="question1"
               placeholder="Please enter your response here (100 chars min, 1500 max)"
-              ng-class="{'error': user.profile.essay.length > 1500}"
+              ng-class="{'error': user.profile.question1.length > 1500}"
             >
             </textarea>
 
             <div class="essay-feedback-container">
               <span
-                ng-show="activateCharCount && (user.profile.essay.length > 1500 || user.profile.essay.length < 100)"
+                ng-show="activateCharCount1 && (user.profile.question1.length > 1500 || user.profile.question1.length < 100)"
                 class="error-red-color"
-                >The essay length must be between 100 and 1500 characters.</span
+                >The response length must be between <span class="numbers">100</span> and <span class="numbers">1500</span> characters.</span
               >
 
               <div
                 class="essay-character-count dark-purple-text"
-                ng-class="{'error-red-color': user.profile.essay.length > 1500}"
+                ng-class="{'error-red-color': user.profile.question2.length > 1500}"
               >
-              <span class="numbers">{{ user.profile.essay.length }}</span>/<span class="numbers">1500</span>
+                <span class="numbers">{{ user.profile.question1.length }}</span>/<span class="numbers">1500</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="field"
+            ng-class="{error: user.profile.question2.length > 1500}"
+          >
+            <label>
+              What would you do if the power goes out at HackUCI? 
+              <span class="required">*</span>
+            </label>
+
+            <textarea
+              ng-model="user.profile.question2"
+              name="question2"
+              placeholder="Please enter your response here (100 chars min, 1500 max)"
+              ng-class="{'error': user.profile.question2.length > 1500}"
+            >
+            </textarea>
+
+            <div class="essay-feedback-container">
+              <span
+                ng-show="activateCharCount2 && (user.profile.question2.length > 1500 || user.profile.question2.length < 100)"
+                class="error-red-color"
+                >The response length must be between <span class="numbers">100</span> and <span class="numbers">1500</span> characters.</span
+              >
+
+              <div
+                class="essay-character-count dark-purple-text"
+                ng-class="{'error-red-color': user.profile.question2.length > 1500}"
+              >
+              <span class="numbers">{{ user.profile.question2.length }}</span>/<span class="numbers">1500</span>
               </div>
             </div>
           </div>
