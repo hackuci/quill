@@ -4,12 +4,12 @@
     still need to change the border-bottom color to correspond to their headers and the
     'Apply' needs to have the gradient color, hex code should be from #7ce0ff to #e2a1e3
   -->
-  <div class="divided title">Apply</div>
+  <div class="divided title apply-title">Apply</div>
 
   <div class="ui stackable page grid bg">
     <div class="column">
       <form class="ui form">
-        <div class="divided title font">Basic Information</div>
+        <div class="divided title font apply-subtitle">Basic Information</div>
 
         <fieldset ng-disabled="!regIsOpen">
           <div class="two fields">
@@ -69,7 +69,7 @@
 
           <br />
 
-          <div class="divided title font">School Information</div>
+          <div class="divided title font apply-subtitle">School Information</div>
 
           <div class="field" ng-show="autoFilledSchool">
             <label> School <span class="required">*</span> </label>
@@ -145,7 +145,7 @@
 
           <br />
 
-          <div class="divided title font">Profile Information</div>
+          <div class="divided title font apply-subtitle">Profile Information</div>
 
           <div class="two fields">
             <div class="field">
@@ -208,14 +208,14 @@
                 class="essay-character-count dark-purple-text"
                 ng-class="{'error-red-color': user.profile.essay.length > 1500}"
               >
-                {{ user.profile.essay.length }}/1500
+              <span class="numbers">{{ user.profile.essay.length }}</span>/<span class="numbers">1500</span>
               </div>
             </div>
           </div>
 
           <div class="field">
             <label>
-              Resume (PDF, 0.5 MB max) <span class="required">*</span>
+              Resume (PDF, <span class="numbers">0.5</span> MB max) <span class="required">*</span>
             </label>
             <div
               class="resume-dropzone center rounded-border"
@@ -224,7 +224,7 @@
             >
               <span ng-show="showResumeDropzoneIcon">
                 <i class="fa fa-upload white" aria-hidden="true"></i>
-                <p>DRAG AND DROP</p>
+                <p class="white-text">DRAG AND DROP</p>
               </span>
               <div class="fallback">
                 <input name="file" type="file" accept="application/pdf" />
@@ -233,13 +233,13 @@
           </div>
 
           <div class="field" ng-hide="isUciStudent">
-            <p>
+            <p class="white-text">
               Because of limitations imposed by UCI, we are not legally allowed
-              to host minors (those under 18) for HackUCI 2020. Checking the box
-              below affirms that you are or will be 18 years or older by
-              January 31st, 2020.
+              to host minors (those under <span class="numbers">18</span>) for HackUCI <span class="numbers">2020</span>. Checking the box
+              below affirms that you are or will be <span class="numbers">18</span> years or older by
+              January <span class="numbers">31</span>st, <span class="numbers">2020</span>.
             </p>
-            <p>
+            <p class="white-text">
               <strong>
                 We will be checking ID. If you are a minor, you will be turned
                 away at the door.
@@ -252,7 +252,8 @@
                 id="adult"
                 ng-model="user.profile.adult"
               />
-              <label class="adult-checkbox" for="adult">I am 18 or older.</label>
+              
+              <label class="adult-checkbox" for="adult">I am <span class="numbers">18</span> or older. <span class="required">*</span></label>
             </div>
           </div>
 
@@ -265,7 +266,7 @@
               ng-class="{'disabled': submitButtonDisabled}"
               ng-click="submitForm()"
             >
-              Submit
+              SUBMIT
             </button>
           </div>
         </fieldset>

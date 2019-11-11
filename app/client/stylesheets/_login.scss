@@ -4,7 +4,8 @@
   background: linear-gradient(#91dfe1, #cca2ff);
   background-size: cover;
   background-position: center center;
-  font-family: 'Catamaran Bold', sans-serif;
+  font-family: 'Catamaran', sans-serif;
+  font-weight: 400;
 
   &::before {
     content: "";
@@ -115,7 +116,7 @@
 
       .button {
         color: #ffffff;
-        font-weight: 300;
+        font-family: "Catamaran", sans-serif;
         font-size: 0.95em;
         letter-spacing: 0.07em;
         border-radius: 25px;
