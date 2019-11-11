@@ -65,7 +65,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      animation: 1s fadein .3s both;
+      animation: 1s fadein .2s both;
 
       .sponsor-title {
         color: #FFFFFF;
@@ -107,23 +107,27 @@
       }
     }    
 
-    .stats {
-      margin: auto;
-      width: 75%;
-      max-width: 900px;
-      position: absolute;
-      bottom: -10%;
-      left: 50%;
-      transform: translateX(-50%);
-      animation: UpDownDesktop 3s ease-in-out infinite;
-      text-align: center;
-      animation: 1s fadein .6s both;
-
-      .robot {
-        width: 100%;
-        content: url("../../assets/images/building-blocks/desktop_robo.png");
+    .fade-in {
+      animation: 1s fadein .5s both;
+ 
+      .stats {
+        margin: auto;
+        width: 75%;
+        max-width: 900px;
+        position: absolute;
+        bottom: -10%;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: UpDownDesktop 3s ease-in-out infinite;
+        text-align: center;
+  
+        .robot {
+          width: 100%;
+          content: url("../../assets/images/building-blocks/desktop_robo.png");
+        }
       }
     }
+    
   }
 
   .benefits-section {
@@ -255,7 +259,7 @@
     margin-bottom: 7%;
   }
 
-  #sponsor .title-section .stats {
+  #sponsor .title-section .fade-in .stats {
     animation: UpDownMobile 3s ease-in-out infinite;
     .robot {
       width: 100%;
@@ -296,7 +300,7 @@
     display: none;
   }
 
-  #sponsor .title-section .stats {
+  #sponsor .title-section .fade-in .stats {
     animation: UpDownTablet 3s ease-in-out infinite;
     .robot {
       width: 80%;
