@@ -12,9 +12,9 @@
 
     <div class="content-side">
       <div class="dashboard-content">
-        <div class="divided title">Dashboard</div>
+        <div class="divided title letters">Dashboard</div>
         <div class="ui status segment seg-box">
-          <div class="small title dark-purple-text text">Your status</div>
+          <div class="small title dark-purple-text text fix-letter">Your status</div>
 
           <div
             class="state"
@@ -38,7 +38,7 @@
             ng-class="settings.timeClose"
             ng-if="!dashState('admittedAndCanConfirm') || !dashState('admittedAndCannotConfirm') || !dashState('confirmed') || !dashState('declined')"
           >
-            <strong> Registration Deadline: </strong> {{ timeClose }}
+            <b> Registration Deadline: </b> {{ timeClose }}
           </div>
 
           <div
@@ -46,7 +46,7 @@
             ng-class="settings.timeConfirm"
             ng-if="dashState('admittedAndCanConfirm') || dashState('admittedAndCannotConfirm') || dashState('confirmed') || dashState('declined')"
           >
-            <strong> Confirmation Deadline: </strong> {{ timeConfirm }}
+            <b> Confirmation Deadline: </b> {{ timeConfirm }}
           </div>
 
           <div ng-if="dashState('unverified')" class="description dark-purple-text">

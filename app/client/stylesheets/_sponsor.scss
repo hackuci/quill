@@ -1,11 +1,11 @@
 #sponsor {
   background: linear-gradient(#91dfe1, #cca2ff);
-  font-family: "Catamaran Bold", sans-serif;
+  font-family: "Catamaran", sans-serif;
   overflow-x: hidden;
 
   .subtitle {
     text-align: center;
-    font-family: "Catamaran Bold", sans-serif;
+    font-family: "Catamaran", sans-serif;
     color: #FFFFFF;
     font-size: 2.2em;
     letter-spacing: 1px;
@@ -69,9 +69,9 @@
       .sponsor-title {
         color: #FFFFFF;
         font-size: 3em;
-        font-family: "Catamaran Bold", sans-serif;
+        font-family: "Catamaran", sans-serif;
         display: inline;
-        font-weight: bold;
+        font-weight: 600;
         letter-spacing: 1px;
         line-height: 1.2em;
 
@@ -91,16 +91,17 @@
         display: inline-block;
         background-color: #827CDF;
         color: #FFFFFF;
-        box-shadow: inset 0px 0px 0px 2px #827cdf;
-        padding: .5em 1em;
+        box-shadow: inset 0px 0px 0px 4px #ffffff;
+        padding: .6em 1.2em;
         border-radius: 25px;
         transition: all 0.2s ease;
-        font-family: "Catamaran Bold", sans-serif;
-        font-size: 1.2em;
+        font-family: "Catamaran", sans-serif;
+        font-size: 1.4em;
       }
 
       .sponsor-btn:hover {
-        box-shadow: inset 0px 0px 0px 2px #ffffff;
+        background-color: #a5a2ff;
+        
         cursor: pointer;
       }
     }    
@@ -126,7 +127,8 @@
   .benefits-section {
     width: 80%;
     margin: 7.5em auto 1.5em;
-    font-family: "Catamaran Bold", sans-serif;
+    font-family: "Catamaran", sans-serif;
+    font-weight: 400;
 
     .benefits-grid {
       margin-top: 2em;
@@ -159,7 +161,7 @@
 
   .footer {
     background-color: #FFFFFF;
-    font-family: "Catamaran Bold", sans-serif;
+    font-family: "Catamaran", sans-serif;
     color: #827cdf;
     text-align: center;
     padding: 1.2em 0;
@@ -169,6 +171,7 @@
     a {
       color: #7069b1;
       cursor: pointer;
+      font-weight: 500;
     }
   }
 }
