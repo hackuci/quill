@@ -4,6 +4,10 @@
 	align-items: center;
 }
 
+.letters {
+    font-family: 'Catamaran', sans-serif;
+  }
+
 .center-left {
 	display: flex;
 	align-items: center;
@@ -47,8 +51,40 @@
 	color: #e2a1e3 !important;
 }
 
+.white-text {
+	color: #ffffff !important;
+}
+
+.purple-text {
+	color: #827cdf !important;
+}
+
+.dark-purple-text {
+	color: #7069b1 !important;
+}
+
 .dark-purple-bg {
-	background: #8e88cf !important;
+	background: #7069b1 !important;
+}
+
+.purple-bg {
+	background: #827cdf !important;
+}
+
+.red-bg {
+	background:#F26C4F !important;
+}
+
+.light-blue-bg {
+	background: #80beef !important;
+}
+
+.box-shadow { 
+  box-shadow: 3px 10px 18px rgba(0, 0, 0, 0.1);
+}
+
+.white-text {
+	color: #FFFFFF !important;
 }
 
 /* Resume Dropzone */
@@ -150,3 +186,11 @@
 		transform: rotate(360deg);
 	}
 }
+
+// Color Variables
+$white: #ffffff;
+$cyan: #91dfe1;
+$pink: #cca2ff;
+$lightPurple: #827cdf;
+$darkPurple: #7069b1;
+$yellow: #f7fb8f;

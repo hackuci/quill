@@ -1,7 +1,7 @@
 @import 'branding';
 @import 'custom';
-$font-body: 'Lato', 'Helvetica Neue', 'Helvetica', sans-serif;
-$font-header: 'Montserrat', 'Helvetica Neue', 'Helvetica', sans-serif;
+$font-body: 'Rubik', 'Helvetica Neue', 'Helvetica', sans-serif;
+$font-header: 'Rubik', 'Montserrat', 'Helvetica Neue', 'Helvetica', sans-serif;
 
 // Login screen variables
 $login-bg-color: $secondary;
@@ -50,18 +50,23 @@ $brand-tertiary: $tertiary;
 @import 'checkin';
 @import 'expo';
 @import 'recruit';
+@import 'reset';
 
 html,
 body {
   height: 100% !important;
   width: 100%;
   font-size: 1.02em;
-  background: linear-gradient(to right, #2a2a2a, #191919);
+  background: linear-gradient(#91dfe1, #cca2ff);
+
+  .numbers {
+    font-family: 'Open Sans', 'Catamaran';
+  }
 }
 
 body {
   margin: 0;
-  font-family: 'Rubik', 'Lato', 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-family: 'Catamaran', 'Catamaran Bold', 'Catamaran SemiBold', sans-serif !important;
   font-weight: 300;
 
   > .container {

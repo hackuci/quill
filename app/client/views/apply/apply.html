@@ -4,12 +4,12 @@
     still need to change the border-bottom color to correspond to their headers and the
     'Apply' needs to have the gradient color, hex code should be from #7ce0ff to #e2a1e3
   -->
-  <div class="divided title">Apply</div>
+  <div class="divided title apply-title">Apply</div>
 
   <div class="ui stackable page grid bg">
     <div class="column">
       <form class="ui form">
-        <div class="divided title blue font">Basic Information</div>
+        <div class="divided title font apply-subtitle">Basic Information</div>
 
         <fieldset ng-disabled="!regIsOpen">
           <div class="two fields">
@@ -69,7 +69,7 @@
 
           <br />
 
-          <div class="divided title lilac font">School Information</div>
+          <div class="divided title font apply-subtitle">School Information</div>
 
           <div class="field" ng-show="autoFilledSchool">
             <label> School <span class="required">*</span> </label>
@@ -133,18 +133,19 @@
               <label> Graduation Year <span class="required">*</span> </label>
               <select name="year" ng-model="user.profile.graduationYear">
                 <option value="">Graduation Year</option>
-                <option value="2019">2019</option>
                 <option value="2020">2020</option>
                 <option value="2021">2021</option>
                 <option value="2022">2022</option>
-                <option value="later">Later than 2022</option>
+                <option value="2023">2023</option>
+                <option value="later">Later than 2023</option>
+                <option value="graduate">I am a graduate student</option>
               </select>
             </div>
           </div>
 
           <br />
 
-          <div class="divided title pink font">Profile Information</div>
+          <div class="divided title font apply-subtitle">Profile Information</div>
 
           <div class="two fields">
             <div class="field">
@@ -167,54 +168,75 @@
             </div>
           </div>
 
-          <div class="field">
-            <label>
-              I would describe myself as a... <span class="required">*</span>
-            </label>
-            <input
-              type="text"
-              name="description"
-              placeholder="Designer, Data Scientist, iOS Wizard, Hacker Extraordinaire"
-              ng-model="user.profile.description"
-            />
-          </div>
-
           <div
             class="field"
-            ng-class="{error: user.profile.essay.length > 1500}"
+            ng-class="{error: user.profile.question1.length > 1500}"
           >
             <label>
-              What would you like to learn or get out of HackUCI?
+              What is your favorite memory from a hackathon? If you have not been, what is something that you are looking forward to at your first one?
               <span class="required">*</span>
             </label>
 
             <textarea
-              ng-model="user.profile.essay"
-              name="essay"
+              ng-model="user.profile.question1"
+              name="question1"
               placeholder="Please enter your response here (100 chars min, 1500 max)"
-              ng-class="{'error': user.profile.essay.length > 1500}"
+              ng-class="{'error': user.profile.question1.length > 1500}"
             >
             </textarea>
 
             <div class="essay-feedback-container">
               <span
-                ng-show="activateCharCount && (user.profile.essay.length > 1500 || user.profile.essay.length < 100)"
+                ng-show="activateCharCount1 && (user.profile.question1.length > 1500 || user.profile.question1.length < 100)"
                 class="error-red-color"
-                >The essay length must be between 100 and 1500 characters.</span
+                >The response length must be between <span class="numbers">100</span> and <span class="numbers">1500</span> characters.</span
               >
 
               <div
-                class="essay-character-count"
-                ng-class="{'error-red-color': user.profile.essay.length > 1500}"
+                class="essay-character-count dark-purple-text"
+                ng-class="{'error-red-color': user.profile.question2.length > 1500}"
               >
-                {{ user.profile.essay.length }}/1500
+                <span class="numbers">{{ user.profile.question1.length }}</span>/<span class="numbers">1500</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="field"
+            ng-class="{error: user.profile.question2.length > 1500}"
+          >
+            <label>
+              What would you do if the power goes out at HackUCI? 
+              <span class="required">*</span>
+            </label>
+
+            <textarea
+              ng-model="user.profile.question2"
+              name="question2"
+              placeholder="Please enter your response here (100 chars min, 1500 max)"
+              ng-class="{'error': user.profile.question2.length > 1500}"
+            >
+            </textarea>
+
+            <div class="essay-feedback-container">
+              <span
+                ng-show="activateCharCount2 && (user.profile.question2.length > 1500 || user.profile.question2.length < 100)"
+                class="error-red-color"
+                >The response length must be between <span class="numbers">100</span> and <span class="numbers">1500</span> characters.</span
+              >
+
+              <div
+                class="essay-character-count dark-purple-text"
+                ng-class="{'error-red-color': user.profile.question2.length > 1500}"
+              >
+              <span class="numbers">{{ user.profile.question2.length }}</span>/<span class="numbers">1500</span>
               </div>
             </div>
           </div>
 
           <div class="field">
             <label>
-              Resume (PDF, 0.5 MB max) <span class="required">*</span>
+              Resume (PDF, <span class="numbers">0.5</span> MB max) <span class="required">*</span>
             </label>
             <div
               class="resume-dropzone center rounded-border"
@@ -223,7 +245,7 @@
             >
               <span ng-show="showResumeDropzoneIcon">
                 <i class="fa fa-upload white" aria-hidden="true"></i>
-                <p>DRAG AND DROP</p>
+                <p class="white-text">DRAG AND DROP</p>
               </span>
               <div class="fallback">
                 <input name="file" type="file" accept="application/pdf" />
@@ -232,13 +254,13 @@
           </div>
 
           <div class="field" ng-hide="isUciStudent">
-            <p>
+            <p class="white-text">
               Because of limitations imposed by UCI, we are not legally allowed
-              to host minors (those under 18) for HackUCI 2019. Checking the box
-              below affirms that you are or will be 18 years or older by
-              Feburary 15th, 2019.
+              to host minors (those under <span class="numbers">18</span>) for HackUCI <span class="numbers">2020</span>. Checking the box
+              below affirms that you are or will be <span class="numbers">18</span> years or older by
+              January <span class="numbers">31</span>st, <span class="numbers">2020</span>.
             </p>
-            <p>
+            <p class="white-text">
               <strong>
                 We will be checking ID. If you are a minor, you will be turned
                 away at the door.
@@ -251,7 +273,8 @@
                 id="adult"
                 ng-model="user.profile.adult"
               />
-              <label for="adult">I am 18 or older.</label>
+              
+              <label class="adult-checkbox" for="adult">I am <span class="numbers">18</span> or older. <span class="required">*</span></label>
             </div>
           </div>
 
@@ -260,11 +283,11 @@
           <div class="field">
             <button
               type="submit"
-              class="fluid ui light-purple button"
+              class="fluid ui purple-btn button"
               ng-class="{'disabled': submitButtonDisabled}"
               ng-click="submitForm()"
             >
-              Submit
+              SUBMIT
             </button>
           </div>
         </fieldset>

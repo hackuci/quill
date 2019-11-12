@@ -1,0 +1,217 @@
+#login {
+  height: calc(100% + 49px);
+  width: 100%;
+  background: linear-gradient(#91dfe1, #cca2ff);
+  background-size: cover;
+  background-position: center center;
+  font-family: 'Catamaran Bold', sans-serif;
+
+  &::before {
+    content: "";
+    background: linear-gradient(#91dfe1, #cca2ff);
+    animation: fadeout 0.8s ease-in 0.5s forwards;
+    opacity: 1;
+    width: 100%;
+    height: calc(100% + 49px);
+  }
+
+  > .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: inherit;
+
+    > .content {
+      max-width: 320px;
+      margin: 15% auto 0;
+
+      .logo-header-container {
+        height: 125px;
+        margin-top: 0;
+        margin-bottom: 5%;
+        animation: fadein 0.5s both;
+        animation-delay: 0.15s;
+      }
+
+      .logo-header {
+        height: 125px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 100%;
+        text-align: center;
+        transition: all 0.2s ease;
+      }
+
+      .logo-cog {
+        animation: spin 12s linear infinite;
+      }
+
+      .logo-header > img {
+        height: 100%;
+      }
+
+      .ui.small.error.message {
+        box-shadow: none;
+        margin-top: 0;
+      }
+
+      .segment {
+        border-radius: 15px;
+        padding: 1.5em 1.75em;
+        border: none;
+        margin: 0;
+        background: #ffffff;
+        animation: fadein 0.5s both;
+        animation-delay: 0.2s;
+      }
+
+      .ui.login-password .field:nth-child(1) {
+        animation: fadein 0.5s both;
+        animation-delay: 0.3s;
+      }
+
+      .ui.login-password .field:nth-child(2) {
+        animation: fadein 0.5s both;
+        animation-delay: 0.35s;
+      }
+
+      .ui.login-password .field:nth-child(3) {
+        animation: fadein 0.5s both;
+        animation-delay: 0.4s;
+      }
+
+      .ui:not(.login-password) .field {
+        animation: fadein 0.5s both;
+        animation-delay: 0.45s;
+      }
+
+      .ui.form .field > label {
+        font-weight: 300;
+        font-size: 0.8em;
+        letter-spacing: 0.07em;
+      }
+
+      .ui.form input[type="email"],
+      .ui.form input[type="password"] {
+        padding: 0 0 .5em;
+        border-style: solid;
+        border-width: 0 0 .1em 0;
+        border-color: #827cdf;
+        border-radius: 0;
+      }
+
+      .ui.form input[type="email"]:focus,
+      .ui.form input[type="password"]:focus {
+        border-style: solid;
+        border-width: 0 0 .1em 0;
+        border-color: #9a96e3;
+        border-radius: 0;
+      }
+
+      .label-text {
+        color: #827cdf;
+      }
+
+      .button {
+        color: #ffffff;
+        font-weight: 300;
+        font-size: 0.95em;
+        letter-spacing: 0.07em;
+        border-radius: 25px;
+        transition: background 0.2s ease;
+
+        &.login {
+          background: #827cdf;
+        }
+
+        &.login:hover {
+          opacity: .8;
+        }
+
+        &.register {
+          background: #cca2ff;
+        }
+
+        &.register:hover {
+          opacity: .8;
+        }
+      }
+
+      .forgot {
+        text-align: center;
+        font-weight: 300;
+        font-size: 0.8em;
+        letter-spacing: 0.07em;
+        animation: fadein 0.5s both;
+        animation-delay: 0.5s;
+        color: #827cdf;
+
+        #forget-password {
+          color: #827cdf;
+        }
+      }
+
+      #login-or-register {
+        color: #827cdf;
+      }
+    }
+
+    .break {
+      margin-bottom: 1.25em;
+    }
+
+    .cube {
+      // position: relative;
+      width: 100%;
+      animation: fadein 1s both;
+      
+      .login-cube-container {
+        width: 100%;
+        text-align: center;
+        position: relative;
+
+        .login-cube {
+          width: 100%;
+        }
+
+        .cube-cube {
+          position: absolute;
+          animation: MoveUpDown 2.5s ease-in-out infinite;
+          width: 55%;
+          top: 25%;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+  }
+
+  /* Mobile */
+  @media (max-width: 767px) {
+    > .reset-container {
+      top: 40%;
+    }
+
+    > .container>.content .segment {
+      margin: 10% 5% 0;
+    }
+
+    >.container .cube .login-cube-container .login-cube {
+      width: 90%;
+    }
+
+    >.container .cube .login-cube-container .cube-cube {
+      width: 50%;
+    }
+  }
+}
+
+@keyframes MoveUpDown {
+  0%, 100% {
+    top: 24%;
+  }
+  50% {
+    top: 26%;
+  }
+}

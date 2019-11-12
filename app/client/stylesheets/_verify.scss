@@ -1,11 +1,30 @@
 .verify.page {
   padding-top: 4em;
+  color: #7069b1;
+  font-family: 'Catamaran Bold', sans-serif;
+
+  .email-title {
+    color: #FFFFFF;
+  }
+
   .segment {
     padding: 36px;
     padding-top: 70px;
     max-width: 300px;
     margin: 0 auto;
     text-align: center;
+    border-radius: 30px;
+    border: none;
+    font-family: 'Catamaran Bold', sans-serif;
+
+    .btn {
+      color: #ffffff !important;
+      font-weight: normal;
+      border-radius: 30px;
+      font-family: "Catamaran Bold", sans-serif;
+      background: #7069B1;
+    }
+
     .icon {
       font-size: 5em;
       margin-bottom: 36px;

@@ -118,12 +118,28 @@ UserController.loginWithPassword = function(email, password, callback){
 };
 
 /**
- * Create a new user given an email and a password.
+ * Creates and validates a new user given an email, password and profile.
  * @param  {String}   email    User's email.
- * @param  {String}   password [description]
+ * @param  {String}   password User's password
+ * @param  {Object}   profile  Profile object
  * @param  {Function} callback args(err, user)
  */
-UserController.createUser = function(email, password, callback) {
+UserController.createValidUser = function(email, password, profile, callback){
+  User.validateProfile(profile, function(err){
+    if (err){
+      return callback({message: 'invalid profile'});
+    }
+    UserController.createUser(email, password, profile, callback);
+  });
+}; 
+
+/**
+ * Create a new user given an email and a password.
+ * @param  {String}   email    User's email.
+ * @param  {String}   password User's password.
+ * @param  {Function} callback args(err, user)
+ */
+UserController.createUser = function(email, password, profile, callback) {
 
   if (typeof email !== "string"){
     return callback({
@@ -143,6 +159,9 @@ UserController.createUser = function(email, password, callback) {
     var u = new User();
     u.email = email;
     u.password = User.generateHash(password);
+    u.lastUpdated = Date.now();
+    u.profile = profile;
+    u.status.completedProfile = true;
     u.save(function(err){
       if (err){
         // Duplicate key error codes

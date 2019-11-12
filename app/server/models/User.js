@@ -44,14 +44,8 @@ var profile = {
   graduationYear: {
     type: String,
     enum: {
-      values: '2019 2020 2021 2022 later graduate'.split(' '),
+      values: '2020 2021 2022 2023 later graduate'.split(' '),
     }
-  },
-
-  description: {
-    type: String,
-    min: 0,
-    max: 300
   },
 
   linkedin: {
@@ -66,7 +60,13 @@ var profile = {
     max: 100
   },
 
-  essay: {
+  question1: {
+    type: String,
+    min: 0,
+    max: 1500
+  },
+
+  question2: {
     type: String,
     min: 0,
     max: 1500
@@ -375,7 +375,7 @@ schema.statics.validateProfile = function(profile, cb){
     profile.name.length > 0 &&
     profile.adult &&
     profile.school.length > 0 &&
-    ['2019', '2020', '2021', '2022', 'later','graduate'].indexOf(profile.graduationYear) > -1 &&
+    ['2020', '2021', '2022', '2023', 'later','graduate'].indexOf(profile.graduationYear) > -1 &&
     ['M', 'F', 'O', 'N'].indexOf(profile.gender) > -1
     ));
 };

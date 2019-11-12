@@ -64,8 +64,8 @@ angular.module('reg')
           school: '',
           major: '',
           graduationYear: '',
-          description: '',
-          essay: '',
+          question1: '',
+          question2: '',
           adult: false
         },
       };
@@ -129,7 +129,7 @@ angular.module('reg')
       }
 
       function _apply(e){
-        AuthService.register($scope.user.email, $scope.user.password, function success(data) {
+        AuthService.register($scope.user.email, $scope.user.password, $scope.user.profile, function success(data) {
           UserService
             .updateProfile(Session.getUserId(), $scope.user.profile)
             .success(function(data){
@@ -172,7 +172,7 @@ angular.module('reg')
       }
 
       function minorsAreAllowed() {
-        return Settings.data.allowMinors;
+        return Settings.allowMinors;
       }
 
       function minorsValidation() {
@@ -271,17 +271,25 @@ angular.module('reg')
                 }
               ]
             },
-            description: {
-              identifier: 'description',
+            question1: {
+              identifier: 'question1',
               rules: [
                 {
                   type: 'empty',
-                  prompt: 'Please describe yourself in at least a word or two.'
+                  prompt: 'Please type your response here.'
+                },
+                {
+                  type: 'minLength[100]',
+                  prompt: 'Your response must be at least 100 characters.'
+                },
+                {
+                  type: 'maxLength[1500]',
+                  prompt: 'Your response must be at most 1500 characters.'
                 }
               ]
             },
-            essay: {
-              identifier: 'essay',
+            question2: {
+              identifier: 'question2',
               rules: [
                 {
                   type: 'empty',
@@ -319,20 +327,34 @@ angular.module('reg')
         });
       }
 
-      $scope.activateCharCount = false;
+      $scope.activateCharCount1 = false;
+      $scope.activateCharCount2 = false;
 
       /* Watching for character changes to trigger error only 
        if the user has reach a 100 characters at least once */
-      $scope.$watch(
-        "user.profile.essay.length",
+       $scope.$watch(
+        "user.profile.question1.length",
         function (length){
           // Initialize word counter
           if (!length) {
-            $scope.user.profile.essay = '';
+            $scope.user.profile.question1 = '';
           }
 
-          if (!$scope.activateCharCount && length >= 100)
-            $scope.activateCharCount = true
+          if (!$scope.activateCharCount1 && length >= 100)
+            $scope.activateCharCount1 = true
+        }
+      );
+      
+      $scope.$watch(
+        "user.profile.question2.length",
+        function (length){
+          // Initialize word counter
+          if (!length) {
+            $scope.user.profile.question2 = '';
+          }
+
+          if (!$scope.activateCharCount2 && length >= 100)
+            $scope.activateCharCount2 = true
         }
       );
 

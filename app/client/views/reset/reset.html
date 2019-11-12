@@ -1,13 +1,18 @@
 <div id="login">
-  <div class="container reset-container">
+  <div class="container" ng-class="{ 'fade-out': fadeOut }">
     <div class="content">
       <div class="logo-header-container ui grid mobile only tablet only">
         <div class="logo-header logo-cog">
-          <img src="../assets/images/logo-cog.svg" />
+          <img src="../assets/images/logo-cog.svg">
         </div>
         <div class="logo-header">
-          <img src="../assets/images/logo-anteater.svg" />
+          <img src="../assets/images/logo-anteater.svg">
         </div>
+      </div>
+
+      <div class="ui small error message"
+           ng-show="error">
+        {{error}}
       </div>
 
       <div class="ui segment">
@@ -16,7 +21,7 @@
         <div class="ui login-password form">
           <form ng-submit="changePassword()">
             <div class="field">
-              <label>New Password</label>
+              <label class="label-text">New Password</label>
               <input
                 type="password"
                 id="password"
@@ -26,7 +31,7 @@
               />
             </div>
             <div class="field">
-              <label>Confirm Password</label>
+              <label class="label-text">Confirm Password</label>
               <input
                 type="password"
                 id="confirm"
@@ -47,6 +52,13 @@
           </form>
         </div>
       </div>
+      <div class="cube">
+        <div class="login-cube-container">
+          <img class="login-cube" src="../assets/images/building-blocks/projection_login.png">
+          <img class="cube-cube" src="../assets/images/building-blocks/cube.png">
+        </div>
+      </div>
     </div>
+
   </div>
 </div>

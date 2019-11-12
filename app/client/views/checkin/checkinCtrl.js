@@ -182,7 +182,7 @@ angular.module('reg')
       };
 
       function _apply(e){
-        AuthService.createAccount($scope.newUser.email, $scope.newUser.password, function success(user) {
+        AuthService.createAccount($scope.newUser.email, $scope.newUser.password, $scope.newUser.profile, function success(user) {
           UserService
             .updateProfile(user.id, $scope.newUser.profile)
             .success(function(data){

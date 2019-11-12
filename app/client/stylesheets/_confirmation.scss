@@ -1,12 +1,67 @@
 #confirmation {
   color: white;
+  background: linear-gradient(#91dfe1, #cca2ff);
+  font-family: "Catamaran", sans-serif !important;
+  font-size: 1em !important;
+
+  .apply-title {
+    font-weight: 600;
+  }
+
+  .apply-subtitle {
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 300;
+    letter-spacing: 1px;
+    font-size: 1.4em;
+  }
+
+  > .title {
+    color: #ffffff;
+    font-family: "Catamaran", sans-serif;
+  }
+
+  .required {
+    color: red;
+    font-weight: 500;
+  }
+
   .ui.form .field > label {
     color: white;
+    font-family: "Catamaran", sans-serif;
+    font-size: 1em;
   }
+
   .ui.checkbox {
     backface-visibility: unset;
   }
+  
   .ui.checkbox label {
     color: white;
+  }
+
+  .purple-btn {
+    background: #827cdf;
+    color: #ffffff;
+    border-radius: 1em;
+    font-size: 1.2em;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    font-family: 'Catamaran', sans-serif;
+  }
+
+  .purple-btn:hover {
+    opacity: .8;
+  }
+
+  .hover-effect:hover {
+    opacity: .8;
+  }
+
+  input {
+    border-radius: 1em;
+  }
+
+  select {
+    border-radius: 1em;
   }
 }

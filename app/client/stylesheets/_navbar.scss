@@ -2,7 +2,7 @@
 #navbar {
   width: 100%;
   z-index: 999;
-  font-family: "Rubik", sans-serif;
+  font-family: "Catamaran", sans-serif;
   color: white;
   font-weight: 300;
   font-size: 0.8em;
@@ -11,10 +11,16 @@
   .navbar {
     width: 100%;
     height: 100px;
-    background: linear-gradient(to right, #2a2a2a, #191919);
+    position: static;
+    background: transparent;
+    padding-top: 35px;
     display: flex;
     animation: fadein 0.5s both;
     animation-delay: 0.1s;
+    
+    .logo-header {
+      margin-top: 0;
+    }
   }
 
   .navbar-transparent {
@@ -95,12 +101,13 @@
   .menu-item {
     color: rgba(255, 255, 255, 0.95);
     cursor: pointer;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Catamaran", sans-serif;
     font-weight: 300;
     font-size: 1.2em;
     line-height: 2em;
-    border-bottom: 1px solid rgba(255, 255, 255, 0);
     transition: all 0.2s ease;
+    padding: 5px 15px;
+    border-radius: 25px;
 
     i {
       margin-left: 1px;
@@ -108,93 +115,119 @@
   }
 
   #menu-item-home {
-    color: #6fd3f4;
+    color: $white;
+    // color: #6fd3f4;
   }
 
   #menu-item-login {
-    color: #d3a1ff;
+    color: $white;
+    // color: #d3a1ff;
   }
 
   #menu-item-sponsor {
-    color: #f2b3f5;
+    color: $white;
+    // color: #f2b3f5;
   }
 
   #menu-item-welcome {
-    color: #7CE0FF;
+    color: $white;
+    // color: #7CE0FF;
   }
 
   #menu-item-logistic {
-    color: #80BEEF;
+    color: $white;
+    // color: #80BEEF;
   }
 
   #menu-item-corporate {
-    color: #9398E1;
+    color: $white;
+    // color: #9398E1;
   }
 
   #menu-item-market {
-    color: #BB8CE5;
+    color: $white;
+    // color: #BB8CE5;
   }
 
   #menu-item-technology {
-    color: #E2A1E3;
+    color: $white;
+    // color: #E2A1E3;
   }
 
   #menu-item-sponsor-logged-in {
-    color: #b8bbef;
+    color: $white;
+    // color: #b8bbef;
   }
 
   #menu-item-dashboard {
-    color: #99cdf7;
+    color: $white;
+    // color: #99cdf7;
   }
 
   #menu-item-application {
-    color: #c9b0ea;
+    color: $white;
+    // color: #c9b0ea;
   }
 
   #menu-item-logout {
-    color: #e2a1e3;
+    color: $white;
+    // color: #e2a1e3;
   }
   #menu-item-confirmation {
-    color: #daa6e5;
+    color: $white;
+    // color: #daa6e5;
   }
   .menu-item + .menu-item:not(.menu-item--sponsor) {
-    margin-left: 3%;
+    margin-left: 1em;
   }
 
   .menu-item:hover {
     color: inherit;
-    border-bottom: 1px solid;
+    box-shadow: inset 0px 0px 0px 2px #ffffff;
+    padding: 5px 15px;
+    border-radius: 25px;
   }
 
   .menu-item-active {
     color: inherit;
-    border-bottom: 1px solid;
+    box-shadow: inset 0px 0px 0px 2px #827cdf;   
+    border: 4px solid white;
+    background-color: #827cdf;
+    padding: 5px 15px;
+    border-radius: 25px;
+  }
+
+  .menu-item-active:hover { 
+    background-color: #a5a2ff !important;
+    box-shadow: none !important; 
   }
 
   .menu-item--sponsor {
-    border: 1px solid rgba(255, 255, 255, 0.95);
-    border-radius: 25px;
-    padding: 9px 25px;
-    margin-left: 2.5%;
+    margin-left: .7em;
     background-color: transparent;
     transition: all 0.2s ease;
+    color: #827cdf;
+    font-weight: bold;
   }
 
   .menu-item--sponsor.menu-item-active {
     background-color: rgba(255, 255, 255, 0.1);
+    background-color: #ffffff;
+    color: #827cdf;
+    box-shadow: inset 0px 0px 0px 2px #ffffff;
   }
 
   .menu-item--sponsor:hover {
     background-color: white;
-    color: #6b8dd6;
-    border: 1px solid rgba(255, 255, 255, 1);
+    color: #827cdf;
+    box-shadow: inset 0px 0px 0px 2px #ffffff;
   }
 
   .navbar-mobile {
     width: 100%;
     height: 70px;
     padding: 10px 30px;
-    background: linear-gradient(to right, #2a2a2a, #191919);
+    background: transparent;
     display: flex;
     animation: fadein 0.2s both;
     transition: all 0.2s ease;
@@ -250,9 +283,10 @@
     padding-right: 30px !important;
     height: 70px;
     align-items: center;
+    border: none;
     border-radius: 0;
     color: white;
-    background: linear-gradient(to right, #2a2a2a, #191919);
+    background: linear-gradient(to right, #91dfe1, #cca2ff);
   }
 
   .content {
@@ -275,5 +309,6 @@
     display: block;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
+    color: #827cdf;
   }
 }
