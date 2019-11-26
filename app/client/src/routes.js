@@ -188,13 +188,13 @@ angular.module('reg')
           requireLogin: false
         }
       })
-      .state('app.live', {
-        url: "/live",
-        redirectTo: 'app.schedule',
-        data: {
-          requireLogin: false
-        }
-      })
+      // .state('app.live', {
+      //   url: "/live",
+      //   redirectTo: 'app.schedule',
+      //   data: {
+      //     requireLogin: false
+      //   }
+      // })
       .state('app.expoRedirect', {
         url: "/expo",
         redirectTo: 'app.expo',
@@ -202,22 +202,22 @@ angular.module('reg')
           requireLogin: false
         }
       })
-      .state('app.schedule', {
-        url: "/live/schedule",
-        templateUrl: "views/live/schedule.html",
-        controller: 'ScheduleCtrl',
-        data: {
-          requireLogin: false
-        }
-      })
-      .state('app.expo', {
-        url: "/live/expo",
-        templateUrl: "views/live/expo.html",
-        controller: 'ExpoCtrl',
-        data: {
-          requireLogin: false
-        }
-      })
+      // .state('app.schedule', {
+      //   url: "/live/schedule",
+      //   templateUrl: "views/live/schedule.html",
+      //   controller: 'ScheduleCtrl',
+      //   data: {
+      //     requireLogin: false
+      //   }
+      // })
+      // .state('app.expo', {
+      //   url: "/live/expo",
+      //   templateUrl: "views/live/expo.html",
+      //   controller: 'ExpoCtrl',
+      //   data: {
+      //     requireLogin: false
+      //   }
+      // })
       .state('app.recruit', {
         url: "/recruit",
         templateUrl: "views/recruit/recruit.html",
