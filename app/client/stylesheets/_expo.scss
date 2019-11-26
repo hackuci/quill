@@ -51,6 +51,10 @@
     left: 50%;
     transform: translate(-50%, -50%);
     animation: 1s fadein .2s both;
+
+    @media (max-width: 767px) {
+      display: none;
+    }
   }
 
   #bg-tint {
