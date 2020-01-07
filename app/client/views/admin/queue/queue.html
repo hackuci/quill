@@ -58,22 +58,25 @@
     </div>
   </div>
   <div class="ui segment">
-   <div 
-      id="table-container" 
-      class="thirteen wide column">
-        <div class="ui header">
-          Add Users to Queue
-        </div>  
-        <div class="ui form">
-          <div class="field">
-            <textarea
-              ng-model="user.profile.essay"
-              name="essay"
-              placeholder="Please enter your emails(each email in its own line)"
-            >
-            </textarea>
+    <div
+      id="table-container"
+      class-"thirdteen wide column">
+      <div class="ui header">
+        Multi Queue
+      </div>
+      <div class="ui form">
+        <div class="field">
+          <textarea class="ui input" type="text" ng-model="queuelist">
+          </textarea>
+        </div>
+        <div class="field">
+          <div
+            class="ui green button"
+            ng-click="addToQueue()">
+            Add
           </div>
         </div>
+      </div>
     </div>
   </div>
   <div class="ui segment">

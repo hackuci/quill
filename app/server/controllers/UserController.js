@@ -1,17 +1,17 @@
-var _ = require('underscore');
-var User = require('../models/User');
-var Settings = require('../models/Settings');
-var Mailer = require('../services/sendgrid_email');
-var Stats = require('../services/stats');
+var _ = require("underscore");
+var User = require("../models/User");
+var Settings = require("../models/Settings");
+var Mailer = require("../services/sendgrid_email");
+var Stats = require("../services/stats");
 // var Waiver = require('../services/waiver');
 
-var validator = require('validator');
-var moment = require('moment');
+var validator = require("validator");
+var moment = require("moment");
 
 var UserController = {};
 
 // Tests a string if it ends with target s
-function endsWith(s, test){
+function endsWith(s, test) {
   return test.indexOf(s, test.length - s.length) !== -1;
 }
 
@@ -21,27 +21,30 @@ function endsWith(s, test){
  * @param  {Function} callback args(err, true, false)
  * @return {[type]}            [description]
  */
-function canRegister(email, password, callback){
-
-  if (!password || password.length < 6){
-    return callback({ message: "Password must be 6 or more characters."}, false);
+function canRegister(email, password, callback) {
+  if (!password || password.length < 6) {
+    return callback(
+      { message: "Password must be 6 or more characters." },
+      false
+    );
   }
 
   // Check if its within the registration window.
-  Settings.getRegistrationTimes(function(err, times){
+  Settings.getRegistrationTimes(function(err, times) {
     if (err) {
       callback(err);
     }
 
     var now = Date.now();
 
-    if (now < times.timeOpen){
+    if (now < times.timeOpen) {
       return callback({
-        message: "Registration opens in " + moment(times.timeOpen).fromNow() + "!"
+        message:
+          "Registration opens in " + moment(times.timeOpen).fromNow() + "!"
       });
     }
 
-    if (now > times.timeClose){
+    if (now > times.timeClose) {
       return callback({
         message: "Sorry, registration is closed."
       });
@@ -49,7 +52,7 @@ function canRegister(email, password, callback){
 
     if (!validator.isEmail(email)) {
       return callback({
-        message: 'Not a valid email.'
+        message: "Not a valid email."
       });
     }
 
@@ -62,8 +65,8 @@ function canRegister(email, password, callback){
  * @param  {String}   token    auth token
  * @param  {Function} callback args(err, token, user)
  */
-UserController.loginWithToken = function(token, callback){
-  User.getByToken(token, function(err, user){
+UserController.loginWithToken = function(token, callback) {
+  User.getByToken(token, function(err, user) {
     return callback(err, token, user);
   });
 };
@@ -74,24 +77,22 @@ UserController.loginWithToken = function(token, callback){
  * @param  {String}   password Password
  * @param  {Function} callback args(err, token, user)
  */
-UserController.loginWithPassword = function(email, password, callback){
-
-  if (!password || password.length === 0){
+UserController.loginWithPassword = function(email, password, callback) {
+  if (!password || password.length === 0) {
     return callback({
-      message: 'Please enter a password'
+      message: "Please enter a password"
     });
   }
 
-  if (!validator.isEmail(email)){
+  if (!validator.isEmail(email)) {
     return callback({
-      message: 'Invalid email'
+      message: "Invalid email"
     });
   }
 
-  User
-    .findOneByEmail(email)
-    .select('+password')
-    .exec(function(err, user){
+  User.findOneByEmail(email)
+    .select("+password")
+    .exec(function(err, user) {
       if (err) {
         return callback(err);
       }
@@ -114,7 +115,7 @@ UserController.loginWithPassword = function(email, password, callback){
       delete u.password;
 
       return callback(null, token, u);
-  });
+    });
 };
 
 /**
@@ -124,14 +125,14 @@ UserController.loginWithPassword = function(email, password, callback){
  * @param  {Object}   profile  Profile object
  * @param  {Function} callback args(err, user)
  */
-UserController.createValidUser = function(email, password, profile, callback){
-  User.validateProfile(profile, function(err){
-    if (err){
-      return callback({message: 'invalid profile'});
+UserController.createValidUser = function(email, password, profile, callback) {
+  User.validateProfile(profile, function(err) {
+    if (err) {
+      return callback({ message: "invalid profile" });
     }
     UserController.createUser(email, password, profile, callback);
   });
-}; 
+};
 
 /**
  * Create a new user given an email and a password.
@@ -140,8 +141,7 @@ UserController.createValidUser = function(email, password, profile, callback){
  * @param  {Function} callback args(err, user)
  */
 UserController.createUser = function(email, password, profile, callback) {
-
-  if (typeof email !== "string"){
+  if (typeof email !== "string") {
     return callback({
       message: "Email must be a string."
     });
@@ -150,9 +150,8 @@ UserController.createUser = function(email, password, profile, callback) {
   email = email.toLowerCase();
 
   // Check that there isn't a user with this email already.
-  canRegister(email, password, function(err, valid){
-
-    if (err || !valid){
+  canRegister(email, password, function(err, valid) {
+    if (err || !valid) {
       return callback(err);
     }
 
@@ -162,12 +161,15 @@ UserController.createUser = function(email, password, profile, callback) {
     u.lastUpdated = Date.now();
     u.profile = profile;
     u.status.completedProfile = true;
-    u.save(function(err){
-      if (err){
+    u.save(function(err) {
+      if (err) {
         // Duplicate key error codes
-        if (err.name === 'MongoError' && (err.code === 11000 || err.code === 11001)) {
+        if (
+          err.name === "MongoError" &&
+          (err.code === 11000 || err.code === 11001)
+        ) {
           return callback({
-            message: 'An account for this email already exists.'
+            message: "An account for this email already exists."
           });
         }
 
@@ -180,21 +182,32 @@ UserController.createUser = function(email, password, profile, callback) {
         var verificationToken = u.generateEmailVerificationToken();
         Mailer.sendVerificationEmail(email, verificationToken);
 
-        return callback(
-          null,
-          {
-            token: token,
-            user: u
-          }
-        );
+        return callback(null, {
+          token: token,
+          user: u
+        });
       }
-
     });
   });
 };
 
-UserController.getByToken = function (token, callback) {
+UserController.getByToken = function(token, callback) {
   User.getByToken(token, callback);
+};
+
+UserController.getByEmail = function(email, callback) {
+  User.findOneByEmail(email).exec(function(err, user) {
+    if (err) {
+      return callback({ err });
+    }
+    if (!user) {
+      return callback({
+        email: email,
+        message: "We couldn't find you!"
+      });
+    }
+    return callback(null, user);
+  });
 };
 
 /**
@@ -202,7 +215,7 @@ UserController.getByToken = function (token, callback) {
  * It's going to be a lot of data, so make sure you want to do this.
  * @param  {Function} callback args(err, user)
  */
-UserController.getAll = function (callback) {
+UserController.getAll = function(callback) {
   User.find({}, callback);
 };
 
@@ -212,38 +225,36 @@ UserController.getAll = function (callback) {
  * @param  {[type]}   size     size of the page
  * @param  {Function} callback args(err, {users, page, totalPages})
  */
-UserController.getPage = function(query, callback){
+UserController.getPage = function(query, callback) {
   var page = query.page;
   var size = parseInt(query.size);
   var searchText = query.text;
 
   var findQuery = {};
-  if (searchText.length > 0){
+  if (searchText.length > 0) {
     var queries = [];
-    var re = new RegExp(searchText, 'i');
+    var re = new RegExp(searchText, "i");
     queries.push({ email: re });
-    queries.push({ 'profile.name': re });
-    queries.push({ 'profile.school': re });
+    queries.push({ "profile.name": re });
+    queries.push({ "profile.school": re });
 
     findQuery.$or = queries;
   }
 
-  User
-    .find(findQuery)
+  User.find(findQuery)
     .sort({
-      'profile.name': 'asc'
+      "profile.name": "asc"
     })
-    .select('+status.admittedBy')
+    .select("+status.admittedBy")
     .skip(page * size)
     .limit(size)
-    .exec(function (err, users){
-      if (err || !users){
+    .exec(function(err, users) {
+      if (err || !users) {
         return callback(err);
       }
 
-      User.count(findQuery).exec(function(err, count){
-
-        if (err){
+      User.count(findQuery).exec(function(err, count) {
+        if (err) {
           return callback(err);
         }
 
@@ -255,7 +266,6 @@ UserController.getPage = function(query, callback){
           totalPages: Math.ceil(count / size)
         });
       });
-
     });
 };
 
@@ -264,7 +274,7 @@ UserController.getPage = function(query, callback){
  * @param  {String}   id       User id
  * @param  {Function} callback args(err, user)
  */
-UserController.getById = function (id, callback){
+UserController.getById = function(id, callback) {
   User.findById(id, callback);
 };
 
@@ -275,52 +285,52 @@ UserController.getById = function (id, callback){
  * @param  {Object}   profile  Profile object
  * @param  {Function} callback Callback with args (err, user)
  */
-UserController.updateProfileById = function (id, profile, callback){
-
+UserController.updateProfileById = function(id, profile, callback) {
   // Validate the user profile, and mark the user as profile completed
   // when successful.
-  User.validateProfile(profile, function(err){
-
-    if (err){
-      return callback({message: 'invalid profile'});
+  User.validateProfile(profile, function(err) {
+    if (err) {
+      return callback({ message: "invalid profile" });
     }
 
     // Check if its within the registration window.
-    Settings.getRegistrationTimes(function(err, times){
+    Settings.getRegistrationTimes(function(err, times) {
       if (err) {
         callback(err);
       }
 
       var now = Date.now();
 
-      if (now < times.timeOpen){
+      if (now < times.timeOpen) {
         return callback({
-          message: "Registration opens in " + moment(times.timeOpen).fromNow() + "!"
+          message:
+            "Registration opens in " + moment(times.timeOpen).fromNow() + "!"
         });
       }
 
-      if (now > times.timeClose){
+      if (now > times.timeClose) {
         return callback({
           message: "Sorry, registration is closed."
         });
       }
     });
 
-    User.findOneAndUpdate({
-      _id: id
-    },
+    User.findOneAndUpdate(
+      {
+        _id: id
+      },
       {
         $set: {
-          'lastUpdated': Date.now(),
-          'profile': profile,
-          'status.completedProfile': true
+          lastUpdated: Date.now(),
+          profile: profile,
+          "status.completedProfile": true
         }
       },
       {
         new: true
       },
-      callback);
-
+      callback
+    );
   });
 };
 
@@ -331,61 +341,73 @@ UserController.updateProfileById = function (id, profile, callback){
  * @param  {Object}   confirmation  Confirmation object
  * @param  {Function} callback      Callback with args (err, user)
  */
-UserController.updateConfirmationById = function (id, confirmation, callback){
-
-  User.findById(id, function(err, user){
-
-    if(err || !user){
+UserController.updateConfirmationById = function(id, confirmation, callback) {
+  User.findById(id, function(err, user) {
+    if (err || !user) {
       return callback(err);
     }
 
     // Make sure that the user followed the deadline, but if they're already confirmed
     // that's okay.
-    if (Date.now() >= user.status.confirmBy && !user.status.confirmed){
+    if (Date.now() >= user.status.confirmBy && !user.status.confirmed) {
       return callback({
         message: "You've missed the confirmation deadline."
       });
     }
 
     // You can only confirm acceptance if you're admitted and haven't declined.
-    User.findOneAndUpdate({
-      '_id': id,
-      'status.admitted': true,
-      'status.declined': {$ne: true}
-    },
+    User.findOneAndUpdate(
+      {
+        _id: id,
+        "status.admitted": true,
+        "status.declined": { $ne: true }
+      },
       {
         $set: {
-          'lastUpdated': Date.now(),
-          'confirmation': confirmation,
-          'status.confirmed': true,
+          lastUpdated: Date.now(),
+          confirmation: confirmation,
+          "status.confirmed": true
         }
-      }, {
+      },
+      {
         new: true
-      }, function(err, user){
-        if (!err && user && typeof user.confirmation.signatureLiability === 'undefined') {
-          Mailer.sendWaiverEmail(user.email, user.profile.firstname, (err, info) => {
-            if (!err) {
-              User.findOneAndUpdate({
-                '_id': id
-              },
-              {
-                $set: {
-                  'lastUpdated': Date.now(),
-                  'confirmation.signatureLiability': ''
-                }
-              }, {
-                new: true
-              },
-              callback);
-            } else {
-              return callback(err, user);
+      },
+      function(err, user) {
+        if (
+          !err &&
+          user &&
+          typeof user.confirmation.signatureLiability === "undefined"
+        ) {
+          Mailer.sendWaiverEmail(
+            user.email,
+            user.profile.firstname,
+            (err, info) => {
+              if (!err) {
+                User.findOneAndUpdate(
+                  {
+                    _id: id
+                  },
+                  {
+                    $set: {
+                      lastUpdated: Date.now(),
+                      "confirmation.signatureLiability": ""
+                    }
+                  },
+                  {
+                    new: true
+                  },
+                  callback
+                );
+              } else {
+                return callback(err, user);
+              }
             }
-          });
+          );
         } else {
           return callback(err, user);
         }
-      });
-
+      }
+    );
   });
 };
 
@@ -395,25 +417,27 @@ UserController.updateConfirmationById = function (id, confirmation, callback){
  * @param  {String}   id            Id of the user
  * @param  {Function} callback      Callback with args (err, user)
  */
-UserController.declineById = function (id, callback){
-
+UserController.declineById = function(id, callback) {
   // You can only decline if you've been accepted.
-  User.findOneAndUpdate({
-    '_id': id,
-    'verified': true,
-    'status.admitted': true,
-    'status.declined': false
-  },
+  User.findOneAndUpdate(
+    {
+      _id: id,
+      verified: true,
+      "status.admitted": true,
+      "status.declined": false
+    },
     {
       $set: {
-        'lastUpdated': Date.now(),
-        'status.confirmed': false,
-        'status.declined': true
+        lastUpdated: Date.now(),
+        "status.confirmed": false,
+        "status.declined": true
       }
-    }, {
+    },
+    {
       new: true
     },
-    callback);
+    callback
+  );
 };
 
 /**
@@ -421,19 +445,23 @@ UserController.declineById = function (id, callback){
  * @param  {[type]}   token    token
  * @param  {Function} callback args(err, user)
  */
-UserController.verifyByToken = function(token, callback){
-  User.verifyEmailVerificationToken(token, function(err, email){
+UserController.verifyByToken = function(token, callback) {
+  User.verifyEmailVerificationToken(token, function(err, email) {
     if (email) {
-      User.findOneAndUpdate({
-        email: email.toLowerCase()
-      },{
-        $set: {
-          'verified': true
-        }
-      }, {
-        new: true
-      },
-      callback);
+      User.findOneAndUpdate(
+        {
+          email: email.toLowerCase()
+        },
+        {
+          $set: {
+            verified: true
+          }
+        },
+        {
+          new: true
+        },
+        callback
+      );
     }
   });
 };
@@ -441,20 +469,21 @@ UserController.verifyByToken = function(token, callback){
 /**
  * Resend an email verification email given a user id.
  */
-UserController.sendVerificationEmailById = function(id, callback){
+UserController.sendVerificationEmailById = function(id, callback) {
   User.findOne(
     {
       _id: id,
       verified: false
     },
-    function(err, user){
-      if (err || !user){
+    function(err, user) {
+      if (err || !user) {
         return callback(err);
       }
       var token = user.generateEmailVerificationToken();
       Mailer.sendVerificationEmail(user.email, token);
       return callback(err, user);
-  });
+    }
+  );
 };
 
 /**
@@ -463,17 +492,20 @@ UserController.sendVerificationEmailById = function(id, callback){
  * @param  {Function} callback [description]
  * @return {[type]}            [description]
  */
-UserController.sendPasswordResetEmail = function(email, callback){
-  User
-    .findOneByEmail(email)
-    .exec(function(err, user){
-      if (err || !user){
-        return callback(err);
-      }
+UserController.sendPasswordResetEmail = function(email, callback) {
+  User.findOneByEmail(email).exec(function(err, user) {
+    if (err || !user) {
+      return callback(err);
+    }
 
-      var token = user.generateTempAuthToken();
-      Mailer.sendPasswordResetEmail(email, user.profile.firstname, token, callback);
-    });
+    var token = user.generateTempAuthToken();
+    Mailer.sendPasswordResetEmail(
+      email,
+      user.profile.firstname,
+      token,
+      callback
+    );
+  });
 };
 
 /**
@@ -485,31 +517,39 @@ UserController.sendPasswordResetEmail = function(email, callback){
  * @param  {[type]}   newPassword new password
  * @param  {Function} callback    args(err, user)
  */
-UserController.changePassword = function(id, oldPassword, newPassword, callback){
-  if (!id || !oldPassword || !newPassword){
+UserController.changePassword = function(
+  id,
+  oldPassword,
+  newPassword,
+  callback
+) {
+  if (!id || !oldPassword || !newPassword) {
     return callback({
-      message: 'Bad arguments.'
+      message: "Bad arguments."
     });
   }
 
-  User
-    .findById(id)
-    .select('password')
-    .exec(function(err, user){
+  User.findById(id)
+    .select("password")
+    .exec(function(err, user) {
       if (user.checkPassword(oldPassword)) {
-        User.findOneAndUpdate({
-          _id: id
-        },{
-          $set: {
-            password: User.generateHash(newPassword)
-          }
-        }, {
-          new: true
-        },
-        callback);
+        User.findOneAndUpdate(
+          {
+            _id: id
+          },
+          {
+            $set: {
+              password: User.generateHash(newPassword)
+            }
+          },
+          {
+            new: true
+          },
+          callback
+        );
       } else {
         return callback({
-          message: 'Incorrect password'
+          message: "Incorrect password"
         });
       }
     });
@@ -521,42 +561,44 @@ UserController.changePassword = function(id, oldPassword, newPassword, callback)
  * @param  {String}   password    New Password
  * @param  {Function} callback    args(err, user)
  */
-UserController.resetPassword = function(token, password, callback){
-  if (!password || !token){
+UserController.resetPassword = function(token, password, callback) {
+  if (!password || !token) {
     return callback({
-      message: 'Bad arguments'
+      message: "Bad arguments"
     });
   }
 
-  if (password.length < 6){
+  if (password.length < 6) {
     return callback({
-      message: 'Password must be 6 or more characters.'
+      message: "Password must be 6 or more characters."
     });
   }
 
-  User.verifyTempAuthToken(token, function(err, id){
-
-    if(err || !id){
+  User.verifyTempAuthToken(token, function(err, id) {
+    if (err || !id) {
       return callback(err);
     }
 
-    User
-      .findOneAndUpdate({
+    User.findOneAndUpdate(
+      {
         _id: id
-      },{
+      },
+      {
         $set: {
           password: User.generateHash(password)
         }
-      }, function(err, user){
-        if (err || !user){
+      },
+      function(err, user) {
+        if (err || !user) {
           return callback(err);
         }
 
         Mailer.sendPasswordChangedEmail(user.email, user.profile.firstname);
         return callback(null, {
-          message: 'Password successfully reset!'
+          message: "Password successfully reset!"
         });
-      });
+      }
+    );
   });
 };
 
@@ -568,21 +610,24 @@ UserController.resetPassword = function(token, password, callback){
  * @param  {String}   user     User doing the admitting
  * @param  {Function} callback args(err, user)
  */
-UserController.admitUser = function(id, user, callback){
-  Settings.getRegistrationTimes(function(err, times){
-    User
-      .findOneAndUpdate({
+UserController.admitUser = function(id, user, callback) {
+  Settings.getRegistrationTimes(function(err, times) {
+    User.findOneAndUpdate(
+      {
         _id: id
-      },{
+      },
+      {
         $set: {
-          'status.admitted': true,
-          'status.admittedBy': user.email,
-          'status.confirmBy': times.timeConfirm
+          "status.admitted": true,
+          "status.admittedBy": user.email,
+          "status.confirmBy": times.timeConfirm
         }
-      }, {
+      },
+      {
         new: true
       },
-      callback);
+      callback
+    );
   });
 };
 
@@ -594,21 +639,24 @@ UserController.admitUser = function(id, user, callback){
  * @param  {String}   user     User doing the admitting
  * @param  {Function} callback args(err, user)
  */
-UserController.admitUserByEmail = function(email, user, callback){
-  Settings.getRegistrationTimes(function(err, times){
-    User
-      .findOneAndUpdate({
+UserController.admitUserByEmail = function(email, user, callback) {
+  Settings.getRegistrationTimes(function(err, times) {
+    User.findOneAndUpdate(
+      {
         email: email
-      },{
+      },
+      {
         $set: {
-          'status.admitted': true,
-          'status.admittedBy': user.email,
-          'status.confirmBy': times.timeConfirm
+          "status.admitted": true,
+          "status.admittedBy": user.email,
+          "status.confirmBy": times.timeConfirm
         }
-      }, {
+      },
+      {
         new: true
       },
-      callback);
+      callback
+    );
   });
 };
 
@@ -620,18 +668,22 @@ UserController.admitUserByEmail = function(email, user, callback){
  * @param  {String}   user     User checking in this person.
  * @param  {Function} callback args(err, user)
  */
-UserController.checkInById = function(id, user, callback){
-  User.findOneAndUpdate({
-    _id: id
-  },{
-    $set: {
-      'status.checkedIn': true,
-      'status.checkInTime': Date.now()
-    }
-  }, {
-    new: true
-  },
-  callback);
+UserController.checkInById = function(id, user, callback) {
+  User.findOneAndUpdate(
+    {
+      _id: id
+    },
+    {
+      $set: {
+        "status.checkedIn": true,
+        "status.checkInTime": Date.now()
+      }
+    },
+    {
+      new: true
+    },
+    callback
+  );
 };
 
 /**
@@ -642,242 +694,280 @@ UserController.checkInById = function(id, user, callback){
  * @param  {String}   user     User checking in this person.
  * @param  {Function} callback args(err, user)
  */
-UserController.checkOutById = function(id, user, callback){
-  User.findOneAndUpdate({
-    _id: id
-  },{
-    $set: {
-      'status.checkedIn': false
-    }
-  }, {
-    new: true
-  },
-  callback);
+UserController.checkOutById = function(id, user, callback) {
+  User.findOneAndUpdate(
+    {
+      _id: id
+    },
+    {
+      $set: {
+        "status.checkedIn": false
+      }
+    },
+    {
+      new: true
+    },
+    callback
+  );
 };
-
 
 /**
  * [ADMIN ONLY]
  */
- /**
-  * Send the acceptance email to the participant by their ID.
-  * @param  {[type]}   ID    [description]
-  * @param  {Function} callback [description]
-  */
+/**
+ * Send the acceptance email to the participant by their ID.
+ * @param  {[type]}   ID    [description]
+ * @param  {Function} callback [description]
+ */
 UserController.sendAcceptanceEmailById = function(id, callback) {
-   User.findOne(
-     {
-       _id: id,
-       verified: true
-     },
-     function(err, user) {
-       if (err || !user) {
-         return callback(err);
-       }
-       Mailer.sendAcceptanceEmail(user.email, user.profile.firstname, user.status.confirmBy, callback);
-       return callback(err, user);
-   });
- };
+  User.findOne(
+    {
+      _id: id,
+      verified: true
+    },
+    function(err, user) {
+      if (err || !user) {
+        return callback(err);
+      }
+      Mailer.sendAcceptanceEmail(
+        user.email,
+        user.profile.firstname,
+        user.status.confirmBy,
+        callback
+      );
+      return callback(err, user);
+    }
+  );
+};
 
- /**
+/**
  * [ADMIN ONLY]
  */
- /**
-  * Send the acceptance email to the participant by their email.
-  * @param  {[type]}   ID    [description]
-  * @param  {Function} callback [description]
-  */
+/**
+ * Send the acceptance email to the participant by their email.
+ * @param  {[type]}   ID    [description]
+ * @param  {Function} callback [description]
+ */
 UserController.sendAcceptanceEmailByEmail = function(email, callback) {
-   email = email.toLowerCase();
-   User.findOne(
-     {
-       email: email
-     },
-     function(err, user) {
-       if (err || !user) {
-         return callback(err || 'no user');
-       }
-       Mailer.sendAcceptanceEmail(email, user.profile.firstname, user.status.confirmBy, callback);
-   });
- };
+  email = email.toLowerCase();
+  User.findOne(
+    {
+      email: email
+    },
+    function(err, user) {
+      if (err || !user) {
+        return callback(err || "no user");
+      }
+      Mailer.sendAcceptanceEmail(
+        email,
+        user.profile.firstname,
+        user.status.confirmBy,
+        callback
+      );
+    }
+  );
+};
 
 UserController.markWaiverAsSigned = function(email, callback) {
-  User.findOneAndUpdate({
-    'email': email,
-    'status.admitted': true
-  },{
-    $set: {
-      'lastUpdated': Date.now(),
-      'confirmation.signatureLiability': Date.now()
-    }
-  }, {
-    new: true
-  },
-  callback);
+  User.findOneAndUpdate(
+    {
+      email: email,
+      "status.admitted": true
+    },
+    {
+      $set: {
+        lastUpdated: Date.now(),
+        "confirmation.signatureLiability": Date.now()
+      }
+    },
+    {
+      new: true
+    },
+    callback
+  );
 };
 
 UserController.sendWaiverEmail = function(id, callback) {
-  User.findById(id, function(err, user){
-
-    if(err || !user){
+  User.findById(id, function(err, user) {
+    if (err || !user) {
       return callback(err);
     }
 
-    if (typeof user.confirmation.signatureLiability === 'undefined') {
-      Mailer.sendWaiverEmail(user.email, user.profile.firstname, (err, info) => {
-        if (!err) {
-          User.findOneAndUpdate({
-            '_id': id
-          },
-          {
-            $set: {
-              'lastUpdated': Date.now(),
-              'confirmation.signatureLiability': ''
-            }
-          }, {
-            new: true
-          },
-          callback);
-        } else {
-          return callback(err);
+    if (typeof user.confirmation.signatureLiability === "undefined") {
+      Mailer.sendWaiverEmail(
+        user.email,
+        user.profile.firstname,
+        (err, info) => {
+          if (!err) {
+            User.findOneAndUpdate(
+              {
+                _id: id
+              },
+              {
+                $set: {
+                  lastUpdated: Date.now(),
+                  "confirmation.signatureLiability": ""
+                }
+              },
+              {
+                new: true
+              },
+              callback
+            );
+          } else {
+            return callback(err);
+          }
         }
-      });
+      );
     } else {
-      Mailer.sendWaiverEmail(user.email, user.profile.firstname, (err, info) => {
-        return callback(err, info);
-      });
+      Mailer.sendWaiverEmail(
+        user.email,
+        user.profile.firstname,
+        (err, info) => {
+          return callback(err, info);
+        }
+      );
     }
-
   });
 };
 
-UserController.getStats = function(callback){
+UserController.getStats = function(callback) {
   return callback(null, Stats.getUserStats());
 };
 
-UserController.addUserAcceptedQueue = function(id, callback){
-  User.findOneAndUpdate({
-    _id: id,
-    'verified': true,
-    'status.admitted': false,
-    'status.completedProfile': true,
-    'status.queued': { $in : [0, null]}
-  },{
-    $set: {
-      'status.queued': Date.now(),
-    }
-  },
-  {
-    new: true
-  },
-  callback);
-};
-
-UserController.removeUserAcceptedQueue = function(id, callback){
-  User.findOneAndUpdate({
-    _id: id,
-    'status.queued' : {$gt: 0}
-  },{
-    $set: {
-      'status.queued': 0
-    }
-  },
-  {
-    new: true
-  },
-  callback);
-};
-
-UserController.emailAcceptanceToAdmitted = function(callback){
-  User
-  .find({
-    'status.admitted': true,
-    'status.notified': false,
-    'status.declined': false,
-    'status.confirmed': false
-  })
-  .exec(function (err, users){
-    if (err || !users){
-      return callback(err);
-    }
-    users.forEach(function(user){
-      Mailer.sendAcceptanceEmail(user.email, user.profile.firstname, user.status.confirmBy, function(err, data){
-        if(err){
-          return callback(err,{user});
-        }
-        user.status.notified = true;
-        user.markModified('status');
-        user.save(function(err){
-          if(err){
-            return callback(err,{user});
-          }
-        });
-      });
-    });
-    return callback(null, {users});
-  });
-};
-
-UserController.acceptAllInAcceptedQueue = function(admitterEmail, callback){
-  Settings.getRegistrationTimes(function(err, times){
-    User
-    .updateMany({
-      'status.queued' : {$gt: 0},
-      'status.admitted' : false,
-      'status.completedProfile': true
-    },{
+UserController.addUserAcceptedQueue = function(id, callback) {
+  User.findOneAndUpdate(
+    {
+      _id: id,
+      verified: true,
+      "status.admitted": false,
+      "status.completedProfile": true,
+      "status.queued": { $in: [0, null] }
+    },
+    {
       $set: {
-        'status.admitted': true,
-        'status.admittedBy': admitterEmail,
-        'status.confirmBy': times.timeConfirm,
-        'status.queued': 0,
-        'status.notified': false
+        "status.queued": Date.now()
       }
     },
-    callback);
+    {
+      new: true
+    },
+    callback
+  );
+};
+
+UserController.removeUserAcceptedQueue = function(id, callback) {
+  User.findOneAndUpdate(
+    {
+      _id: id,
+      "status.queued": { $gt: 0 }
+    },
+    {
+      $set: {
+        "status.queued": 0
+      }
+    },
+    {
+      new: true
+    },
+    callback
+  );
+};
+
+UserController.emailAcceptanceToAdmitted = function(callback) {
+  User.find({
+    "status.admitted": true,
+    "status.notified": false,
+    "status.declined": false,
+    "status.confirmed": false
+  }).exec(function(err, users) {
+    if (err || !users) {
+      return callback(err);
+    }
+    users.forEach(function(user) {
+      Mailer.sendAcceptanceEmail(
+        user.email,
+        user.profile.firstname,
+        user.status.confirmBy,
+        function(err, data) {
+          if (err) {
+            return callback(err, { user });
+          }
+          user.status.notified = true;
+          user.markModified("status");
+          user.save(function(err) {
+            if (err) {
+              return callback(err, { user });
+            }
+          });
+        }
+      );
+    });
+    return callback(null, { users });
   });
 };
 
-UserController.viewAcceptedQueue = function(callback){
-  User
-  .find({
-    'status.queued' : {$gt: 0},
-    'status.admitted' : false
-  })
-  .sort({
-    'status.queued': 'asc'
-  })
-  .exec(function (err, users){
-    if (err || !users){
-      return callback(err);
-    }
-    queueStats = {
-      gender: {},
-      school: {},
-      year: {}
-    };
-    users.forEach(function(user){
-      if(user.profile.gender in queueStats.gender){
-        queueStats.gender[user.profile.gender] += 1;
-      } else {
-        queueStats.gender[user.profile.gender] = 1;
-      }
-      if(user.profile.school in queueStats.school){
-        queueStats.school[user.profile.school] += 1;
-      } else {
-        queueStats.school[user.profile.school] = 1;
-      }
-      if(user.profile.graduationYear in queueStats.year){
-        queueStats.year[user.profile.graduationYear] += 1;
-      } else {
-        queueStats.year[user.profile.graduationYear] = 1;
-      }
-    });
-    return callback(null, {
-      users,
-      stats: queueStats
-    });
+UserController.acceptAllInAcceptedQueue = function(admitterEmail, callback) {
+  Settings.getRegistrationTimes(function(err, times) {
+    User.updateMany(
+      {
+        "status.queued": { $gt: 0 },
+        "status.admitted": false,
+        "status.completedProfile": true
+      },
+      {
+        $set: {
+          "status.admitted": true,
+          "status.admittedBy": admitterEmail,
+          "status.confirmBy": times.timeConfirm,
+          "status.queued": 0,
+          "status.notified": false
+        }
+      },
+      callback
+    );
   });
+};
+
+UserController.viewAcceptedQueue = function(callback) {
+  User.find({
+    "status.queued": { $gt: 0 },
+    "status.admitted": false
+  })
+    .sort({
+      "status.queued": "asc"
+    })
+    .exec(function(err, users) {
+      if (err || !users) {
+        return callback(err);
+      }
+      queueStats = {
+        gender: {},
+        school: {},
+        year: {}
+      };
+      users.forEach(function(user) {
+        if (user.profile.gender in queueStats.gender) {
+          queueStats.gender[user.profile.gender] += 1;
+        } else {
+          queueStats.gender[user.profile.gender] = 1;
+        }
+        if (user.profile.school in queueStats.school) {
+          queueStats.school[user.profile.school] += 1;
+        } else {
+          queueStats.school[user.profile.school] = 1;
+        }
+        if (user.profile.graduationYear in queueStats.year) {
+          queueStats.year[user.profile.graduationYear] += 1;
+        } else {
+          queueStats.year[user.profile.graduationYear] = 1;
+        }
+      });
+      return callback(null, {
+        users,
+        stats: queueStats
+      });
+    });
 };
 
 module.exports = UserController;
