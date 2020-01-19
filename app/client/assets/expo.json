@@ -63,24 +63,6 @@
     { "project": "Peter Spell Master", "table": 54 },
     { "project": "DriveAlert", "table": 55 },
     { "project": "Pet Portal", "table": 56 },
-    { "project": "The Breadcrumb Trail", "table": 57 },
-    { "project": "Shark VR", "table": 58 },
-    { "project": "Finals Week Study Scheduler", "table": 59 },
-    { "project": "mARk", "table": 60 },
-    { "project": "HireHelper", "table": 61 },
-    { "project": "Lingua Franca", "table": 62 },
-    { "project": "Code Tutor", "table": 63 },
-    { "project": "Job Buddy", "table": 64 },
-    { "project": "Listen", "table": 65 },
-    { "project": "MemeMail", "table": 66 },
-    { "project": "LeagueOfLegends_Ranked_Stats", "table": 67 },
-    { "project": "Let's Pack!", "table": 68 },
-    { "project": "sharity", "table": 69 },
-    { "project": "ToDoQu", "table": 70 },
-    { "project": "look-then-cook", "table": 71 },
-    { "project": "Furniture Assembler", "table": 72 },
-    { "project": "Photo Sign", "table": 73 },
-    { "project": "Mood Matcher", "table": 74 },
-    { "project": "UCI Connect", "table": 75 }
+    { "project": "The Breadcrumb Trail", "table": 57 }
   ]
 }
