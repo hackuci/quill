@@ -88,6 +88,7 @@
     animation: 1s fadein 1s both;
 
     .packs-subtitle {
+      line-height: 1em;
       font-size: 2em;
       color: #7069B1;
       text-align: center;
@@ -95,6 +96,7 @@
     }
 
     .packs-subtitle-subtitle {
+      line-height: 1em;
       color: #FFFFFF;
       font-size: 1.5em;
       font-weight: 500;
@@ -103,6 +105,8 @@
 
     .packs-text {
       font-size: 1em;
+      margin-top: .2em;
+      line-height: 1em;
       color: #FFFFFF;
     }
   }
@@ -112,40 +116,24 @@
 /* Mobile */
 @media (max-width: 767px) {
 
-  #sponsor .benefits-section {
-    margin: 40em auto 1.5em;
-  }
-
-  #sponsor .title-section #cloud1 {
+  #packs .title-section #cloud3 {
     display: none;
   }
 
-  #sponsor .title-section #cloud3 {
-    display: none;
-  }
-
-  #sponsor .title-section #cloud4 {
+  #packs .title-section #cloud2 {
     top: -17%;
     animation: Cloud4Mobile 10s ease-in-out infinite;
   }
 
-  #sponsor .title-section #cloud2 {
-    animation: Cloud2Mobile 8s ease-in-out infinite;
+  #packs .title-section #cloud1 {
+    animation: Cloud2Mobile 12s ease-in-out infinite;
   }
 }
 
 // tablet styles
 @media (min-width: 768px) and (max-width: 1000px) {
-  #sponsor .title-section #cloud1 {
+  #packs .title-section #cloud3 {
     display: none;
-  }
-
-  #sponsor .title-section #cloud3 {
-    display: none;
-  }
-
-  #sponsor .benefits-section {
-    margin: 18em auto 1.5em;
   }
 }
 
