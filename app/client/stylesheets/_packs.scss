@@ -7,7 +7,7 @@
   .subtitle {
     text-align: center;
     font-family: "Catamaran", sans-serif;
-    color: #FFFFFF;
+    color: #ffffff;
     font-size: 2.2em;
     letter-spacing: 1px;
     font-weight: bold;
@@ -21,7 +21,7 @@
     .cloud {
       position: absolute;
       width: 45%;
-      opacity: .5;
+      opacity: 0.5;
       z-index: -1;
       min-width: 300px;
     }
@@ -59,10 +59,10 @@
       top: 60%;
       left: 50%;
       transform: translate(-50%, -50%);
-      animation: 1s fadein .2s both;
+      animation: 1s fadein 0.2s both;
 
       .packs-title {
-        color: #FFFFFF;
+        color: #ffffff;
         font-size: 3.8em;
         font-family: "Catamaran", sans-serif;
         display: inline;
@@ -71,13 +71,10 @@
         line-height: 1.2em;
 
         .pack {
-          margin-top: .1em;
+          margin-top: 0.1em;
         }
-
       }
-
-    }    
-    
+    }
   }
 
   .packs-subsection {
@@ -90,32 +87,30 @@
     .packs-subtitle {
       line-height: 1em;
       font-size: 2em;
-      color: #7069B1;
+      color: #7069b1;
       text-align: center;
       font-weight: 700;
     }
 
     .packs-subtitle-subtitle {
       line-height: 1em;
-      color: #FFFFFF;
+      color: #ffffff;
       font-size: 1.5em;
       font-weight: 500;
-      margin: .5em auto .1em;
+      margin: 0.5em auto 0.1em;
     }
 
     .packs-text {
       font-size: 1em;
-      margin-top: .2em;
-      line-height: 1em;
-      color: #FFFFFF;
+      margin-top: 0.2em;
+      line-height: 1.5em;
+      color: #ffffff;
     }
   }
 }
 
-
 /* Mobile */
 @media (max-width: 767px) {
-
   #packs .title-section #cloud3 {
     display: none;
   }
@@ -137,9 +132,9 @@
   }
 }
 
-
 @keyframes Cloud1-Pack {
-  0%, 100% {
+  0%,
+  100% {
     left: 17%;
   }
   50% {
@@ -147,9 +142,9 @@
   }
 }
 
-
 @keyframes Cloud2-Pack {
-  0%, 100% {
+  0%,
+  100% {
     right: 13%;
   }
   50% {
@@ -157,9 +152,9 @@
   }
 }
 
-
 @keyframes Cloud3-Pack {
-  0%, 100% {
+  0%,
+  100% {
     left: 14%;
   }
   50% {
