@@ -172,6 +172,14 @@ angular.module('reg')
           requireLogin: false
         }
       })
+      .state('app.packs', {
+        url:"/starter-packs",
+        templateUrl: "views/packs/packs.html",
+        controller: 'PacksCtrl',
+        data: {
+          requireLogin: false
+        }
+      })
       .state('app.volunteer', {
         url: "/volunteer",
         templateUrl: "views/volunteer/volunteer.html",

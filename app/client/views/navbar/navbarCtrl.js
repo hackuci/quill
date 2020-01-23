@@ -28,7 +28,7 @@ angular.module("reg").controller("NavbarCtrl", [
       "app.marketing",
       "app.technology"
     ];
-    var liveViews = ["app.live", "app.schedule", "app.expo"];
+    var liveViews = ["app.live", "app.schedule", "app.expo", "app.packs"];
     var hackViews = [
       "app.recruit",
       "app.logistics",
