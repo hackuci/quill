@@ -1,6 +1,8 @@
 #schedule {
   height: 100%;
 
+  // background: linear-gradient(#91dfe1,#91dfe1);
+
   .cloud {
     position: absolute;
     width: 45%;
@@ -129,7 +131,21 @@
     vertical-align: bottom;
   }
 
+  @keyframes floatupanddown{
+    from {
+      transform: translateY(15px);
+    }
+  
+    to {
+      transform: translateY(-15px);
+    }
+  }
+
   .countdown-container {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     z-index: 2;
     text-transform: uppercase;
@@ -137,22 +153,65 @@
     font-size: 2.5em;
     text-align: center;
     letter-spacing: 8px;
-    animation: fadein 0.5s both;
-    animation-delay: 0.3s;
+    // animation: fadein 0.5s both;
+    // animation-delay: 0.3s;
 
-    &:after {
-      content: " ";
-      width: 200px;
-      display: block;
-      margin: 1em auto 0;
-      border-bottom: 3px solid #fff;
+    animation-duration: 4s ;
+    animation-name: floatupanddown;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+
+    @media (max-width: 992px) {
+      height: 80px;
+    }
+
+    @media (max-width: 767px) {
+      height: 0px;
+    }
+
+    #floating-robot {
+      position: absolute;
+      padding-top: 450px;
+
+      @media (max-width: 992px) {
+        transform: scale(.7);
+        padding-top: 480px;
+      }
+
+      @media (max-width: 767px) {
+        transform: scale(.5);
+        padding-top: 600px;
+      }
+
+      @media (max-width: 460px) {
+        transform: scale(1);
+        width: 80vw;
+        padding-top: 330px;
+      }
+    }
+  
+    .countdown-wrapper {
+      position: absolute;
+      transform: translateY(116px);
+
+      @media (max-width: 992px) {
+        transform: translateY(90px) scale(.7);
+      }
+
+      @media (max-width: 767px) {
+        transform: translateY(95px) scale(.6);
+      }
+
+      @media (max-width: 460px) {
+        transform: translateY(122px) scale(.6);
+      }
     }
   }
 
   @media (max-width: 767px) {
     .countdown-container {
-      margin-top: 55px;
-      font-size: 1.25em;
+      font-size: 1.5em;
       letter-spacing: 3px;
 
       &:after {
@@ -163,7 +222,7 @@
 
     .countdown-segment {
       .countdown--fixed {
-        width: 30px;
+        width: 40px;
       }
     }
   }
