@@ -1,6 +1,24 @@
 #schedule {
   height: 100%;
-  // background: linear-gradient(#91dfe1,#91dfe1);
+  width: 100%;
+  position: absolute;
+
+  .col-border::after {
+    content: " ";
+    display: block;
+    height: 500px;
+    background-color: #7069b1;
+    width: 3px;
+    left: 101%;
+    // border-radius: 5px;
+    top: calc(50% - 250px);
+    position: absolute;
+
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+  
 
   .cloud {
     position: absolute;
@@ -155,11 +173,11 @@
     // animation: fadein 0.5s both;
     // animation-delay: 0.3s;
 
-    animation-duration: 4s ;
-    animation-name: floatupanddown;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-timing-function: ease-in-out;
+    -webkit-animation-duration: 4s ;
+    -webkit-animation-name: floatupanddown;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-timing-function: ease-in-out;
 
     @media (max-width: 992px) {
       height: 80px;
@@ -231,7 +249,8 @@
   }
 
   .countdown--bold {
-    font-weight: 500;
+    font-weight: 800;
+    font-family: "Lato" !important;
   }
 
   .countdown--fixed {
@@ -243,10 +262,12 @@
   #schedule-container {
     position: relative;
     z-index: 1000;
-    background: #ffffff;
+    // background: #ffffff;
+    margin-bottom: 10vh;
     color: #2e2e2e;
     animation: fadein 0.5s both;
     animation-delay: 0.45s;
+    padding-bottom: 1px;
 
     @media screen and (max-width: 767px){
       background: #91dfe1;
@@ -261,11 +282,9 @@
       border-radius: 15px;
       box-shadow: 3px 10px 18px rgba(0, 0, 0, 0.1);
       background: linear-gradient(to right, #ffffff 0%, #ffffff 100%);
-      position: absolute;
       z-index: 1000;
 
       @media screen and (max-width: 767px){
-        position: relative;
         padding-bottom: 30px;
         margin-bottom: 0px;
       }
@@ -276,18 +295,6 @@
         padding: 0 1%;
       }
 
-      .column + .column:after {
-        content: "";
-        position: absolute;
-        left: 0;
-        z-index: 100;
-        top: 25%;
-        width: 1px;
-        height: 50%;
-        background: white;
-        animation: fadein 0.5s both;
-        animation-delay: 0.75s;
-      }
     }
 
     .title {
@@ -299,6 +306,7 @@
       margin: 2.5% 0 5%;
       animation: fadein 0.5s both;
       animation-delay: 0.65s;
+      color: #7069b1;
     }
 
     .schedule-list {
@@ -313,6 +321,7 @@
         margin-top: 3.5%;
         animation: fadein 0.5s both;
         animation-delay: 0.75s;
+        color: #7069b1;
 
         .schedule-title {
           width: 65%;
@@ -335,7 +344,7 @@
           font-size: 0.8em;
           letter-spacing: 0.05em;
           line-height: 1.5em;
-          color: #3f3f3f;
+          color: #827cdf;
         }
       }
     }
