@@ -1,6 +1,5 @@
 #schedule {
   height: 100%;
-
   // background: linear-gradient(#91dfe1,#91dfe1);
 
   .cloud {
@@ -266,7 +265,7 @@
       z-index: 1000;
 
       @media screen and (max-width: 767px){
-        position: initial;
+        position: relative;
         padding-bottom: 30px;
         margin-bottom: 0px;
       }
