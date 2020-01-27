@@ -244,10 +244,15 @@
   #schedule-container {
     position: relative;
     z-index: 1000;
-    background: #f2f1f7;
+    background: #ffffff;
     color: #2e2e2e;
     animation: fadein 0.5s both;
     animation-delay: 0.45s;
+
+    @media screen and (max-width: 767px){
+      background: #91dfe1;
+      padding-bottom: 30px;
+    }
 
     .schedule-box {
       width: 85%;
@@ -259,7 +264,15 @@
       background: linear-gradient(to right, #ffffff 0%, #ffffff 100%);
       position: absolute;
       z-index: 1000;
+
+      @media screen and (max-width: 767px){
+        position: initial;
+        padding-bottom: 30px;
+        margin-bottom: 0px;
+      }
     }
+
+
 
     @media (min-width: 768px) {
       .schedule-box {
