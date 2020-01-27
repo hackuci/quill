@@ -114,13 +114,13 @@
     },
     {
       "time": "5:00–6:00pm",
-      "name": "Dinner",
-      "location": "Woods Cove A"
-    },
-    {
-      "time": "6:30–7:30pm",
       "name": "Bob Ross Painting",
       "location": "Pacific Ballroom"
+    },
+    {
+      "time": "6:00–7:00pm",
+      "name": "Dinner",
+      "location": "Woods Cove A"
     },
     {
       "time": "7:30–8:00pm",
