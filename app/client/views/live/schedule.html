@@ -1,44 +1,44 @@
 <div id="schedule" ng-class="{ 'fade-out': fadeOut }">
   <!-- <div id="bg-tint" ng-style="{ 'opacity' : tintOpacity }"></div> -->
 
-    <div class="countdown-container">
-      <img id="floating-robot" src="../../assets/images/time_robo.png"/>
-      <div class="countdown-wrapper">
-        <span class="countdown-segment">
-          <span
-            class="countdown countdown--bold"
-            ng-style="{ 'opacity' : countdownOpacity }"
-          >
-            {{ hours }}
-          </span>
-          <span class="countdown" ng-style="{ 'opacity' : countdownOpacity }">
-            Hours
-          </span>
+  <div class="countdown-container">
+    <img id="floating-robot" src="../../assets/images/time_robo.png"/>
+    <div class="countdown-wrapper">
+      <span class="countdown-segment">
+        <span
+          class="countdown countdown--bold"
+          ng-style="{ 'opacity' : countdownOpacity }"
+        >
+          {{ hours }}
         </span>
-        <span class="countdown-segment">
-          <span
-            class="countdown countdown--bold countdown--fixed"
-            ng-style="{ 'opacity' : countdownOpacity }"
-          >
-            {{ minutes }}
-          </span>
-          <span class="countdown" ng-style="{ 'opacity' : countdownOpacity }">
-            Min
-          </span>
+        <span class="countdown" ng-style="{ 'opacity' : countdownOpacity }">
+          Hours
         </span>
-        <span class="countdown-segment">
-          <span
-            class="countdown countdown--bold countdown--fixed"
-            ng-style="{ 'opacity' : countdownOpacity }"
-          >
-            {{ seconds }}
-          </span>
-          <span class="countdown" ng-style="{ 'opacity' : countdownOpacity }">
-            Sec
-          </span>
+      </span>
+      <span class="countdown-segment">
+        <span
+          class="countdown countdown--bold countdown--fixed"
+          ng-style="{ 'opacity' : countdownOpacity }"
+        >
+          {{ minutes }}
         </span>
-      </div>
+        <span class="countdown" ng-style="{ 'opacity' : countdownOpacity }">
+          Min
+        </span>
+      </span>
+      <span class="countdown-segment">
+        <span
+          class="countdown countdown--bold countdown--fixed"
+          ng-style="{ 'opacity' : countdownOpacity }"
+        >
+          {{ seconds }}
+        </span>
+        <span class="countdown" ng-style="{ 'opacity' : countdownOpacity }">
+          Sec
+        </span>
+      </span>
     </div>
+  </div>
 
   <section id="schedule-container">
     <div class="schedule-box ui stackable three column grid">
