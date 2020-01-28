@@ -1,5 +1,24 @@
 #schedule {
   height: 100%;
+  width: 100%;
+  position: absolute;
+
+  .col-border::after {
+    content: " ";
+    display: block;
+    height: 500px;
+    background-color: #7069b1;
+    width: 3px;
+    left: 101%;
+    // border-radius: 5px;
+    top: calc(50% - 250px);
+    position: absolute;
+
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+  
 
   .cloud {
     position: absolute;
@@ -129,7 +148,21 @@
     vertical-align: bottom;
   }
 
+  @keyframes floatupanddown{
+    from {
+      transform: translateY(15px);
+    }
+  
+    to {
+      transform: translateY(-15px);
+    }
+  }
+
   .countdown-container {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     z-index: 2;
     text-transform: uppercase;
@@ -137,22 +170,65 @@
     font-size: 2.5em;
     text-align: center;
     letter-spacing: 8px;
-    animation: fadein 0.5s both;
-    animation-delay: 0.3s;
+    // animation: fadein 0.5s both;
+    // animation-delay: 0.3s;
 
-    &:after {
-      content: " ";
-      width: 200px;
-      display: block;
-      margin: 1em auto 0;
-      border-bottom: 3px solid #fff;
+    -webkit-animation-duration: 4s ;
+    -webkit-animation-name: floatupanddown;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-timing-function: ease-in-out;
+
+    @media (max-width: 992px) {
+      height: 80px;
+    }
+
+    @media (max-width: 767px) {
+      height: 0px;
+    }
+
+    #floating-robot {
+      position: absolute;
+      padding-top: 450px;
+
+      @media (max-width: 992px) {
+        transform: scale(.7);
+        padding-top: 480px;
+      }
+
+      @media (max-width: 767px) {
+        transform: scale(.5);
+        padding-top: 600px;
+      }
+
+      @media (max-width: 460px) {
+        transform: scale(1);
+        width: 80vw;
+        padding-top: 330px;
+      }
+    }
+  
+    .countdown-wrapper {
+      position: absolute;
+      transform: translateY(116px);
+
+      @media (max-width: 992px) {
+        transform: translateY(90px) scale(.7);
+      }
+
+      @media (max-width: 767px) {
+        transform: translateY(95px) scale(.6);
+      }
+
+      @media (max-width: 460px) {
+        transform: translateY(122px) scale(.6);
+      }
     }
   }
 
   @media (max-width: 767px) {
     .countdown-container {
-      margin-top: 55px;
-      font-size: 1.25em;
+      font-size: 1.5em;
       letter-spacing: 3px;
 
       &:after {
@@ -163,7 +239,7 @@
 
     .countdown-segment {
       .countdown--fixed {
-        width: 30px;
+        width: 40px;
       }
     }
   }
@@ -173,7 +249,8 @@
   }
 
   .countdown--bold {
-    font-weight: 500;
+    font-weight: 800;
+    font-family: "Open Sans" !important;
   }
 
   .countdown--fixed {
@@ -185,10 +262,17 @@
   #schedule-container {
     position: relative;
     z-index: 1000;
-    background: #f2f1f7;
+    // background: #ffffff;
+    margin-bottom: 10vh;
     color: #2e2e2e;
     animation: fadein 0.5s both;
     animation-delay: 0.45s;
+    padding-bottom: 1px;
+
+    @media screen and (max-width: 767px){
+      background: #91dfe1;
+      padding-bottom: 30px;
+    }
 
     .schedule-box {
       width: 85%;
@@ -198,8 +282,12 @@
       border-radius: 15px;
       box-shadow: 3px 10px 18px rgba(0, 0, 0, 0.1);
       background: linear-gradient(to right, #ffffff 0%, #ffffff 100%);
-      position: absolute;
       z-index: 1000;
+
+      @media screen and (max-width: 767px){
+        padding-bottom: 30px;
+        margin-bottom: 0px;
+      }
     }
 
     @media (min-width: 768px) {
@@ -207,18 +295,6 @@
         padding: 0 1%;
       }
 
-      .column + .column:after {
-        content: "";
-        position: absolute;
-        left: 0;
-        z-index: 100;
-        top: 25%;
-        width: 1px;
-        height: 50%;
-        background: white;
-        animation: fadein 0.5s both;
-        animation-delay: 0.75s;
-      }
     }
 
     .title {
@@ -230,6 +306,7 @@
       margin: 2.5% 0 5%;
       animation: fadein 0.5s both;
       animation-delay: 0.65s;
+      color: #7069b1;
     }
 
     .schedule-list {
@@ -244,6 +321,7 @@
         margin-top: 3.5%;
         animation: fadein 0.5s both;
         animation-delay: 0.75s;
+        color: #7069b1;
 
         .schedule-title {
           width: 65%;
@@ -260,13 +338,14 @@
           font-weight: 400;
           font-size: 0.85em;
           letter-spacing: 0.02em;
+          font-family: "Open Sans";
         }
 
         .schedule-location {
           font-size: 0.8em;
           letter-spacing: 0.05em;
           line-height: 1.5em;
-          color: #3f3f3f;
+          color: #827cdf;
         }
       }
     }
