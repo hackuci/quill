@@ -78,7 +78,7 @@
   }
 
   .packs-subsection {
-    width: 80%;
+    width: 70%;
     margin: 0 auto 1.5em;
     font-family: "Catamaran", sans-serif;
     font-weight: 400;
@@ -91,6 +91,13 @@
       color: #7069b1;
       text-align: center;
       font-weight: 700;
+      a.easter-egg {
+        color: #7069b1;
+        text-decoration: none;
+        &:hover {
+          cursor: default;
+        }
+      }
     }
 
     .packs-subtitle-subtitle {
