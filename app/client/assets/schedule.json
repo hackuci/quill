@@ -1,193 +1,188 @@
 {
-    "friday": [
-      {
-        "name": "Pre-Check In",
-        "time": "4:00-6:00pm",
-        "location": "Ballroom Lobby"
-      },
-      {
-        "name": "Waitlist Lines",
-        "time": "5:00pm",
-        "location": "Pacific Ballroom"
-      },
-      {
-        "name": "Check-In",
-        "time": "6:00-9:00pm",
-        "location": "Ballroom Lobby"
-      },
-      {
-        "name": "Dinner",
-        "time": "7:00-9:00pm",
-        "location": "Ballroom Patio"
-      },
-      {
-        "name": "Sponsor Meet and Greet",
-        "time": "7:00-9:00pm",
-        "location": "Pacific Ballroom"
-      },
-      {
-        "name": "Opening Ceremony",
-        "time": "9:00-10:00pm",
-        "location": "Pacific Ballroom"
-      },
-      {
-        "name": "Hacking Begins",
-        "time": "10:00pm",
-        "location": "Pacific Ballroom"
-      },
-      {
-        "name": "VR Workshop",
-        "time": "10:00-11:45pm",
-        "location": "Moss Cove"
-      },
-      {
-        "name": "AI Workshop",
-        "time": "10:00-11:45pm",
-        "location": "Woods Cove"
-      },
-      {
-        "name": "Team Formation",
-        "time": "10:00-1:00am",
-        "location": "Pacific Ballroom Hallway"
-      }
-    ],
-    "saturday": [
-      {
-        "name": "Bob Ross Painting",
-        "time": "1:00-2:00am",
-        "location": "Pacific Ballroom"
-      },
-      {
-        "name": "Campus Tour",
-        "time": "2:00-3:00am",
-        "location": "Pacific Ballroom"
-      },
-      {
-        "name": "Breakfast",
-        "time": "7:30-8:30am",
-        "location": "Pacific Ballroom Patio"
-      },
-      {
-        "name": "Thornton Event (Typing Test)",
-        "time": "8:30-9:30am",
-        "location": "Pacific Ballroom"
-      },
-      {
-        "name": "Android Workshop",
-        "time": "9:30-11:00am",
-        "location": "Moss Cove"
-      },
-      {
-        "name": "IOS Workshop",
-        "time": "9:30-11:00am",
-        "location": "Woods Cove"
-      },
-      {
-        "name": "Tech Talk: Northrop Grumman Accelerator Lab for Modern Software Development",
-        "time": "11:00-12:00pm",
-        "location": "Moss Cove"
-      },
-      {
-        "name": "Lunch",
-        "time": "12:00-1:00pm",
-        "location": "Pacific Ballroom Patio"
-      },
-      {
-        "name": "Raffle",
-        "time": "12:30-1:00pm",
-        "location": "Pacific Ballroom"
-      },
-      {
-        "name": "Introduction to Git and GitHub",
-        "time": "1:30-2:30pm",
-        "location": "Moss Cove"
-      },
-      {
-        "name": "Blockchain Workshop",
-        "time": "2:30-3:30pm",
-        "location": "Moss Cove"
-      },
-      {
-        "name": "Dance Workshop",
-        "time": "4:00-5:00pm",
-        "location": "Pacific Ballroom Patio"
-      },
-      {
-        "name": "Chess Club Tournament",
-        "time": "4:00-5:00pm",
-        "location": "Woods Cove"
-      },
-      {
-        "name": "Design Workshop",
-        "time": "5:00-6:30pm",
-        "location": "Moss Cove"
-      },
-      {
-        "name": "Dinner",
-        "time": "7:00-8:00pm",
-        "location": "Pacific Ballroom Patio"
-      },
-      {
-        "name": "Raffle",
-        "time": "7:30-8:00pm",
-        "location": "Pacific Ballroom"
-      },
-      {
-        "name": "Super Smash Ultimate Tournament",
-        "time": "8:00-9:00pm",
-        "location": "Woods Cove"
-      },
-      {
-        "name": "GCP Workshop",
-        "time": "9:00-10:30pm",
-        "location": "Moss Cove"
-      },
-      {
-        "name": "Puzzle Hunt",
-        "time": "10:00-11:00pm",
-        "location": "Pacific Ballroom"
-      },
-      {
-        "name": "Cup Stacking",
-        "time": "11:00-12:00am",
-        "location": "Pacific Ballroom"
-      },
-      {
-        "name": "Midnight Snack",
-        "time": "12:00am",
-        "location": "Pacific Ballroom"
-      }
-    ],
-    "sunday": [
-      {
-        "name": "Musical Chairs",
-        "time": "1:00-2:00am",
-        "location": "Pacific Ballroom"
-      },
-      {
-        "name": "Breakfast",
-        "time": "7:00-8:00am",
-        "location": "Pacific Ballroom Patio"
-      },
-      {
-        "name": "Hacking Ends",
-        "time": "10:00am",
-        "location": "Pacific Ballroom"
-      },
-      {
-        "name": "Lunch",
-        "time": "11:00-12:00am",
-        "location": "Pacific Ballroom Patio"
-      },
-      {
-        "name": "Expo",
-        "time": "12:30-2:30pm",
-        "location": "Moss Cove & Woods Cove"
-      },
-      {
-        "name": "Closing Ceremony",
-        "time": "2:30-4:00pm",
-        "location": "Pacific Ballroom"
-      }
-    ]
-  }
+  "friday": [
+    {
+      "time": "6:00–9:00pm",
+      "name": "Check In",
+      "location": "Pacific Ballroom Lobby"
+    },
+    {
+      "time": "5:00pm",
+      "name": "Waitlist Lines",
+      "location": "Pacific Ballroom"
+    },
+    {
+      "time": "7:30pm",
+      "name": "Waitlist Check-In",
+      "location": "Pacific Ballroom Lobby"
+    },
+    {
+      "time": "7:00–9:00pm",
+      "name": "Dinner",
+      "location": "Woods Cove A"
+    },
+    {
+      "time": "7:00–9:00pm",
+      "name": "Sponsor Meet and Greet",
+      "location": "Pacific Ballroom"
+    },
+    {
+      "time": "9:00–10:00pm",
+      "name": "Opening Ceremony",
+      "location": "Pacific Ballroom"
+    },
+    {
+      "time": "10:00pm",
+      "name": "Hacking Begins",
+      "location": "Pacific Ballroom"
+    },
+    {
+      "time": "10:00pm",
+      "name": "Quiet Room Opens",
+      "location": "Woods Cove B + C"
+    },
+    {
+      "time": "10:00–10:30pm",
+      "name": "Team Formation",
+      "location": "Pacific Ballroom Hallway"
+    },
+    {
+      "time": "10:30–11:30pm",
+      "name": "iOS Workshop (Codepath)",
+      "location": "Moss Cove A"
+    },
+    {
+      "time": "10:30–11:30pm",
+      "name": "Intro to Web Dev (Ryan Yang)",
+      "location": "Moss Cove B"
+    },
+    {
+      "time": "11:30pm–12:30am",
+      "name": "Android Workshop (Codepath)",
+      "location": "Moss Cove A"
+    },
+    {
+      "time": "11:30pm–12:30am",
+      "name": "Firebase Workshop (DSC)",
+      "location": "Moss Cove B"
+    }
+  ],
+  "saturday": [
+    {
+      "time": "1:00–2:00am",
+      "name": "Cup Stacking",
+      "location": "Pacific Ballroom"
+    },
+    {
+      "time": "7:30–8:30am",
+      "name": "Breakfast",
+      "location": "Woods Cove A"
+    },
+    {
+      "time": "9:30–10:30am",
+      "name": "Bentley Tech Talk",
+      "location": "Moss Cove A"
+    },
+    {
+      "time": "11:00am–12:00pm",
+      "name": "AI APIs (AI@UCI)",
+      "location": "Moss Cove A"
+    },
+    {
+      "time": "12:00–1:00pm",
+      "name": "Lunch",
+      "location": "Woods Cove A"
+    },
+    {
+      "time": "1:00–1:30pm",
+      "name": "ACM Coding Activity",
+      "location": "Pacific Ballroom"
+    },
+    {
+      "time": "4:00–5:00pm",
+      "name": "Drawing Scavenger Hunt",
+      "location": "Pacific Ballroom"
+    },
+    {
+      "time": "5:00–6:00pm",
+      "name": "Bob Ross Painting",
+      "location": "Moss Cove A"
+    },
+    {
+      "time": "6:00–7:00pm",
+      "name": "Dinner",
+      "location": "Woods Cove A"
+    },
+    {
+      "time": "7:30–8:00pm",
+      "name": "Raffle",
+      "location": "Pacific Ballroom"
+    },
+    {
+      "time": "8:00–10:00pm",
+      "name": "Super Smash Brothers",
+      "location": "Moss Cove B"
+    },
+    {
+      "time": "10:30–11:30pm",
+      "name": "Paper Airplane Contest",
+      "location": "Pacific Ballroom"
+    },
+    {
+      "time": "12:00am",
+      "name": "Midnight Snack",
+      "location": "Pacific Ballroom"
+    }
+  ],
+  "sunday": [
+    {
+      "time": "7:00–8:00am",
+      "name": "Breakfast",
+      "location": "Woods Cove A"
+    },
+    {
+      "time": "8:00–8:30am",
+      "name": "How To: Submit a Devpost Video",
+      "location": "Pacific Ballroom"
+    },
+    {
+      "time": "8:00–10:00am",
+      "name": "Hacking Ends + Devpost Due",
+      "location": "Pacific Ballroom"
+    },
+    {
+      "time": "10:00am",
+      "name": "Quiet Rooms Close",
+      "location": "Woods Cove B + C"
+    },
+    {
+      "time": "10:00–11:00am",
+      "name": "Judges Orientation",
+      "location": "Moss Cove B"
+    },
+    {
+      "time": "10:00–12:00pm",
+      "name": "Expo Setup",
+      "location": "Pacific Ballroom"
+    },
+    {
+      "time": "11:00–12:00pm",
+      "name": "Lunch",
+      "location": "Woods Cove A"
+    },
+    {
+      "time": "12:30–2:30pm",
+      "name": "Expo",
+      "location": "Pacific Ballroom"
+    },
+    {
+      "time": "2:30–3:00pm",
+      "name": "Deliberations",
+      "location": "Pacific Ballroom"
+    },
+    {
+      "time": "3:00–4:00pm",
+      "name": "Closing Ceremony",
+      "location": "Pacific Ballroom"
+    }
+  ]
+}

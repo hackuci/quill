@@ -1,23 +1,9 @@
 <div id="expo" ng-class="{ 'fade-out': fadeOut }">
   <!-- <div id="bg-tint" ng-style="{ 'opacity' : tintOpacity }"></div> -->
-  <div class="inner-section">
-    <img id="cloud4" class="cloud" src="../../assets//images/building-blocks/cloud4.png">
-    <img id="cloud3" class="cloud" src="../../assets//images/building-blocks/cloud3.png">
-    <img id="cloud2" class="cloud" src="../../assets//images/building-blocks/cloud2.png">
-    <img id="cloud1" class="cloud" src="../../assets//images/building-blocks/cloud1.png">
-  </div>
   
-  <section id="hero" class="center">
-    <div class="logo-header-container ui grid mobile only tablet only">
-      <div class="logo-header logo-cog">
-        <img src="../assets/images/logo-cog.svg" />
-      </div>
-      <div class="logo-header">
-        <img src="../assets/images/logo-anteater.svg" />
-      </div>
-    </div>
-
-    <div class="countdown-container">
+  <div class="countdown-container">
+    <img id="floating-robot" src="../../assets/images/time_robo.png"/>
+    <div class="countdown-wrapper">
       <span class="countdown-segment">
         <span
           class="countdown countdown--bold"
@@ -52,87 +38,63 @@
         </span>
       </span>
     </div>
-
-    <div class="hero-border">
-      <!-- <svg
-        version="1.1"
-        id="circle"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        x="0px"
-        y="0px"
-        viewBox="0 0 1920 380"
-        xml:space="preserve"
-        preserveAspectRatio="none"
-      >
-      <defs>
-        <linearGradient id="darkGradient">
-          <stop offset="5%"  stop-color="#2a2a2a" />
-          <stop offset="95%" stop-color="#191919" />
-        </linearGradient>
-      </defs>
-        <path
-          fill="url({{currentPath}})"
-          d="M0,309c0,0,340,70.8,960,70.8c620,0.2,960-70.8,960-70.8v71H0"
-          transform="translate(0 1)"
-        ></path>
-      </svg> -->
   </div>
-  </section>
 
   <section id="schedule-container">
-    <div class="schedule-box ui stackable three column grid">
-      <div class="column">
-        <div class="title">
-          Woods Cove
-        </div>
-        <div class="schedule-list">
-          <div class="schedule" ng-repeat="event in schedule.e2">
-            <span class="schedule-title">
-              {{ event.project }}
-            </span>
-            <span class="schedule-time">
-              {{ event.table }}
-            </span>
-            <span class="schedule-location">
-              <!-- {{ event.location }} -->
-            </span>
+    <div class="hello">
+      <div class="schedule-box ui stackable three column grid">
+        <div class="column col-border">
+          <div class="title">
+            Woods Cove
+          </div>
+          <div class="schedule-list">
+            <div class="schedule" ng-repeat="event in schedule.e2">
+              <span class="schedule-title">
+                {{ event.project }}
+              </span>
+              <span class="schedule-time">
+                {{ event.table }}
+              </span>
+              <span class="schedule-location">
+                <!-- {{ event.location }} -->
+              </span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="column">
-        <div class="title">
-          Moss Cove
-        </div>
-        <div class="schedule-list">
-          <div class="schedule" ng-repeat="event in schedule.e1">
-            <span class="schedule-title">
-              {{ event.project }}
-            </span>
-            <span class="schedule-time">
-              {{ event.table }}
-            </span>
-            <span class="schedule-location">
-              <!-- {{ event.location }} -->
-            </span>
+        <div class="column col-border">
+          <div class="title">
+            Moss Cove
+          </div>
+          <div class="schedule-list">
+            <div class="schedule" ng-repeat="event in schedule.e1">
+              <span class="schedule-title">
+                {{ event.project }}
+              </span>
+              <span class="schedule-time">
+                {{ event.table }}
+              </span>
+              <span class="schedule-location">
+                <!-- {{ event.location }} -->
+              </span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="column">
-        <div class="title">
-          Pacific Ballroom
-        </div>
-        <div class="schedule-list">
-          <div class="schedule" ng-repeat="event in schedule.e3">
-            <span class="schedule-title">
-              {{ event.project }}
-            </span>
-            <span class="schedule-time">
-              {{ event.table }}
-            </span>
-            <span class="schedule-location">
-              <!-- {{ event.location }} -->
-            </span>
+        <div class="column">
+          <div class="title">
+            Pacific Ballroom
+          </div>
+          <div class="schedule-list">
+            <div class="schedule" ng-repeat="event in schedule.e3">
+              <span class="schedule-title">
+                {{ event.project }}
+              </span>
+              <span class="schedule-time">
+                {{ event.table }}
+              </span>
+              <span class="schedule-location">
+                <!-- {{ event.location }} -->
+              </span>
+            </div>
           </div>
         </div>
       </div>
