@@ -6,24 +6,23 @@
   .col-border::after {
     content: " ";
     display: block;
-    height: 500px;
+    height: 900px;
     background-color: #7069b1;
     width: 3px;
     left: 101%;
     // border-radius: 5px;
-    top: calc(50% - 250px);
+    top: calc(50% - 450px);
     position: absolute;
 
     @media screen and (max-width: 767px) {
       display: none;
     }
   }
-  
 
   .cloud {
     position: absolute;
     width: 45%;
-    opacity: .5;
+    opacity: 0.5;
     z-index: -1;
     min-width: 300px;
   }
@@ -68,7 +67,7 @@
     top: 200px;
     left: 50%;
     transform: translate(-50%, -50%);
-    animation: 1s fadein .2s both;
+    animation: 1s fadein 0.2s both;
 
     @media (max-width: 767px) {
       display: none;
@@ -148,11 +147,11 @@
     vertical-align: bottom;
   }
 
-  @keyframes floatupanddown{
+  @keyframes floatupanddown {
     from {
       transform: translateY(15px);
     }
-  
+
     to {
       transform: translateY(-15px);
     }
@@ -173,7 +172,7 @@
     // animation: fadein 0.5s both;
     // animation-delay: 0.3s;
 
-    -webkit-animation-duration: 4s ;
+    -webkit-animation-duration: 4s;
     -webkit-animation-name: floatupanddown;
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-direction: alternate;
@@ -192,12 +191,12 @@
       padding-top: 450px;
 
       @media (max-width: 992px) {
-        transform: scale(.7);
+        transform: scale(0.7);
         padding-top: 480px;
       }
 
       @media (max-width: 767px) {
-        transform: scale(.5);
+        transform: scale(0.5);
         padding-top: 600px;
       }
 
@@ -207,21 +206,21 @@
         padding-top: 330px;
       }
     }
-  
+
     .countdown-wrapper {
       position: absolute;
       transform: translateY(116px);
 
       @media (max-width: 992px) {
-        transform: translateY(90px) scale(.7);
+        transform: translateY(90px) scale(0.7);
       }
 
       @media (max-width: 767px) {
-        transform: translateY(95px) scale(.6);
+        transform: translateY(95px) scale(0.6);
       }
 
       @media (max-width: 460px) {
-        transform: translateY(122px) scale(.6);
+        transform: translateY(122px) scale(0.6);
       }
     }
   }
@@ -267,8 +266,9 @@
     animation: fadein 0.5s both;
     animation-delay: 0.45s;
     padding-bottom: 1px;
+    background: linear-gradient(#91dfe1, #cca2ff);
 
-    @media screen and (max-width: 767px){
+    @media screen and (max-width: 767px) {
       background: #91dfe1;
       padding-bottom: 30px;
     }
@@ -283,7 +283,7 @@
       background: linear-gradient(to right, #ffffff 0%, #ffffff 100%);
       z-index: 1000;
 
-      @media screen and (max-width: 767px){
+      @media screen and (max-width: 767px) {
         padding-bottom: 30px;
         margin-bottom: 0px;
       }
@@ -293,7 +293,6 @@
       .schedule-box {
         padding: 0 1%;
       }
-
     }
 
     .title {
@@ -350,7 +349,6 @@
     }
 
     @media (max-width: 767px) {
-
       .schedule-list {
         width: 97%;
         margin-right: 1%;
