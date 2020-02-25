@@ -122,7 +122,7 @@
     animation-delay: 0.6s;
 
     .btn {
-      background: #fc6076;
+      background: #000;
       border: none;
       padding: 2.5% 5%;
       border-radius: 25px;
@@ -131,7 +131,7 @@
 
     .btn:hover {
       color: white;
-      background: #fb465e;
+      background: #000;
     }
 
     .btn--coming-soon {
@@ -203,7 +203,7 @@
 
   /* Who We Are */
   #about-us {
-    background: #827ce0;
+    background: #cca2ff;
     color: white;
     padding: 6% 0;
 
@@ -608,7 +608,7 @@
     }
 
     #break {
-      background: #7673c9;
+      background: #cca2ff;
       color: white;
       padding: 3.5% 0;
       animation: fadein 0.5s both;
@@ -737,7 +737,7 @@
 
   /* Footer */
   #footer {
-    background-image: url(../assets/images/footer.png);
+    background-color: #827ce0;
     color: white;
     text-align: center;
     padding: 6% 0;
@@ -750,7 +750,7 @@
         margin-bottom: 1.8em;
 
         .btn {
-          background: #fc6076;
+          background: #000;
           font-weight: 300;
           font-size: 0.55em;
           padding: 15px 25px;
@@ -764,7 +764,7 @@
         .btn:hover {
           color: white;
           text-decoration: none;
-          background: #fb465e;
+          background: #333;
         }
 
         .btn:focus {
