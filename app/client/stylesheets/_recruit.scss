@@ -2,6 +2,15 @@
   height: 100%;
   font-family: "Rubik", sans-serif;
 
+  width: 100%;
+  height: 100%;
+  background: #000;
+  transition: padding-left $sidebar-transition-time;
+
+  .borderthing {
+    background: linear-gradient(#91dfe1, #cca2ff);
+  }
+
   /* Global */
   button,
   .btn {
@@ -34,7 +43,7 @@
 
   /* Hero */
   #hero {
-    background-image: url("../assets/images/desktop-background.png");
+    // background-image: url("../assets/images/desktop-background.png");
     background-size: 110%;
     background-repeat: no-repeat;
     background-position: center center;
@@ -194,7 +203,7 @@
 
   /* Who We Are */
   #about-us {
-    background: #7673c9;
+    background: #827ce0;
     color: white;
     padding: 6% 0;
 
@@ -349,7 +358,7 @@
 
   /* Footer */
   #footer {
-    background-image: url(../assets/images/footer.png);
+    background-color: #827ce0;
     color: white;
     text-align: center;
     padding: 6% 0;
@@ -467,7 +476,7 @@
     height: calc(45vh + 49px);
     animation: fadein 0.5s both;
   }
-  
+
   .body {
     margin-bottom: 2%;
   }
@@ -717,7 +726,7 @@
           .prompt {
             line-height: 1.1em;
           }
-          
+
           .body {
             padding: 0.75em 0 0 0;
           }
