@@ -326,7 +326,7 @@
 
         &.committee-card--logistics {
           background: url("../assets/images/logistics.jpg");
-          background-position: center center;
+          background-position: center top;
           background-size: cover;
           background-repeat: no-repeat;
         }
@@ -340,14 +340,14 @@
 
         &.committee-card--marketing {
           background: url("../assets/images/marketing.jpg");
-          background-position: center center;
+          background-position: center top;
           background-size: cover;
           background-repeat: no-repeat;
         }
 
         &.committee-card--technology {
           background: url("../assets/images/technology.jpg");
-          background-position: center center;
+          background-position: center top;
           background-size: cover;
           background-repeat: no-repeat;
         }
@@ -676,7 +676,7 @@
         .prompt {
           font-size: 1.25em;
           font-weight: 500;
-          line-height: 2em;
+          line-height: 2.5em;
         }
 
         .body {
@@ -801,6 +801,7 @@
 #logistics {
   #hero {
     background-image: url("../assets/images/hero-logistics.jpg");
+    background-position: center top -50px;
   }
 }
 
