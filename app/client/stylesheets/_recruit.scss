@@ -2,6 +2,14 @@
   height: 100%;
   font-family: "Rubik", sans-serif;
 
+  width: 100%;
+  height: 100%;
+  transition: padding-left $sidebar-transition-time;
+
+  .borderthing {
+    background: linear-gradient(#91dfe1, #cca2ff);
+  }
+
   /* Global */
   button,
   .btn {
@@ -34,7 +42,7 @@
 
   /* Hero */
   #hero {
-    background-image: url("../assets/images/desktop-background.png");
+    // background-image: url("../assets/images/desktop-background.png");
     background-size: 110%;
     background-repeat: no-repeat;
     background-position: center center;
@@ -71,7 +79,7 @@
 
   .hack-header {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 3.5em;
+    font-size: 4em;
     font-weight: 700;
   }
 
@@ -113,7 +121,7 @@
     animation-delay: 0.6s;
 
     .btn {
-      background: #fc6076;
+      background: #000;
       border: none;
       padding: 2.5% 5%;
       border-radius: 25px;
@@ -122,7 +130,7 @@
 
     .btn:hover {
       color: white;
-      background: #fb465e;
+      background: #000;
     }
 
     .btn--coming-soon {
@@ -194,7 +202,7 @@
 
   /* Who We Are */
   #about-us {
-    background: #7673c9;
+    background: #cca2ff;
     color: white;
     padding: 6% 0;
 
@@ -226,7 +234,7 @@
   /* Mobile */
   @media (max-width: 767px) {
     #hero {
-      background-image: linear-gradient(to right, #2a2a2a, #191919);
+      background: linear-gradient(#91dfe1, #cca2ff);
     }
     .logo-header-container {
       margin-bottom: 20%;
@@ -318,13 +326,13 @@
 
         &.committee-card--logistics {
           background: url("../assets/images/logistics.jpg");
-          background-position: center center;
+          background-position: center top;
           background-size: cover;
           background-repeat: no-repeat;
         }
 
         &.committee-card--corporate {
-          background: url("../assets/images/corporate.png");
+          background: url("../assets/images/corporate.jpg");
           background-position: center top;
           background-size: cover;
           background-repeat: no-repeat;
@@ -332,14 +340,14 @@
 
         &.committee-card--marketing {
           background: url("../assets/images/marketing.jpg");
-          background-position: center center;
+          background-position: center top;
           background-size: cover;
           background-repeat: no-repeat;
         }
 
         &.committee-card--technology {
           background: url("../assets/images/technology.jpg");
-          background-position: center center;
+          background-position: center top;
           background-size: cover;
           background-repeat: no-repeat;
         }
@@ -349,7 +357,7 @@
 
   /* Footer */
   #footer {
-    background-image: url(../assets/images/footer.png);
+    background-color: #7069b1;
     color: white;
     text-align: center;
     padding: 6% 0;
@@ -467,7 +475,7 @@
     height: calc(45vh + 49px);
     animation: fadein 0.5s both;
   }
-  
+
   .body {
     margin-bottom: 2%;
   }
@@ -599,7 +607,7 @@
     }
 
     #break {
-      background: #7673c9;
+      background: #cca2ff;
       color: white;
       padding: 3.5% 0;
       animation: fadein 0.5s both;
@@ -668,7 +676,7 @@
         .prompt {
           font-size: 1.25em;
           font-weight: 500;
-          line-height: 1em;
+          line-height: 2.5em;
         }
 
         .body {
@@ -717,7 +725,7 @@
           .prompt {
             line-height: 1.1em;
           }
-          
+
           .body {
             padding: 0.75em 0 0 0;
           }
@@ -728,7 +736,7 @@
 
   /* Footer */
   #footer {
-    background-image: url(../assets/images/footer.png);
+    background-color: #7069b1;
     color: white;
     text-align: center;
     padding: 6% 0;
@@ -741,7 +749,7 @@
         margin-bottom: 1.8em;
 
         .btn {
-          background: #fc6076;
+          background: #000;
           font-weight: 300;
           font-size: 0.55em;
           padding: 15px 25px;
@@ -755,7 +763,7 @@
         .btn:hover {
           color: white;
           text-decoration: none;
-          background: #fb465e;
+          background: #333;
         }
 
         .btn:focus {
@@ -793,6 +801,7 @@
 #logistics {
   #hero {
     background-image: url("../assets/images/hero-logistics.jpg");
+    background-position: center top -50px;
   }
 }
 
