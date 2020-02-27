@@ -4,7 +4,6 @@
 
   width: 100%;
   height: 100%;
-  background: #000;
   transition: padding-left $sidebar-transition-time;
 
   .borderthing {
@@ -80,7 +79,7 @@
 
   .hack-header {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 3.5em;
+    font-size: 4em;
     font-weight: 700;
   }
 
@@ -235,7 +234,7 @@
   /* Mobile */
   @media (max-width: 767px) {
     #hero {
-      background-image: linear-gradient(to right, #2a2a2a, #191919);
+      background: linear-gradient(#91dfe1, #cca2ff);
     }
     .logo-header-container {
       margin-bottom: 20%;
@@ -333,7 +332,7 @@
         }
 
         &.committee-card--corporate {
-          background: url("../assets/images/corporate.png");
+          background: url("../assets/images/corporate.jpg");
           background-position: center top;
           background-size: cover;
           background-repeat: no-repeat;
@@ -358,7 +357,7 @@
 
   /* Footer */
   #footer {
-    background-color: #827ce0;
+    background-color: #7069b1;
     color: white;
     text-align: center;
     padding: 6% 0;
@@ -677,7 +676,7 @@
         .prompt {
           font-size: 1.25em;
           font-weight: 500;
-          line-height: 1em;
+          line-height: 2em;
         }
 
         .body {
@@ -737,7 +736,7 @@
 
   /* Footer */
   #footer {
-    background-color: #827ce0;
+    background-color: #7069b1;
     color: white;
     text-align: center;
     padding: 6% 0;
