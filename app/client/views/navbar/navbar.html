@@ -62,6 +62,15 @@
         Dashboard
       </a>
       <a
+        ui-sref="app.recruit"
+        ui-sref-active="menu-item-active"
+        class="menu-item"
+        ng-if="!isLoggedIn"
+        id="menu-item-login"
+      >
+        Recruit
+      </a>
+      <a
         ui-sref="app.login"
         ui-sref-active="menu-item-active"
         class="menu-item"
